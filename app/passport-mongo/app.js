@@ -36,7 +36,7 @@ passport.use(new JwtStrategy(
 ));
 
 
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 

@@ -1,18 +1,46 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios"
 
 class App extends Component {
+  state = {
+    text: "",
+    notes: []
+  }
+  componentDidMount(){
+    this.loadNotes();
+  }
+  handleChange = event => {
+    this.setState({text: event.target.value});
+  }
+  loadNotes = () => {
+    axios.get("/api/notes").then(res => {
+      console.log(res);
+      this.setState({notes: res.data})
+    })
+  }
+  sendNote = event => {
+    axios.post("/api/create", { text: this.state.text}).then(res => {
+      this.loadNotes();
+    });
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <div>
+          Text: <input name="text" onChange={this.handleChange}value={this.state.value} />
+          <button onClick={this.sendNote}>Click</button>
+        </div>
+        <div>
+          <ul>
+            {this.state.notes.map(note => {
+              return (
+                <li key={note._id}>{note.text}</li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     );
   }
