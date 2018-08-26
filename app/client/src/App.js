@@ -5,6 +5,18 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      // <Router>
+      //   <div>
+      //     <Route exact path="/" component={Home} />
+      //     <Route exact path="/login" component={Login} />
+      //     <Route exact path="/signup" component={Signup} />
+
+
+      //   </div>
+
+
+      // </Router>
+
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
