@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
+import SignIn from "./components/SignIn";
 
 class App extends Component {
   state = {
@@ -25,10 +26,20 @@ class App extends Component {
       this.loadNotes();
     });
   }
+
+  // function needed to get form data from create account
+  // addAccount = event => {
+  //   axios.post("/api/create", { form data here... })
+  // }
+
   render() {
     return (
 
       <div>
+        {/* Our signin we've created */}
+        <SignIn />
+        <br />
+        {/* Eric's form */}
         <div>
           Text: <input name="text" onChange={this.handleChange}value={this.state.value} />
           <button onClick={this.sendNote}>Click</button>
