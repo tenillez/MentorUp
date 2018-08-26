@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import axios from "axios"
-import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 class App extends Component {
   state = {
     text: "",
     notes: []
   }
-  componentDidMount(){
+  componentDidMount() {
     this.loadNotes();
   }
   handleChange = event => {
-    this.setState({text: event.target.value});
+    this.setState({ text: event.target.value });
   }
   loadNotes = () => {
     axios.get("/api/notes").then(res => {
       console.log(res);
-      this.setState({notes: res.data})
+      this.setState({ notes: res.data })
     })
   }
   sendNote = event => {
-    axios.post("/api/create", { text: this.state.text}).then(res => {
+    axios.post("/api/create", { text: this.state.text }).then(res => {
       this.loadNotes();
     });
   }
@@ -34,26 +34,36 @@ class App extends Component {
 
   render() {
     return (
-
-      <div>
-        {/* Our signin we've created */}
-        <SignIn />
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">MentorUp</h1>
+        </header>
+        <p className="App-intro">
+        </p>
+        <SignUp />
         <br />
-        {/* Eric's form */}
-        <div>
-          Text: <input name="text" onChange={this.handleChange}value={this.state.value} />
-          <button onClick={this.sendNote}>Click</button>
-        </div>
-        <div>
-          <ul>
-            {this.state.notes.map(note => {
-              return (
-                <li key={note._id}>{note.text}</li>
-              )
-            })}
-          </ul>
-        </div>
 
+
+
+        <div>
+          {/* Our signin we've created */}
+          {/* Eric's form */}
+          <div>
+            Text: <input name="text" onChange={this.handleChange} value={this.state.value} />
+            <button onClick={this.sendNote}>Click</button>
+          </div>
+          <div>
+            <ul>
+              {this.state.notes.map(note => {
+                return (
+                  <li key={note._id}>{note.text}</li>
+                )
+              })}
+            </ul>
+          </div>
+
+        </div>
       </div>
     );
   }

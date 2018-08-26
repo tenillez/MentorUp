@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import "./Form.css";
 
-class SignIn extends Component {
+class SignUp extends Component {
     // Setting the component's initial state
     state = {
         firstName: "",
@@ -54,6 +54,7 @@ class SignIn extends Component {
         // Notice how each input has a `value`, `name`, and `onChange` prop
         return (
             <div>
+                <h3>Please create an account to begin.</h3>
                 <p>
                     Hello {this.state.username}
                 </p>
@@ -110,4 +111,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default SignUp;
