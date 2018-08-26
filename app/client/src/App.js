@@ -27,6 +27,7 @@ class App extends Component {
   }
   render() {
     return (
+
       <div>
         <div>
           Text: <input name="text" onChange={this.handleChange}value={this.state.value} />
@@ -41,6 +42,7 @@ class App extends Component {
             })}
           </ul>
         </div>
+
       </div>
     );
   }
