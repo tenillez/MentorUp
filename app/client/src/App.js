@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import axios from "axios"
 import SignUp from "./components/SignUp";
+import Navbar from "./components/NavBar";
 
 class App extends Component {
   state = {
@@ -34,13 +35,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">MentorUp</h1>
-        </header>
-        <p className="App-intro">
-        </p>
+      <div>
+        <Navbar />
         <SignUp />
         <br />
 
