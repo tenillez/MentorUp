@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
 import './App.css';
 import axios from "axios"
 import SignUp from "./components/SignUp";
 import Navbar from "./components/NavBar";
+import About from "./components/About";
 
 class App extends Component {
   state = {
@@ -37,9 +37,9 @@ class App extends Component {
     return (
       <div>
         <Navbar />
+        <About />
         <SignUp />
         <br />
-
 
 
         <div>
