@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from "axios"
 import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 import Navbar from "./components/NavBar";
 import About from "./components/About";
 
@@ -36,13 +37,22 @@ class App extends Component {
   render() {
     return (
       // react router will be here instead
-      <div>
+      <div className="App">
         <Navbar />
         <About />
-        <SignUp />
+        {/* just to test components */}
         <br />
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        {/* <SignUp />
+        <SignIn /> */}
+        <br />
       </div>
+      
     );
   }
 }
