@@ -35,31 +35,13 @@ class App extends Component {
 
   render() {
     return (
+      // react router will be here instead
       <div>
         <Navbar />
         <About />
         <SignUp />
         <br />
 
-
-        <div>
-          {/* Our signin we've created */}
-          {/* Eric's form */}
-          <div>
-            Text: <input name="text" onChange={this.handleChange} value={this.state.value} />
-            <button onClick={this.sendNote}>Click</button>
-          </div>
-          <div>
-            <ul>
-              {this.state.notes.map(note => {
-                return (
-                  <li key={note._id}>{note.text}</li>
-                )
-              })}
-            </ul>
-          </div>
-
-        </div>
       </div>
     );
   }

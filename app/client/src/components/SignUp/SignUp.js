@@ -58,55 +58,67 @@ class SignUp extends Component {
                 <p>
                     Hello {this.state.username}
                 </p>
-                <form className="form">
-                    <input
-                        value={this.state.firstName}
-                        name="firstName"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="First Name"
-                    />
-                    <input
-                        value={this.state.lastName}
-                        name="lastName"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Last Name"
-                    />
-                    <input
-                        value={this.state.username}
-                        name="username"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Username"
-                    />
-
-                    <input
-                        value={this.state.password}
-                        name="password"
-                        onChange={this.handleInputChange}
-                        type="password"
-                        placeholder="Password"
-                    />
-                    <input
-                        value={this.state.password1}
-                        name="password1"
-                        onChange={this.handleInputChange}
-                        type="password1"
-                        placeholder="Password"
-                    />
-                    <input
-                        value={this.state.email}
-                        name="email"
-                        onChange={this.handleInputChange}
-                        type="email"
-                        placeholder="E-mail"
-                    />
-
-                    <button onClick={this.handleFormSubmit}>Submit</button>
-                    {/* we will need to do more with this handleFormSubmit change for authentication and pushing to db */}
-                </form>
-            </div>
+                <form>
+                    <div className="form-group">
+                        <input
+                            value={this.state.firstName}
+                            name="firstName"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="First Name"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            value={this.state.lastName}
+                            name="lastName"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Last Name"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            value={this.state.username}
+                            name="username"
+                            onChange={this.handleInputChange}
+                            type="text"
+                            placeholder="Username"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            value={this.state.password}
+                            name="password"
+                            onChange={this.handleInputChange}
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            value={this.state.password1}
+                            name="password1"
+                            onChange={this.handleInputChange}
+                            type="password1"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            value={this.state.email}
+                            name="email"
+                            onChange={this.handleInputChange}
+                            type="email"
+                            placeholder="E-mail"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <button onClick={this.handleFormSubmit}>Submit</button>
+                        {/* we will need to do more with this handleFormSubmit change for authentication and pushing to db */}
+                    </div>
+                </form >
+            </div >
         );
     }
 }
