@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from "axios"
 import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 import Navbar from "./components/NavBar";
 import About from "./components/About";
 
@@ -35,32 +36,23 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      // react router will be here instead
+      <div className="App">
         <Navbar />
         <About />
-        <SignUp />
+        {/* just to test components */}
         <br />
-
-
-        <div>
-          {/* Our signin we've created */}
-          {/* Eric's form */}
-          <div>
-            Text: <input name="text" onChange={this.handleChange} value={this.state.value} />
-            <button onClick={this.sendNote}>Click</button>
-          </div>
-          <div>
-            <ul>
-              {this.state.notes.map(note => {
-                return (
-                  <li key={note._id}>{note.text}</li>
-                )
-              })}
-            </ul>
-          </div>
-
-        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        {/* <SignUp />
+        <SignIn /> */}
+        <br />
       </div>
+      
     );
   }
 }

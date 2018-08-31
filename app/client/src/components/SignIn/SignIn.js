@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 
-class SignUp extends Component {
+class SignIn extends Component {
     // Setting the component's initial state
     state = {
-        firstName: "",
-        lastName: "",
         username: "",
         password: "",
-        password1: "",
-        email: ""
     };
 
     handleInputChange = event => {
@@ -45,12 +41,9 @@ class SignUp extends Component {
         }
 
         this.setState({
-            firstName: "",
-            lastName: "",
             username: "",
             password: "",
             password1: "",
-            email: ""
         });
     };
 
@@ -60,30 +53,12 @@ class SignUp extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className="signupForm">
-                            <h3>Please create an account to begin.</h3>
+                        <div className="signinForm">
+                            <h3>Login Here</h3>
                             <p>
                                 <hr />
                             </p>
                             <form>
-                                <div className="form-group">
-                                    <input
-                                        value={this.state.firstName}
-                                        name="firstName"
-                                        onChange={this.handleInputChange}
-                                        type="text-area"
-                                        placeholder="First Name"
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <input
-                                        value={this.state.lastName}
-                                        name="lastName"
-                                        onChange={this.handleInputChange}
-                                        type="text"
-                                        placeholder="Last Name"
-                                    />
-                                </div>
                                 <div className="form-group">
                                     <input
                                         value={this.state.username}
@@ -102,33 +77,6 @@ class SignUp extends Component {
                                         placeholder="Password"
                                     />
                                 </div>
-                                <div className="form-group">
-                                    <input
-                                        value={this.state.password1}
-                                        name="password1"
-                                        onChange={this.handleInputChange}
-                                        type="password"
-                                        placeholder="Verify Password"
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <input
-                                        value={this.state.email}
-                                        name="email"
-                                        onChange={this.handleInputChange}
-                                        type="email"
-                                        placeholder="Email"
-                                    />
-                                </div>
-                                <br />
-                                <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
-                                    <input 
-                                        value={this.state.picture}
-                                        name="form-control-file" 
-                                        onChange={this.handleInputChange}
-                                        type="file" 
-                                    />
-                                </div>
                                     <div className="form-group">
                                         <button className="btn btn-secondary" onClick={this.handleFormSubmit}>Submit</button>
                                         {/* we will need to do more with this handleFormSubmit change for authentication and pushing to db */}
@@ -142,4 +90,4 @@ class SignUp extends Component {
             }
         }
         
-export default SignUp;
+export default SignIn;
