@@ -48,8 +48,8 @@ class App extends Component {
         <br />
         <br />
         <br />
-        {/* <SignUp />
-        <SignIn /> */}
+        <SignUp />
+        <SignIn />
         <br />
       </div>
       
