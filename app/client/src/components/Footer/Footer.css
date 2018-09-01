@@ -1,0 +1,21 @@
+footer {
+    font-family: 'PT Sans', sans-serif;
+    background: #343a40!important;
+    color: white;
+    position: relative;
+    display: flex;
+}
+
+.footerDiv {
+    width: 100%;
+    height: 25px;
+}
+
+github {
+    text-align: left;
+    color: rgba(255,255,255,.5);
+    padding: .5rem 1rem;
+}
+.logos {
+    text-align: right;
+}

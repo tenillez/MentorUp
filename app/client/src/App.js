@@ -5,6 +5,7 @@ import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Navbar from "./components/NavBar";
 import About from "./components/About";
+import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
@@ -51,6 +52,7 @@ class App extends Component {
         {/* <SignUp />
         <SignIn /> */}
         <br />
+        <Footer />
       </div>
       
     );
