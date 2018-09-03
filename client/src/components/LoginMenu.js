@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LoginMenu = (props) => {
-  const { onLogOut, username, ...otherProps } = props;
+  const { onLogOut, username } = props;
   return (
     <div className="dropdown">
       <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

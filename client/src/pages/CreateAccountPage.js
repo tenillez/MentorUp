@@ -37,6 +37,13 @@ class CreateAccountPage extends Component {
       return;
     }
 
+    if (this.state.password !== this.state.password1) {
+      this.setState({
+        error: 'Password fields do not match.'
+      });
+      return;
+    }
+
     // post an auth request
     axios.post('/api/users', {
       username,
@@ -65,6 +72,7 @@ class CreateAccountPage extends Component {
               <p>
                 <hr />
               </p>
+              { error }
               <form onSubmit={this.handleLogin}>
                 <div className="form-group">
                   <input
