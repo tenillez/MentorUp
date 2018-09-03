@@ -33,23 +33,17 @@ class HomePage extends Component {
 
     return (
       <div>
-      <About />
-      {/* <Fragment>
-        {user && stuff &&
-          <div>
-            Welcome back, {user.username}!
-          <List>
-           {stuff.map((s, i) => <ListItem key={i} primaryText={s} />)}
-          </List>
+        {/* <Fragment>
+          {user &&
+            <div className="loggedinmessage">
+              Welcome back, {user.username}!
           </div>
-        }
-        {user && !stuff &&
-          <div>Hold on, looking for your stuff...</div>
-        }
-        {!user &&
-          <div>It doesn't look like you have an account. Please register.</div>
-        }
-      </Fragment> */}
+          }
+          {!user &&
+            <div className="loggedinmessage">Please login or register to get started!</div>
+          }
+        </Fragment> */}
+        <About />
       </div>
     );
   }

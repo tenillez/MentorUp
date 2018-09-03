@@ -1,13 +1,21 @@
 /* our whole app */
-.App {
+  .App {
     text-align: center;
     font-family: 'PT Sans', sans-serif;
   }
+  
+  .loggedinmessage {
+    text-align: right;
+    font-family: 'PT Sans', sans-serif;
+    background:black;
+    color:white
+  }
+
   body {
     font-family: 'PT Sans', sans-serif;
     background: lightgray
   }
-  
+
   /* Nav */
   .navbar button {
     background: #96E6B3;
@@ -17,7 +25,7 @@
   }
 
   /* headers */
-  h1, h3, h4{
+  h1, h3, h4 {
     color: rgb(44, 46, 46);
     margin-bottom: 10px;
     font-family: 'Pacifico', cursive;

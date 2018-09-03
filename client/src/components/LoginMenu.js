@@ -13,7 +13,6 @@ const LoginMenu = (props) => {
         <a className="dropdown-item" href="/chat">Chat</a>
         <a className="dropdown-item" onClick={onLogOut}>Log out</a>
       </div>
-      
     </div>
   )
 };
