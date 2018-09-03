@@ -25,35 +25,16 @@ const Navbar = (props) => {
       });
   }
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand"><img height="35" width="35" src="./assets/logo.png" /></a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+    <nav className="navbar navbar-dark bg-dark">
+        <a className="navbar-brand" href="/"><img height="35" width="35" src="./assets/logo.png" /></a>
+        {/* this shows login/logout based on if user is either logged in/out */}
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li className="nav-item active">
-              <a className="nav-link" href="/board">Community</a>
-            </li>
-            <li className="nav-item active">
-              <a className="nav-link" href="/chat">Chat</a>
-            </li>
-
-            {/* this shows login/logout based on if user is either logged in/out */}
-            <li id="authinout">
-              {user ?
-                <LoginMenu username={username} onLogOut={handleLogOut} />
-                : <LoginButton onClick={handleLogIn} />}
-            </li>
-          </ul>
+        <div className="nav-item">
+          {user ?
+            <LoginMenu username={username} onLogOut={handleLogOut} />
+            : <LoginButton onClick={handleLogIn} />}
         </div>
-      </nav>
-    </div>
+    </nav>
   )
 };
 

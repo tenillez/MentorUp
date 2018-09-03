@@ -20,7 +20,7 @@ class About extends Component {
                     <p>
                         Yr bespoke lo-fi shaman drinking vinegar tofu sriracha. Disrupt raclette street art pok pok fam shoreditch. La croix cold-pressed pabst, glossier knausgaard single-origin coffee activated charcoal helvetica man bun. Migas whatever pour-over organic brunch cloud bread. Put a bird on it affogato lyft cardigan humblebrag, banjo hexagon synth pinterest vice pork belly post-ironic williamsburg authentic banh mi. Raclette shaman biodiesel ugh chillwave meditation hexagon etsy dreamcatcher subway tile asymmetrical.
                     </p>
-                    <a className="btn btn-dark btn" href="#" role="button">Get Started!</a>
+                    <a className="btn btn-dark btn" href="/questionnaire" role="button">Get Started!</a>
                 </div>
             </div>
         )

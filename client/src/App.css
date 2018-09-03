@@ -9,15 +9,13 @@
   }
   
   /* Nav */
-  Navbar {
-    background: black;
+  .navbar button {
+    background: #96E6B3;
+    opacity: 0.7;
+    color: black;
+    font-family: 'Pacifico', cursive;
   }
-  .navbar-brand {
-    color: white;
-  }
-#authinout {
-    align-content: right;
-}
+
   /* headers */
   h1, h3, h4{
     color: rgb(44, 46, 46);

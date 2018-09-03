@@ -11,6 +11,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
+import Questionnaire from './pages/Questionnaire';
 
 
 class App extends Component {
@@ -43,6 +44,7 @@ class App extends Component {
               <Route exact path="/" component={HomePage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/create" component={CreateAccountPage} />
+              <Route exact path="/questionnaire" component={Questionnaire} />
               <Route component={NotFoundPage} />
             </Switch>
           </Fragment>
