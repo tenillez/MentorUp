@@ -36,7 +36,8 @@ class ChatScreen extends Component {
       instanceLocator: 'v1:us1:ee8fb85b-b346-4935-990a-9119ce8f91a9',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
-        url: 'http://localhost:3001/authenticate' || 'https://agile-caverns-57821.herokuapp.com/authenticate',
+        // url: 'http://localhost:3001/authenticate' || 
+        url: 'https://agile-caverns-57821.herokuapp.com/authenticate'
       }),
     })
 
