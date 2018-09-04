@@ -33,7 +33,7 @@ class HomePage extends Component {
 
     return (
       <div>
-        {/* <Fragment>
+        <Fragment>
           {user &&
             <div className="loggedinmessage">
               Welcome back, {user.username}!
@@ -42,7 +42,7 @@ class HomePage extends Component {
           {!user &&
             <div className="loggedinmessage">Please login or register to get started!</div>
           }
-        </Fragment> */}
+        </Fragment>
         <About />
       </div>
     );

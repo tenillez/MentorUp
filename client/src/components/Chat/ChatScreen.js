@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Chatkit from '@pusher/chatkit'
-import MessageList from './components/MessageList'
-import SendMessageForm from './components/SendMessageForm'
-import TypingIndicator from './components/TypingIndicator'
-import WhosOnlineList from './components/WhosOnlineList'
+import MessageList from './MessageList'
+import SendMessageForm from './SendMessageForm'
+import TypingIndicator from './TypingIndicator'
+import WhosOnlineList from './WhosOnlineList'
 
 class ChatScreen extends Component {
   constructor(props) {
