@@ -22,10 +22,13 @@
   }
 
   /* headers */
-  h1, h3, h4 {
+  h1, h3 {
     color: #353a3f;
     margin-bottom: 10px;
     font-family: 'Pacifico', cursive;
+  }
+  h4 {
+    color: white
   }
   /* Forms */
   form input {

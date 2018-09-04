@@ -32,7 +32,9 @@ class UsernameForm extends Component {
               placeholder="Your name here!"
               onChange={this.onChange}
             />
-            <input type="submit" />
+            <br />
+            <button type="submit">Submit</button>
+            {/* <input type="submit" /> */}
           </form>
         </div>
       </div>

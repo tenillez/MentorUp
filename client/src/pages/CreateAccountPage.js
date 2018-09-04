@@ -9,6 +9,9 @@ class CreateAccountPage extends Component {
     password: "",
     password1: "",
     email: "",
+    location: "",
+    years: "",
+    mentor: "",
     error: ""
   }
   handleInputChanged = (event) => {
@@ -128,8 +131,35 @@ class CreateAccountPage extends Component {
                     placeholder="Email"
                   />
                 </div>
+                <div className="form-group">
+                  <input
+                    value={this.state.location}
+                    name="location"
+                    onChange={this.handleInputChanged}
+                    type="location"
+                    placeholder="City, State"
+                  />
+                </div>
+                {/* <div className="form-group">
+                  <input
+                    value={this.state.years}
+                    name="years"
+                    onChange={this.handleInputChanged}
+                    type="years"
+                    placeholder="Years of experience"
+                  />
+                </div>
+                <div className="form-group">
+                <h4>Interested in becoming a mentor?</h4>
+                  <input
+                    value={this.state.mentor}
+                    name="mentor"
+                    onChange={this.handleInputChanged}
+                    type="checkbox"
+                  />
+                </div>
                 <br />
-                {/* <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
+                <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
                   <input
                     value={this.state.picture}
                     name="form-control-file"
