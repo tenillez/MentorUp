@@ -33,10 +33,11 @@ class ChatScreen extends Component {
 
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
-      instanceLocator: 'v1:us1:ee8fb85b-b346-4935-990a-9119ce8f91a9',
+      instanceLocator: 'v1:us1:0cd47b49-3742-40a3-a33f-e112656df8a6',
+      // instanceLocator: 'v1:us1:ee8fb85b-b346-4935-990a-9119ce8f91a9',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
-        // url: 'http://localhost:3001/authenticate' || 
+        // url: 'http://localhost:3001/authenticate'  
         url: 'https://agile-caverns-57821.herokuapp.com/authenticate'
       }),
     })
@@ -46,7 +47,8 @@ class ChatScreen extends Component {
       .then(currentUser => {
         this.setState({ currentUser })
         return currentUser.subscribeToRoom({
-          roomId: 15052466,
+          // roomId: 15052466,
+          roomId:  15419552,
           messageLimit: 100,
           hooks: {
             onNewMessage: message => {
