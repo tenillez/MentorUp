@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 
 class CreateAccountPage extends Component {
   state = {
-    firstName: null,
-    lastName: null,
-    username: null,
-    password: null,
-    password1: null,
-    email: null,
-    error: null
+    firstName: "",
+    lastName: "",
+    username: "",
+    password: "",
+    password1: "",
+    email: "",
+    error: ""
   }
   handleInputChanged = (event) => {
     this.setState({
@@ -24,7 +24,7 @@ class CreateAccountPage extends Component {
 
     // clear any previous errors so we don't confuse the user
     this.setState({
-      error: null
+      error: ""
     });
 
     // check to make sure they've entered a username and password.

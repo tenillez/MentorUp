@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
+
 class UsernameForm extends Component {
+
  constructor(props) {
    super(props)
    this.state = {
-     username: '',
+     username: "",
    }
    this.onSubmit = this.onSubmit.bind(this)
    this.onChange = this.onChange.bind(this)
@@ -23,11 +25,11 @@ class UsernameForm extends Component {
     return (
       <div>
         <div>
-          <h2>What is your username?</h2>
+          <h2>What is your name?</h2>
           <form onSubmit={this.onSubmit}>
             <input
               type="text"
-              placeholder="Your full name"
+              placeholder="Your name here!"
               onChange={this.onChange}
             />
             <input type="submit" />

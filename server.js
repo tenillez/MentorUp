@@ -1,9 +1,18 @@
 const express = require("express");
 const bodyparser = require('body-parser');
 const morgan = require('morgan');
-const path = require('path');
 const PORT = process.env.PORT || 3001;
+// chat dependencies
+const cors = require('cors');
+const Chatkit = require('pusher-chatkit-server');
+
 const app = express();
+
+// chatkit
+const chatkit = new Chatkit.default({
+  instanceLocator: 'v1:us1:ee8fb85b-b346-4935-990a-9119ce8f91a9',
+  key: '17fc9db6-db7a-456c-ae5e-cc79608ec205:V7C9sVmM22k27vXB5/59Wn/ctEw8Ogsb01z68lWU8Eo='
+ })
 
 // let's set up some basic middleware for our express app
 // logs requests to the console. not necessary to make passport work, but useful
@@ -12,7 +21,31 @@ app.use(morgan('dev'));
 app.use(bodyparser.urlencoded({ extended: true }));
 // Use body-parser for reading application/json into objects
 app.use(bodyparser.json());
+// chatkit
+app.use(cors());
 
+// chatkit
+app.post('/users', (req,res) => {
+  const { username } = req.body
+  chatkit
+  .createUser({
+    id: username,
+    name: username
+  })
+  .then(() => res.sendStatus(201))
+    .catch(error => {
+      if (error.error_type === 'services/chatkit/user_already_exists') {
+        res.sendStatus(200)
+      } else {
+        res.status(error.status).json(error)
+      }
+    });
+ });
+ 
+ app.post('/authenticate', (req, res) => {
+    const authData = chatkit.authenticate({ userId: req.query.user_id })
+    res.status(authData.status).send(authData.body)
+  });
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

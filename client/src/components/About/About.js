@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import "./About.css";
 
 const About = (props) => {
-    const { user } = props;
+    // const { user } = props;
 
     return (
         <div className="jumbotron">

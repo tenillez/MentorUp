@@ -97,8 +97,8 @@ class ChatScreen extends Component {
         width: '300px',
         flex: 'none',
         padding: 20,
-        backgroundColor: '#2c303b',
-        color: 'white',
+        backgroundColor: 'white',
+        color: '#7E6B8F',
       },
       chatListContainer: {
         padding: 20,
@@ -106,6 +106,9 @@ class ChatScreen extends Component {
         display: 'flex',
         flexDirection: 'column',
       },
+      element: {
+        backgroundColor: 'white',
+      }
     }
 
     return (

@@ -5,8 +5,8 @@ import { update } from '../services/withUser';
 
 class LoginPage extends Component {
   state = {
-    username: null,
-    password: null
+    username: "",
+    password: ""
   }
   handleInputChanged = (event) => {
     this.setState({

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { withUser } from '../services/withUser';
 import About from "../components/About";
 
@@ -28,12 +28,13 @@ class HomePage extends Component {
       });
   }
   render() {
-    const { user } = this.props; // get the user prop from props
+    // get the user prop from props
+    // const { user } = this.props; 
     // const { stuff } = this.state; // get stuff from state
 
     return (
       <div>
-        <Fragment>
+        {/* <Fragment>
           {user &&
             <div className="loggedinmessage">
               Welcome back, {user.username}!
@@ -42,7 +43,7 @@ class HomePage extends Component {
           {!user &&
             <div className="loggedinmessage">Please login or register to get started!</div>
           }
-        </Fragment>
+        </Fragment> */}
         <About />
       </div>
     );
