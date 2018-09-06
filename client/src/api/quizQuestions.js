@@ -17,7 +17,7 @@ var quizQuestions = [
         ]
     },
     {
-        question: "What adjective best describes the role you would like your mentors to play (or what role would you play as a mentor)? I'd like my mentor to as a ____________",
+        question: "What adjective best describes the role you would like your mentors to play? I'd like my mentor to as a ____________",
         answers: [
             {
                 type: "Heather",
@@ -109,7 +109,7 @@ var quizQuestions = [
         answers: [
             {
                 type: "Heather",
-                content: "Central Libraray Downtown"
+                content: "Central Library Downtown"
             },
             {
                 type: "Tenille",
