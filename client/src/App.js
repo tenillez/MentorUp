@@ -38,11 +38,13 @@ class App extends Component {
     return (
       <Router>
           <Fragment>
+            <div className="header">
+            </div>
             <Navbar
               user={user}
             />
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/" component={HomePage} user={user} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/create" component={CreateAccountPage} />
               <Route exact path="/chat" component={Chat} />

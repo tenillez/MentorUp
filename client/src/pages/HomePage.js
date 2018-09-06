@@ -5,7 +5,7 @@ import About from "../components/About";
 
 class HomePage extends Component {
   state = {
-    stuff: null
+    home: null
   }
   componentDidMount() {
     // only try loading stuff if the user is logged in.
@@ -13,17 +13,17 @@ class HomePage extends Component {
       return;
     }
 
-    axios.get('/api/stuff')
+    axios.get('/api/home')
       .then(res => {
         this.setState({
-          stuff: res.data
+          home: res.data
         });
       })
       .catch(err => {
         // if we got an error, we'll just log it and set stuff to an empty array
         console.log(err);
         this.setState({
-          stuff: []
+          home: []
         });
       });
   }

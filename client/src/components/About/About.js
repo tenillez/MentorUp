@@ -1,32 +1,58 @@
 import React from "react";
 import "./About.css";
 
+
 const About = (props) => {
-    // const { user } = props;
 
     return (
-        <div className="jumbotron">
-            <h1 className="display-4">Mentor Up</h1>
-            <p className="lead">Mentorship app designed to further women in tech</p>
-            <hr></hr>
-            <p>
-                Lorem ipsum dolor amet street art selvage organic before they sold out drinking vinegar readymade shoreditch iPhone seitan shaman. Farm-to-table williamsburg freegan copper mug. Stumptown heirloom snackwave jean shorts tote bag thundercats iPhone chambray migas tbh YOLO woke. Single-origin coffee live-edge selfies biodiesel church-key. Live-edge unicorn swag chillwave shaman biodiesel pickled blog paleo. Pop-up kogi synth, fingerstache semiotics pok pok street art blog adaptogen.
-                </p>
-            <a className="btn btn-dark btn" href="#about" role="button">Learn More</a>
+        <div>
+            <div className="jumbotron">
+                <h1>Mentor Up</h1>
+                <p className="lead">Mentorship pairing geared to further women in tech</p>
+                {/* <a className="btn btn-light btn" role="button">Learn More</a> */}
 
-            <div className="container">
-                <p>
-                    Lorem ipsum dolor amet street art selvage organic before they sold out drinking vinegar readymade shoreditch iPhone seitan shaman. Farm-to-table williamsburg freegan copper mug. Stumptown heirloom snackwave jean shorts tote bag thundercats iPhone chambray migas tbh YOLO woke. Single-origin coffee live-edge selfies biodiesel church-key. Live-edge unicorn swag chillwave shaman biodiesel pickled blog paleo. Pop-up kogi synth, fingerstache semiotics pok pok street art blog adaptogen.
+                <div className="container">
+                    <p>We believe mentorship matters, but only about 54% of women in the workforce participate. This percentage is even less for women in the tech industry.  Check out what Forbes has to say
+                    <a href="https://www.forbes.com/sites/margiewarrell/2017/06/24/women-mentoring/#65a6be9d22db" target="_blank"> here</a>.
                     </p>
-                <p>
-                    Yr bespoke lo-fi shaman drinking vinegar tofu sriracha. Disrupt raclette street art pok pok fam shoreditch. La croix cold-pressed pabst, glossier knausgaard single-origin coffee activated charcoal helvetica man bun. Migas whatever pour-over organic brunch cloud bread. Put a bird on it affogato lyft cardigan humblebrag, banjo hexagon synth pinterest vice pork belly post-ironic williamsburg authentic banh mi. Raclette shaman biodiesel ugh chillwave meditation hexagon etsy dreamcatcher subway tile asymmetrical.
+                    <p>
+                        We'd like to change that trend.
                     </p>
-                    <a className="btn btn-dark btn" href="/questionnaire" role="button">Get Started</a>
-            </div>
-            <div className="container">
-                <div id="about">
-                    some random stuff here blah blah blah blah columns and stuff
+                    <a className="btn btn-dark btn" href="#why" role="button">Learn More</a>
                 </div>
+            </div>
+            <div className="card">
+                <div className="card-body">
+                    <h3>How this works</h3>
+                    <hr />
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <div className="card">
+                            <br />
+                            <p><i className="fa fa-user-circle-o" aria-hidden="true"></i></p>
+                            <p> First, sign up <a href="/create">here</a> or log in <a href="/login">here.</a></p>
+                            </div>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="card">
+                            <br />
+                            <p><i className="fa fa-question-circle" aria-hidden="true"></i></p>
+                            <p> Next, take our questionnaire <a href="/questionnaire">here.</a></p>
+                            </div>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="card">
+                            <br />
+                            <p><i className="fa fa-handshake-o" aria-hidden="true"></i></p>
+                            <p> Meet your mentor!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="card why-card" id="why">
+                <h3>Why choose us?</h3>
+                    <p>We have carefully crafted our question pool and have implemented a matching algorithm to ensure you and your mentor will be set up to succeed!  </p>
             </div>
         </div>
     )
