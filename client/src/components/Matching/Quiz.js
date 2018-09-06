@@ -22,13 +22,13 @@ function Quiz(props) {
 
   return (
     <ReactCSSTransitionGroup
-      className="container question-container"
+      className="container"
       component="div"
       transitionName="fade"
-      transitionEnterTimeout={800}
-      transitionLeaveTimeout={500}
+      transitionEnterTimeout={900}
+      transitionLeaveTimeout={100}
       transitionAppear
-      transitionAppearTimeout={500}
+      transitionAppearTimeout={900}
     >
       <div key={props.questionId}>
         <QuestionCount
