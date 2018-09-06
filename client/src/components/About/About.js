@@ -2,16 +2,13 @@ import React from "react";
 import "./About.css";
 
 const About = (props) => {
-    // const { user } = props;
+    const { user } = props;
 
     return (
         <div className="jumbotron">
-            <h1 className="display-4">Mentor Up</h1>
-            <p className="lead">Mentorship app designed to further women in tech</p>
-            <hr></hr>
-            <p>
-                Lorem ipsum dolor amet street art selvage organic before they sold out drinking vinegar readymade shoreditch iPhone seitan shaman. Farm-to-table williamsburg freegan copper mug. Stumptown heirloom snackwave jean shorts tote bag thundercats iPhone chambray migas tbh YOLO woke. Single-origin coffee live-edge selfies biodiesel church-key. Live-edge unicorn swag chillwave shaman biodiesel pickled blog paleo. Pop-up kogi synth, fingerstache semiotics pok pok street art blog adaptogen.
-                </p>
+            <h1>Mentor Up</h1>
+            <br />
+            <p className="lead">Mentorship pairing geared to further women in tech</p>
             <a className="btn btn-dark btn" href="#about" role="button">Learn More</a>
 
             <div className="container">
