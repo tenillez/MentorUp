@@ -3,26 +3,19 @@
     text-align: center;
     font-family: 'PT Sans', sans-serif;
   }
-  
   .loggedinmessage {
     text-align: right;
     font-family: 'PT Sans', sans-serif;
     background:black;
     color:white
   }
-
   body {
     font-family: 'PT Sans', sans-serif;
     background: #e7e7e7; 
   }
-
   a {
     color: #7E6B8F
   }
-  /* Nav
-  .navbar button {
-    font-family: 'Pacifico', cursive;
-  } */
 
   /* headers */
   h1, h3 {
@@ -32,6 +25,7 @@
   h4 {
     color: white
   }
+
   /* Forms */
   form input {
     width: 100%;
@@ -41,14 +35,15 @@
     text-align: center;
     margin-top: 5%;
     border-radius: 0.5rem;
-    /* background-color: #A3D9FF;
-    background-image: linear-gradient(15deg, #353a3f 50%, transparent 50%), linear-gradient(-65deg, #DA3E52 30%, transparent 30%), linear-gradient(160deg, #96E6B3 10%, transparent 10%), linear-gradient(75deg, #7E6B8F 40%, transparent 40%); */
     padding: 5%;
+    background: #353a3f;  
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 30px 5px rgba(0, 0, 0, 0.4);
   }
   #pic {
     text-align: center;
   }
-  
+
   /* buttons */
   .btn {
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.2);
