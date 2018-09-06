@@ -1,21 +1,21 @@
 var quizQuestions = [
-    {
-        question: "Would you prefer meeting in person or a virtual meeting?",
-        answers: [
-            {
-                type: "Heather",
-                content: "In-person is great"
-            },
-            {
-                type: "Tenille",
-                content: "Virtual please!"
-            },
-            {
-                type: "Christine",
-                content: "Not sure, I'd like to be paired first."
-            }
-        ]
-    },
+    // {
+    //     question: "Would you prefer meeting in person or a virtual meeting?",
+    //     answers: [
+    //         {
+    //             type: "Heather",
+    //             content: "In-person is great"
+    //         },
+    //         {
+    //             type: "Tenille",
+    //             content: "Virtual please!"
+    //         },
+    //         {
+    //             type: "Christine",
+    //             content: "Not sure, I'd like to be paired first."
+    //         }
+    //     ]
+    // },
     {
         question: "What adjective best describes the role you would like your mentors to play? I'd like my mentor to as a ____________",
         answers: [

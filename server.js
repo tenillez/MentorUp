@@ -12,8 +12,8 @@ const app = express();
 const chatkit = new Chatkit.default({
   // instanceLocator: 'v1:us1:ee8fb85b-b346-4935-990a-9119ce8f91a9',
   // key: '17fc9db6-db7a-456c-ae5e-cc79608ec205:V7C9sVmM22k27vXB5/59Wn/ctEw8Ogsb01z68lWU8Eo='
-  instanceLocator: 'v1:us1:0cd47b49-3742-40a3-a33f-e112656df8a6',
-  key: '48e4431c-2922-4b45-97c0-dc9850ebb2db:7vH5ysojoplk34EyfgjCOtvwG58BBuLsNRUbhzvUr08='
+  instanceLocator: 'v1:us1:fdac1e47-fa7e-4a46-a912-854460d6e6e3',
+  key: '89b47af3-e562-4808-992b-658e3369f465:5zl7HaA9pva6fg+0ej1QkoLhlaVuFE/BxvGlVDkwPrQ='
 
 })
 

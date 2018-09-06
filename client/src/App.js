@@ -38,8 +38,6 @@ class App extends Component {
     return (
       <Router>
           <Fragment>
-            <div className="header">
-            </div>
             <Navbar
               user={user}
             />
