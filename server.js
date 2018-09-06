@@ -8,6 +8,32 @@ const Chatkit = require('pusher-chatkit-server');
 
 const app = express();
 
+const passport = require('passport');
+const auth = require('./auth');
+
+
+//google auth
+auth(passport);
+app.use(passport.initialize());
+app.get('/', (req, res) => {
+    res.json({
+        status: 'session cookie not set'
+    });
+});
+app.get('/auth/google', passport.authenticate('google', {
+    scope: ['https://www.googleapis.com/auth/userinfo.profile']
+}));
+app.get('/auth/google/callback',
+    passport.authenticate('google', {
+        failureRedirect: '/'
+    }),
+    (req, res) => {}
+);
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+
+
 // chatkit
 const chatkit = new Chatkit.default({
   // instanceLocator: 'v1:us1:ee8fb85b-b346-4935-990a-9119ce8f91a9',

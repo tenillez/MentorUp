@@ -45,7 +45,11 @@ class HomePage extends Component {
           }
         </Fragment> */}
         <About />
+        
+        
+        
       </div>
+      
     );
   }
 }

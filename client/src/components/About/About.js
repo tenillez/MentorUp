@@ -5,6 +5,7 @@ const About = (props) => {
     // const { user } = props;
 
     return (
+        <div>
         <div className="jumbotron">
             <h1 className="display-4">Mentor Up</h1>
             <p className="lead">Mentorship app designed to further women in tech</p>
@@ -29,6 +30,10 @@ const About = (props) => {
                 </div>
             </div>
         </div>
+        
+
+    </div>
+
     )
 }
 
