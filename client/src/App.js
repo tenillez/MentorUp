@@ -13,6 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 import Questionnaire from './pages/Questionnaire';
 import Chat from './pages/Chat';
+import AccountPage from './pages/AccountPage';
 
 
 class App extends Component {
@@ -47,6 +48,7 @@ class App extends Component {
               <Route exact path="/create" component={CreateAccountPage} />
               <Route exact path="/chat" component={Chat} />
               <Route exact path="/questionnaire" component={Questionnaire} />
+              <Route path="/account/:userID" component={AccountPage} />
               <Route component={NotFoundPage} />
             </Switch>
           </Fragment>

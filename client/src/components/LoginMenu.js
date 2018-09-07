@@ -9,7 +9,7 @@ const LoginMenu = (props) => {
       </button>
       <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
         <a className="dropdown-item" href="/">Home</a>
-        <a className="dropdown-item" href="/account:id">Account</a>
+        <a className="dropdown-item" href="/account/1">Account</a>
         <a className="dropdown-item" href="/board">Community</a>
         <a className="dropdown-item" href="/chat">Chat</a>
         <a className="dropdown-item" onClick={onLogOut}>Log out</a>
