@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+// import Footer from "../components/Footer";
+
 
 class CreateAccountPage extends Component {
   state = {
@@ -174,6 +176,11 @@ class CreateAccountPage extends Component {
             </div>
           </div>
         </div>
+
+      
+    
+     
+
       </div>
     );
   }

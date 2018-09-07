@@ -57,7 +57,7 @@ const About = (props) => {
                 <h3>Why choose us?</h3>
                     <p>We have carefully crafted our question pool and have implemented a matching algorithm to ensure you and your mentor will be set up to succeed!  </p>
             </div>
-            <div id="chat-icon"><i className="fa fa-comments" aria-hidden="true"></i></div>
+            {/* <div id="chat-icon"><i className="fa fa-comments" aria-hidden="true"></i></div> */}
         </div>
     )
 }

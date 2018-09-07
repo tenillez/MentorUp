@@ -54,3 +54,7 @@
   #chat-app {
     width: 80%;
   }
+
+  #footer {
+    position: fixed
+  }
