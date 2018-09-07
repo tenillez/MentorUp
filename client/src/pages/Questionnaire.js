@@ -146,7 +146,6 @@ class Questionnaire extends Component {
   render() {
     return (
       <div>
-          <h2></h2>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
