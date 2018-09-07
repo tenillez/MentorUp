@@ -28,7 +28,6 @@ const Navbar = (props) => {
     <nav className="navbar navbar-dark bg-dark">
         <a className="navbar-brand" href="/"><img height="35" width="35" src="./assets/logo.png" alt="logo"/></a>
         {/* this shows login/logout based on if user is either logged in/out */}
-
         <div className="nav-item">
           {user ?
             <LoginMenu username={username} onLogOut={handleLogOut} />
