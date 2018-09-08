@@ -1,4 +1,4 @@
- import React, { Component } from 'react'
+import React, { Component } from 'react'
 
  class SendMessageForm extends Component {
    constructor(props) {
@@ -24,16 +24,34 @@
    }
 
    render() {
+     const styles = {
+       container: {
+         padding: 20,
+         borderTop: '1px #4C758F solid',
+         marginBottom: 20,
+       },
+       form: {
+         display: 'flex',
+       },
+       input: {
+         color: 'inherit',
+         background: 'none',
+         outline: 'none',
+         border: 'none',
+         flex: 1,
+         fontSize: 16,
+       },
+     }
      return (
-       <div>
+       <div style={styles.container}>
          <div>
-           <form onSubmit={this.onSubmit}>
+           <form onSubmit={this.onSubmit} style={styles.form}>
              <input
-               id="message-input"
                type="text"
-               placeholder="Type a message & hit ENTER"
+               placeholder="Type a message here then hit ENTER"
                onChange={this.onChange}
                value={this.state.text}
+               style={styles.input}
              />
            </form>
          </div>
