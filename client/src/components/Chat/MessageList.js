@@ -11,8 +11,8 @@
          listStyle: 'none',
        },
        li: {
-         marginTop: 13,
-         marginBottom: 13,
+         marginTop: '20%',
+         marginBottom: '20%',
        },
        senderUsername: {
          fontWeight: 'bold',
@@ -26,13 +26,13 @@
            ...styles.container,
          }}
        >
-         <ul style={styles.ul}>
+         <ul>
            {this.props.messages.map((message, index) => (
-             <li key={index} style={styles.li}>
+             <li key={index}>
                <div>
-                 <span style={styles.senderUsername}>{message.senderId}</span>{' '}
+                 <span>{message.senderId}</span>{' '}
                </div>
-               <p style={styles.message}>{message.text}</p>
+               <p>{message.text}</p>
              </li>
            ))}
          </ul>
