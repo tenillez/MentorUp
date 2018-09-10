@@ -26,6 +26,7 @@
           ...styles.container,
         }}
       >
+      <h2>Messages</h2>
         <ul style={styles.ul}>
           {this.props.messages.map((message, index) => (
             <li key={index} style={styles.li}>

@@ -16,8 +16,6 @@ import Questionnaire from './pages/Questionnaire';
 import Chat from './pages/Chat';
 import Community from './pages/Community';
 
-
-
 class App extends Component {
   componentDidMount() {
     // this is going to double check that the user is still actually logged in
@@ -46,7 +44,6 @@ class App extends Component {
               <Navbar
                 user={user}
               />
-              
                 <Switch>
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/login" component={LoginPage} />
@@ -57,17 +54,9 @@ class App extends Component {
                   <Route component={NotFoundPage} />
                 </Switch>
               
-              
                 <Footer />
           </Fragment>
-      </Router>
-
-      
-                
-
-      
-
-      
+      </Router> 
     );
   }
 }

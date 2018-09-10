@@ -34,9 +34,12 @@ class WhosOnlineList extends Component {
 class WhosOnlineListItem extends Component {
   render() {
     return (
-      <li >
-        {this.props.children}
-      </li>
+      <div>
+        <h2>Online</h2>
+        <li >
+          {this.props.children}
+        </li>
+      </div>
     )
   }
 }
