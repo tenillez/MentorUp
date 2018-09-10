@@ -18,13 +18,12 @@ const Footer = () =>{
 
         <div id="footer">
             <div id="repolink">
-            <a href="https://github.com/tenillez/MentorUp" target="_blank">Source code.</a>
+            <a href="https://github.com/tenillez/MentorUp" target="_blank"><i className="fab fa-github"></i></a>
             
             <div id="social">
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-facebook-square"></i>
+            <i className="fab fa-twitter"></i>
+            <i className="fab fa-instagram"></i>
+            <i className="fab fa-facebook-square"></i>
             </div>
             </div>
             {/* <div id="social">

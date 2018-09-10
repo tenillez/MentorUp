@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
-import MessageList from './MessageList'
-import SendMessageForm from './SendMessageForm'
-import TypingIndicator from './TypingIndicator'
-import WhosOnlineList from './WhosOnlineList'
+import React, { Component } from 'react';
+import Chatkit from '@pusher/chatkit';
+import MessageList from './MessageList';
+import SendMessageForm from './SendMessageForm';
+import TypingIndicator from './TypingIndicator';
+import WhosOnlineList from './WhosOnlineList';
+import "./Chat.css";
 
 class ChatScreen extends Component {
   constructor(props) {
@@ -83,7 +84,7 @@ class ChatScreen extends Component {
   render() {
     const styles = {
       container: {
-        height: '95vh',
+        height: '90vh',
         display: 'flex',
         flexDirection: 'column',
       },
@@ -93,10 +94,10 @@ class ChatScreen extends Component {
       },
       whosOnlineListContainer: {
         width: '33%',
-        flex: 'none',
         padding: 20,
         backgroundColor: 'white',
         color: '#7E6B8F',
+        textAlign: 'left'
       },
       chatListContainer: {
         padding: 20,

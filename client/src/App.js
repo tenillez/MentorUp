@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 import { withUser, update } from './services/withUser';
 
@@ -13,8 +14,8 @@ import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 import Questionnaire from './pages/Questionnaire';
 import Chat from './pages/Chat';
+import Community from './pages/Community';
 
-import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
                   <Route exact path="/create" component={CreateAccountPage} />
                   <Route exact path="/chat" component={Chat} />
                   <Route exact path="/questionnaire" component={Questionnaire} />
+                  <Route exact path="/board" component={Community} />
                   <Route component={NotFoundPage} />
                 </Switch>
               

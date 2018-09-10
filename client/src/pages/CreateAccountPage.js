@@ -71,76 +71,83 @@ class CreateAccountPage extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-lg-12">
+          <div className="col-lg-3"></div>
+          <div className="col-lg-6">
             <div className="signupForm">
-              <h3>Please create an account to begin.</h3>
-              <p>
-                <hr />
-              </p>
+              <div className="title-container">
+              <h2>Register</h2>
+              </div>
               { error }
               <form onSubmit={this.handleLogin}>
                 <div className="form-group">
+                <i className="fa fa-address-book" aria-hidden="true"></i>
                   <input
                     value={this.state.firstName}
                     name="firstName"
                     onChange={this.handleInputChanged}
                     type="text-area"
                     placeholder="First Name"
-                  />
+                  ></input>
                 </div>
                 <div className="form-group">
+                <i className="fa fa-address-book-o" aria-hidden="true"></i>
                   <input
                     value={this.state.lastName}
                     name="lastName"
                     onChange={this.handleInputChanged}
                     type="text"
                     placeholder="Last Name"
-                  />
+                  ></input>
                 </div>
                 <div className="form-group">
+                <i className="fa fa-user-circle-o" aria-hidden="true"></i>
                   <input
                     value={this.state.username}
                     name="username"
                     onChange={this.handleInputChanged}
                     type="text"
                     placeholder="Username"
-                  />
+                  ></input>
                 </div>
                 <div className="form-group">
+                <i className="fa fa-unlock-alt" aria-hidden="true"></i>
                   <input
                     value={this.state.password}
                     name="password"
                     onChange={this.handleInputChanged}
                     type="password"
                     placeholder="Password"
-                  />
+                  ></input>
                 </div>
                 <div className="form-group">
+                <i className="fa fa-key" aria-hidden="true"></i>
                   <input
                     value={this.state.password1}
                     name="password1"
                     onChange={this.handleInputChanged}
                     type="password"
                     placeholder="Verify Password"
-                  />
+                 ></input>
                 </div>
                 <div className="form-group">
+                <i className="fa fa-envelope" aria-hidden="true"></i>
                   <input
                     value={this.state.email}
                     name="email"
                     onChange={this.handleInputChanged}
                     type="email"
                     placeholder="Email"
-                  />
+                  ></input>
                 </div>
                 <div className="form-group">
+                <i className="fa fa-map-marker" aria-hidden="true"></i>
                   <input
                     value={this.state.location}
                     name="location"
                     onChange={this.handleInputChanged}
                     type="location"
                     placeholder="City, State"
-                  />
+                  ></input>
                 </div>
                 {/* <div className="form-group">
                   <input
@@ -149,16 +156,7 @@ class CreateAccountPage extends Component {
                     onChange={this.handleInputChanged}
                     type="years"
                     placeholder="Years of experience"
-                  />
-                </div>
-                <div className="form-group">
-                <h4>Interested in becoming a mentor?</h4>
-                  <input
-                    value={this.state.mentor}
-                    name="mentor"
-                    onChange={this.handleInputChanged}
-                    type="checkbox"
-                  />
+                  ></input>
                 </div>
                 <br />
                 <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
@@ -167,7 +165,7 @@ class CreateAccountPage extends Component {
                     name="form-control-file"
                     onChange={this.handleInputChanged}
                     type="file"
-                  />
+                  ></input>
                 </div> */}
                 <div className="form-group">
                   <button className="btn btn-secondary" type="submit" onClick={this.handleFormSubmit}>Submit</button>
