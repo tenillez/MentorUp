@@ -4,7 +4,7 @@ const Community = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-7">
                     <h3>Community Posts</h3>
                     <p>Have a question, or an answer? Please contribute below</p>
                     <div className="card">
@@ -47,7 +47,7 @@ const Community = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-5">
                     <h3>Meetups</h3>
                     <p>Click a group below to see their upcoming events.</p>
                     <button className="btn btn-dark" value="Women-Who-Code-Austin">Women Who Code Austin</button>
