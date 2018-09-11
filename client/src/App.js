@@ -14,8 +14,8 @@ import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 import Questionnaire from './pages/Questionnaire';
 import Chat from './pages/Chat';
+import AccountPage from './pages/AccountPage';
 import Community from './pages/Community';
-
 
 
 class App extends Component {
@@ -42,7 +42,6 @@ class App extends Component {
       
       <Router>
           <Fragment>
-           
               <Navbar
                 user={user}
               />
@@ -56,7 +55,6 @@ class App extends Component {
                   <Route exact path="/board" component={Community} />
                   <Route component={NotFoundPage} />
                 </Switch>
-              
               
                 <Footer />
           </Fragment>
