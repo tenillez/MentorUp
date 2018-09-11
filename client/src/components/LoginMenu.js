@@ -8,11 +8,11 @@ const LoginMenu = (props) => {
         {username}
       </button>
       <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-        <a className="dropdown-item" href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
-        <a className="dropdown-item" href="/account/1"><i class="fa fa-user-circle" aria-hidden="true"></i>Account</a>
-        <a className="dropdown-item" href="/board"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Community</a>
-        <a className="dropdown-item" href="/chat"><i class="fa fa-comments" aria-hidden="true"></i>Chat</a>
-        <a className="dropdown-item" onClick={onLogOut}><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+        <a className="dropdown-item" href="/"><i className="fa fa-home" aria-hidden="true"></i>Home</a>
+        <a className="dropdown-item" href="/account/1"><i className="fa fa-user-circle" aria-hidden="true"></i>Account</a>
+        <a className="dropdown-item" href="/board"><i className="fa fa-thumb-tack" aria-hidden="true"></i>Community</a>
+        <a className="dropdown-item" href="/chat"><i className="fa fa-comments" aria-hidden="true"></i>Chat</a>
+        <a className="dropdown-item" onClick={onLogOut}><i className="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
       </div>
     </div>
   )

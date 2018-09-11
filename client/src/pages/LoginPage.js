@@ -58,7 +58,7 @@ class LoginPage extends Component {
                   </div>
                 }
                 <div className="form-group">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <i className="fa fa-user-circle-o" aria-hidden="true"></i>
                 <input
                     value={this.state.username}
                     name="username"
@@ -68,7 +68,7 @@ class LoginPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i class="fa fa-key" aria-hidden="true"></i>
+                <i className="fa fa-key" aria-hidden="true"></i>
                   <input
                     value={this.state.password}
                     name="password"
