@@ -45,41 +45,43 @@ class LoginPage extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-lg-12">
+        <div className="col-lg-3"></div>
+          <div className="col-lg-6">
             <div className="signinForm">
               <form onSubmit={this.handleLogin}>
-                <h3>Login Here</h3>
-                <hr />
+              <div className="title-container">
+                <h2>Login</h2>
+              </div>
                 {error &&
                   <div>
                     {error}
                   </div>
                 }
                 <div className="form-group">
-                  <input
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input
                     value={this.state.username}
                     name="username"
                     onChange={this.handleInputChanged}
                     type="text"
                     placeholder="Username"
-                  />
+                  ></input>
                 </div>
                 <div className="form-group">
+                <i class="fa fa-key" aria-hidden="true"></i>
                   <input
                     value={this.state.password}
                     name="password"
                     onChange={this.handleInputChanged}
                     type="password"
                     placeholder="Password"
-                  />
+                  ></input>
                 </div>
-                <div className="form-group">
-                  <button className="btn" type="submit" onClick={this.handleLogin}>Login</button>
-                  <br />
-                  <br />
-                <Link to="/create">
-                    <button className="btn" type="submit">Register</button>
-                </Link>
+                <div className="form-group logins">
+                  <button className="btn btn-secondary" type="submit" onClick={this.handleLogin}>Login</button> or
+                  <Link to="/create">
+                      <button className="btn btn-link" type="submit">Register</button>
+                  </Link>
                 </div>
               </form>
             </div>

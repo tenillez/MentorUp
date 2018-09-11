@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
-import MessageList from './MessageList'
-import SendMessageForm from './SendMessageForm'
-import TypingIndicator from './TypingIndicator'
-import WhosOnlineList from './WhosOnlineList'
+import React, { Component } from 'react';
+import Chatkit from '@pusher/chatkit';
+import MessageList from './MessageList';
+import SendMessageForm from './SendMessageForm';
+import TypingIndicator from './TypingIndicator';
+import WhosOnlineList from './WhosOnlineList';
+import "./Chat.css";
 
 class ChatScreen extends Component {
   constructor(props) {
@@ -33,12 +34,12 @@ class ChatScreen extends Component {
 
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
-      instanceLocator: 'v1:us1:0cd47b49-3742-40a3-a33f-e112656df8a6',
+      instanceLocator: 'v1:us1:fdac1e47-fa7e-4a46-a912-854460d6e6e3',
       // instanceLocator: 'v1:us1:ee8fb85b-b346-4935-990a-9119ce8f91a9',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
-        // url: 'http://localhost:3001/authenticate'  
-        url: 'https://agile-caverns-57821.herokuapp.com/authenticate'
+        url: 'http://localhost:3001/authenticate'  
+        // url: 'https://agile-caverns-57821.herokuapp.com/authenticate'
       }),
     })
 
@@ -48,7 +49,7 @@ class ChatScreen extends Component {
         this.setState({ currentUser })
         return currentUser.subscribeToRoom({
           // roomId: 15052466,
-          roomId:  15419552,
+          roomId:  15585824,
           messageLimit: 100,
           hooks: {
             onNewMessage: message => {
@@ -81,14 +82,9 @@ class ChatScreen extends Component {
   }
 
   render() {
-    // return (
-    //   <div>
-    //     <h1>Chat</h1>
-    //   </div>
-    // )
     const styles = {
       container: {
-        height: '100vh',
+        height: '90vh',
         display: 'flex',
         flexDirection: 'column',
       },
@@ -97,15 +93,15 @@ class ChatScreen extends Component {
         flex: 1,
       },
       whosOnlineListContainer: {
-        width: '300px',
-        flex: 'none',
+        width: '33%',
         padding: 20,
         backgroundColor: 'white',
         color: '#7E6B8F',
+        textAlign: 'left'
       },
       chatListContainer: {
         padding: 20,
-        width: '85%',
+        width: '66%',
         display: 'flex',
         flexDirection: 'column',
       },
