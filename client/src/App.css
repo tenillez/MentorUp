@@ -2,6 +2,7 @@
   .App {
     text-align: center;
     font-family: 'PT Sans', sans-serif;
+    height: 100vh
   }
   .loggedinmessage {
     text-align: right;
@@ -11,7 +12,7 @@
   }
   body {
     font-family: 'PT Sans', sans-serif;
-    background: #e7e7e7; 
+    background: url("./greyzz.png"); 
   }
   a {
     color: #7E6B8F
