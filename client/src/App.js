@@ -49,6 +49,7 @@ class App extends Component {
                   <Route exact path="/login" component={LoginPage} />
                   <Route exact path="/create" component={CreateAccountPage} />
                   <Route exact path="/chat" component={Chat} />
+                  <Route exact path="/account/:userID" component={AccountPage} />
                   <Route exact path="/questionnaire" component={Questionnaire} />
                   <Route exact path="/board" component={Community} />
                   <Route component={NotFoundPage} />
