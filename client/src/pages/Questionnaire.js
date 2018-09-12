@@ -13,6 +13,7 @@ class Questionnaire extends Component {
     this.state = {
       counter: 0,
       questionId: 1,
+      weight: 0,
       question: '',
       answerOptions: [],
       answer: '',
@@ -32,6 +33,7 @@ class Questionnaire extends Component {
   componentWillMount() {
     const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
     this.setState({
+      weight: this.state.weight,
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0]
     });
@@ -68,8 +70,11 @@ class Questionnaire extends Component {
 
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: {$apply: (currentValue) => currentValue + 1}
+      [answer]: {$apply: (currentValue) => currentValue * this.state.questionId}
     });
+    console.log(this.state.questionId);
+    console.log([answer]* parseInt(this.state.questionId));
+    // console.log(answer);
 
     this.setState({
         answersCount: updatedAnswersCount,
@@ -82,6 +87,7 @@ class Questionnaire extends Component {
     const questionId = this.state.questionId + 1;
 
     this.setState({
+        score: ([this.state.answer]* parseInt(this.state.questionId)),
         counter: counter,
         questionId: questionId,
         question: quizQuestions[counter].question,
@@ -89,7 +95,6 @@ class Questionnaire extends Component {
         answer: ''
     });
   }
-
   getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
@@ -103,7 +108,7 @@ class Questionnaire extends Component {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: 'not available at this time' });
     }
   }
 

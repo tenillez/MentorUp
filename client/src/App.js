@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import About from './components/About';
 
 import { withUser, update } from './services/withUser';
 
