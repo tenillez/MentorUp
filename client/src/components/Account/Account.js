@@ -3,6 +3,7 @@ import {withRouter} from 'react-router';
 import "./Account.css";
 import axios from 'axios';
 import { withUser } from '../../services/withUser';
+import Goals from "../Goals";
 
 
 
@@ -44,6 +45,7 @@ class Account extends Component {
             <h1>
                 Account Page
             </h1>
+<<<<<<< HEAD
             <p>User: { this.props.match.params.userID } </p>
 
             <div id="accountGoals">
@@ -51,6 +53,15 @@ class Account extends Component {
             </div>
             
 
+=======
+            <p>Name: { this.props.match.params.userID } </p>
+            <br></br>
+            <p>UserName: </p>
+            <br></br>
+            <p>Email: </p>
+            <br></br>
+            <Goals />
+>>>>>>> 35bbb159641f985166ec0d92d064f4d4b09d89cd
             </div>
         )
     }

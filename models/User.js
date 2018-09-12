@@ -15,12 +15,28 @@ const bcrypt = require('bcrypt');
 const WORK_FACTOR = 10;
 
 const UserSchema = new Schema({
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
   username: {
     type: String,
     required: true,
     index: { unique: true }
   },
   password: {
+    type: String
+  },
+  email: {
+    type: String,
+    required: true,
+    index: { unique: true }
+  },
+  location: {
     type: String
   }
 });
