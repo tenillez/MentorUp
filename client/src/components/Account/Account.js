@@ -3,6 +3,7 @@ import {withRouter} from 'react-router';
 import "./Account.css";
 import axios from 'axios';
 import { withUser } from '../../services/withUser';
+import Goals from "../Goals";
 
 class Account extends Component {
     constructor(props) {
@@ -23,7 +24,13 @@ class Account extends Component {
             <h1>
                 Account Page
             </h1>
-            <p>User: { this.props.match.params.userID } </p>
+            <p>Name: { this.props.match.params.userID } </p>
+            <br></br>
+            <p>UserName: </p>
+            <br></br>
+            <p>Email: </p>
+            <br></br>
+            <Goals />
             </div>
         )
     }
