@@ -4,7 +4,7 @@ import "./Account.css";
 import axios from 'axios';
 import { withUser } from '../../services/withUser';
 
-// import mongoose from "../../../../middleware/mongoose";
+
 
 class Account extends Component {
     constructor(props) {
@@ -25,7 +25,17 @@ class Account extends Component {
         axios.get("/api/stuff").then((res) => {
             console.log(res);
         })
+
+        axios.get("/api/tableTest").then((res) => {
+            console.log(res);
+        })
     }
+
+    
+
+
+
+    
 
     
     render() {
@@ -35,6 +45,10 @@ class Account extends Component {
                 Account Page
             </h1>
             <p>User: { this.props.match.params.userID } </p>
+
+            <div id="accountGoals">
+                Goals dawg
+            </div>
             
 
             </div>

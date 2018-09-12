@@ -4,6 +4,10 @@ const router = express.Router();
 const db = require('../models');
 const mustBeLoggedIn = require('../middleware/mustBeLoggedIn');
 
+
+
+// const accountController = require("../../controllers/accountPageController");
+
 function getCurrentUser(req, res) {
   // I'm picking only the specific fields its OK for the audience to see publicly
   // never send the whole user object in the response, and only show things it's OK
@@ -82,6 +86,9 @@ router.route('/stuff')
       'Battlestar Galactica'
     ]);
   });
+
+
+
 
 
 module.exports = router;
