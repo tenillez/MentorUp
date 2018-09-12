@@ -17,11 +17,11 @@ class Questionnaire extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {
-        Heather: 0,
-        Tenille: 0,
-        Christine: 0,
-        Alex: 0,
-        Ellie: 0
+        0: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0
       },
       result: ''
     };

@@ -3,7 +3,8 @@
     text-align: left;
     border-radius: 0;
     height: auto;
-    background: #e7e7e7; 
+    /* background: #e7e7e7;  */
+    background: url("../../greyzz.png"); 
     background-image: url("./img/mentor2.jpeg");
     background-size: 100% auto;
     background-repeat: no-repeat;

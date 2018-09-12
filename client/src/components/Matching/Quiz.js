@@ -12,7 +12,7 @@ function Quiz(props) {
       <AnswerOption
         key={key.content}
         answerContent={key.content}
-        answerType={key.type}
+        answerType={key.value}
         answer={props.answer}
         questionId={props.questionId}
         onAnswerSelected={props.onAnswerSelected}
@@ -22,7 +22,8 @@ function Quiz(props) {
 
   return (
     <ReactCSSTransitionGroup
-      className="container"
+      className="card"
+      id="quiz-container"
       component="div"
       transitionName="fade"
       transitionEnterTimeout={900}

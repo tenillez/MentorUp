@@ -6,7 +6,7 @@ function Result(props) {
 
   return (
     <ReactCSSTransitionGroup
-      className="container result"
+      className="card result"
       component="div"
       transitionName="fade"
       transitionEnterTimeout={800}

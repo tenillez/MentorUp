@@ -1,143 +1,249 @@
 var quizQuestions = [
-    // {
-    //     question: "Would you prefer meeting in person or a virtual meeting?",
-    //     answers: [
-    //         {
-    //             type: "Heather",
-    //             content: "In-person is great"
-    //         },
-    //         {
-    //             type: "Tenille",
-    //             content: "Virtual please!"
-    //         },
-    //         {
-    //             type: "Christine",
-    //             content: "Not sure, I'd like to be paired first."
-    //         }
-    //     ]
-    // },
     {
-        question: "What adjective best describes the role you would like your mentors to play? I'd like my mentor to as a ____________",
+        question: "Are you interested in being a Mentor or a Mentee?",
         answers: [
             {
-                type: "Heather",
-                content: "Colleague"
+                value: "0",
+                content: "Mentor"
             },
             {
-                type: "Tenille",
-                content: "Sounding board"
+                value: "1",
+                content: "Mentee"
+            },
+            // {
+            //     value: "2",
+            //     content: "both"
+            // }
+        ]
+    },
+    {
+        question: "How many years of experience do you have?",
+        number: 10,
+        answers: [
+            {
+                value: 0,
+                content: "0-3 years"
             },
             {
-                type: "Christine",
+                value: 1,
+                content: "3-5 years"
+            },
+            {
+                value: 2,
+                content: "5-10 years"
+            },
+            {
+                value: 3,
+                content: "10-15 years"
+            },
+            {
+                value: 4,
+                content: "15+ years"
+            }
+        ]
+    },
+    {
+        question: "As a mentee, what adjective best describes the role you would like your mentor to play?  As a mentor, what adjective best describes the role you would play?",
+        number: 9,
+        answers: [
+            {
+                value: 0,
+                content: "Motivator"
+            },
+            {
+                value: 1,
                 content: "Teacher"
             },
             {
-                type: "Alex",
-                content: "Motivator"
+                value: 2,
+                content: "Colleague"
+            },
+            {
+                value: 3,
+                content: "Sounding Board"
             }
 
         ]
     },
     {
-        question: "What area do you most want support?",
+        question: "As a mentee, which area do you most want support? As a mentor, which area are you interested in supporting most?",
+        number: 8,
         answers: [
             {
-                type: "Heather",
-                content: "Improve communication skills"
-            },
-            {
-                type: "Tenille",
-                content: "Knowledge of profession etiquette and standards of personal presentation"
-            },
-            {
-                type: "Christine",
+                value: 0,
                 content: "Increase self-confidence"
             },
             {
-                type: "Alex",
+                value: 1,
+                content: "Improve communication skills"
+            },
+            {
+                value: 2,
+                content: "Knowledge of professional etiquette and standards of personal presentation"
+            },
+            {
+                value: 3,
                 content: "Increase professional network"
             }
 
         ]
     },
     {
-        question: "Which department do you belong to?",
+        question: "Which department do you belong to (or are interested in)?",
+        number: 7,
         answers: [
             {
-                type: "Heather",
-                content: "Software Development or IT"
-            },
-            {
-                type: "Tenille",
-                content: "Operations, Marketing, Account, Finance, or HR"
-            },
-            {
-                type: "Christine",
+                value: 0,
                 content: "Sales, Business Development, or Customer Support"
             },
             {
-                type: "Alex",
-                content: "Student"
+                value: 1,
+                content: "Operations, Marketing, Accounting, Finance, or HR"
             },
             {
-                type: "Ellie",
+                value: 2,
+                content: "Software Development or IT"
+            },
+            {
+                value: 3,
                 content: "Looking for the next opportunity"
             }
-
+        ]
+    },
+    {
+        question: "I am driven by which of the following?",
+        number: 6,
+        answers: [
+            {
+                value: 0,
+                content: "Learning something new and creativity"
+            },
+            {
+                value: 1,
+                content: "Goals and/or the end-result"
+            },
+            {
+                value: 2,
+                content: "Money"
+            },
+            {
+                value: 3,
+                content: "Numbers and Statistics"
+            }
+        ]
+    },
+    {
+        question: "Which statement best describes you?",
+        number: 5,
+        answers: [
+            {
+                value: 0,
+                content: "I want to be known"
+            },
+            {
+                value: 1,
+                content: "I want to enjoy life"
+            },
+            {
+                value: 2,
+                content: "I want to learn as much as possible"
+            },
+            {
+                value: 3,
+                content: "I want to help people"
+            }
 
         ]
     },
     {
         question: "What do you like to do during your free time?",
+        number: 4,
         answers: [
             {
-                type: "Heather",
-                content: "Low-key activities"
+                value: 0,
+                content: "High Impact, Physical movement, i.e. hiking, sports, etc."
             },
             {
-                type: "Tenille",
-                content: "Physical activities"
+                value: 1,
+                content: "Who has hobbies?  I have kids! "
             },
             {
-                type: "Christine",
-                content: "Who has hobbies? I have kids!"
+                value: 2,
+                content: "Low Impact, Low-key activity, i.e. reading, television, etc. "
+            },
+            {
+                value: 3,
+                content: "Creating art/content or pursuing side-projects"
             }
         ]
     },
     {
-        question: "Where would you prefer to go on the weekend?",
+        question: "My priorities in life from most important to least important more closely resemble which of the following?",
+        number: 3,
         answers: [
             {
-                type: "Heather",
-                content: "Central Library Downtown"
+                value: 0,
+                content: "Work, Creative Endeavors, Family, Friends"
             },
             {
-                type: "Tenille",
-                content: "Barton Springs"
+                value: 1,
+                content: "Family, Work, Friends, Creative Endeavors"
             },
             {
-                type: "Christine",
-                content: "Stay home"
+                value: 2,
+                content: "Family, Friends, Work, Creative Endeavors"
+            },
+            {
+                value: 3,
+                content: "Creative Endeavors, Work, Family, Friends"
             }
         ]
     },
     {
-        question: "Where would you prefer to go on the weekend?",
+        question: "If I have a problem or conflict with someone at work:",
+        number: 2,
         answers: [
             {
-                type: "Heather",
-                content: "Cat"
+                value: 0,
+                content: "I speak up right away"
             },
             {
-                type: "Tenille",
-                content: "Dog"
+                value: 1,
+                content: "I wait for an appropriate time, then bring it up"
             },
             {
-                type: "Christine",
-                content: "Eh, not an animal person"
+                value: 2,
+                content: "I wait to see if the problem persists, then eventually say something about it"
+            },
+            {
+                value: 3,
+                content: "I probably wouldn't say anything"
+            }
+        ]
+    },
+    {
+        question: "When someone comes up with a 'new' plan or procedure, you usually think:",
+        number: 1,
+        answers: [
+            {
+                value: 0,
+                content: "Excited. I like staying on the cutting edge and experimenting"
+            },
+            {
+                value: 1,
+                content: "Irritated. Things run more smoothly with the established procedures"
+            },
+            {
+                value: 2,
+                content: "Interested. I like changing things up so that I don't get bored"
+            },
+            {
+                value: 3,
+                content: "Slightly apprehensive. I might not be comfortable with the new routine"
             }
         ]
     }
+
 ];
 
 export default quizQuestions;
