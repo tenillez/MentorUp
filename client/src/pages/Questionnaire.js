@@ -4,22 +4,23 @@ import quizQuestions from '../api/quizQuestions';
 import Quiz from '../components/Matching/Quiz';
 import Result from '../components/Matching/Result';
 import "../components/Matching/Matching.css"
-import { withUser } from '../services/withUser';
+import axios from 'axios';
 
 class Questionnaire extends Component {
-
+  
   constructor(props) {
     super(props);
 
     this.state = {
       counter: 0,
       questionId: 1,
-      weight: 0,
       question: '',
       answerOptions: [],
       answer: '',
+      answers: [],
       answersCount: {
-        0: 0,
+        Mentor: "",
+        Mentee: "",
         1: 0,
         2: 0,
         3: 0,
@@ -35,14 +36,13 @@ class Questionnaire extends Component {
   componentWillMount() {
     const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
     this.setState({
-      weight: this.state.weight,
+      answers: [],
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0]
     });
   }
-
   shuffleArray(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
@@ -56,13 +56,11 @@ class Questionnaire extends Component {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-
     return array;
   };
-
+  
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
-
     if (this.state.questionId < quizQuestions.length) {
       setTimeout(() => this.setNextQuestion(), 300);
     } else {
@@ -72,13 +70,19 @@ class Questionnaire extends Component {
 
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: { $apply: (currentValue) => currentValue * this.state.questionId }
+      [answer]: { $apply: (currentValue) => currentValue * this.state.questionId },
     });
-
     this.setState({
       answersCount: updatedAnswersCount,
-      answer: answer
+      answer: answer,
+      answers: [...this.state.answers, answer]
     });
+    // this is the array we want to push to mongoDB
+    console.log(this.state.answers);
+    let userAnswers = this.state.answers;
+    // axios.post('/api/user/:id', {
+    //   userAnswers
+    // })
   }
 
   setNextQuestion() {
@@ -141,4 +145,4 @@ class Questionnaire extends Component {
 
 }
 
-export default withUser(Questionnaire);
+export default Questionnaire;

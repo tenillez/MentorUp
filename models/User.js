@@ -37,8 +37,7 @@ const UserSchema = new Schema({
     index: { unique: true }
   },
   location: {
-    type: String,
-    required: true,
+    type: String
   }
 });
 
