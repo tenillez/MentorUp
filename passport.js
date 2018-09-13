@@ -12,14 +12,14 @@ module.exports = (app) => {
   app.use(cookieparser());
   app.use(session({
     // this should be changed to something cryptographically secure for production
-    secret: 'keyboard cat',
+    secret: 'kjasf;dkh;khawenk;h',
     resave: false,
     saveUninitialized: false,
     // automatically extends the session age on each request. useful if you want
     // the user's activity to extend their session. If you want an absolute session
     // expiration, set to false
     rolling: true,
-    name: 'sid', // don't use the default session cookie name
+    name: 'kjasdkl;j;klajsdl;f', // don't use the default session cookie name
     // set your options for the session cookie
     cookie: {
       httpOnly: true,

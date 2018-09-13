@@ -25,14 +25,10 @@ class CreateAccountPage extends Component {
     const { username, password, firstName, lastName, email, location } = this.state;
     const { history } = this.props;
 
-    // clear any previous errors so we don't confuse the user
     this.setState({
       error: ""
     });
 
-    // check to make sure they've entered a username and password.
-    // this is very poor validation, and there are better ways
-    // to do this in react, but this will suffice for the example
     if (!username || !password) {
       this.setState({
         error: 'A username and password is required.'
@@ -47,6 +43,11 @@ class CreateAccountPage extends Component {
       return;
     }
 
+    if (!firstName || !lastName || !email || !location) {
+      this.setState({
+        error: 'All fields are required.'
+      });
+    }
     // post an auth request
     axios.post('/api/users', {
       username,
@@ -59,7 +60,7 @@ class CreateAccountPage extends Component {
       .then(user => {
         // if the response is successful, make them log in
         history.push('/login');
-      })
+        })
       .catch(err => {
 
         this.setState({

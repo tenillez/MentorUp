@@ -4,6 +4,7 @@ import quizQuestions from '../api/quizQuestions';
 import Quiz from '../components/Matching/Quiz';
 import Result from '../components/Matching/Result';
 import "../components/Matching/Matching.css"
+import { withUser } from '../services/withUser';
 
 class Questionnaire extends Component {
 
@@ -22,7 +23,8 @@ class Questionnaire extends Component {
         1: 0,
         2: 0,
         3: 0,
-        4: 0
+        4: 0,
+        5: 0
       },
       result: ''
     };
@@ -62,23 +64,20 @@ class Questionnaire extends Component {
     this.setUserAnswer(event.currentTarget.value);
 
     if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
+      setTimeout(() => this.setNextQuestion(), 300);
     } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
+      setTimeout(() => this.setResults(this.getResults()), 300);
     }
   }
 
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: {$apply: (currentValue) => currentValue * this.state.questionId}
+      [answer]: { $apply: (currentValue) => currentValue * this.state.questionId }
     });
-    console.log(this.state.questionId);
-    console.log([answer]* parseInt(this.state.questionId));
-    // console.log(answer);
 
     this.setState({
-        answersCount: updatedAnswersCount,
-        answer: answer
+      answersCount: updatedAnswersCount,
+      answer: answer
     });
   }
 
@@ -87,12 +86,11 @@ class Questionnaire extends Component {
     const questionId = this.state.questionId + 1;
 
     this.setState({
-        score: ([this.state.answer]* parseInt(this.state.questionId)),
-        counter: counter,
-        questionId: questionId,
-        question: quizQuestions[counter].question,
-        answerOptions: quizQuestions[counter].answers,
-        answer: ''
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
     });
   }
   getResults() {
@@ -143,4 +141,4 @@ class Questionnaire extends Component {
 
 }
 
-export default Questionnaire;
+export default withUser(Questionnaire);

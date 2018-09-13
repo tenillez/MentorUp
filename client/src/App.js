@@ -4,19 +4,18 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import About from './components/About';
-
 import { withUser, update } from './services/withUser';
-
-import CreateAccountPage from './pages/CreateAccountPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
-import NotFoundPage from './pages/NotFoundPage';
-import './App.css';
-import Questionnaire from './pages/Questionnaire';
+import CreateAccountPage from './pages/CreateAccountPage';
 import Chat from './pages/Chat';
 import AccountPage from './pages/AccountPage';
+import Questionnaire from './pages/Questionnaire';
 import Community from './pages/Community';
+
+import NotFoundPage from './pages/NotFoundPage';
+
+import './App.css';
 
 class App extends Component {
   componentDidMount() {
