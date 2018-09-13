@@ -4,9 +4,10 @@ import quizQuestions from '../api/quizQuestions';
 import Quiz from '../components/Matching/Quiz';
 import Result from '../components/Matching/Result';
 import "../components/Matching/Matching.css"
+import axios from 'axios';
 
 class Questionnaire extends Component {
-
+  
   constructor(props) {
     super(props);
 
@@ -16,12 +17,15 @@ class Questionnaire extends Component {
       question: '',
       answerOptions: [],
       answer: '',
+      answers: [],
       answersCount: {
-        0: 0,
+        Mentor: "",
+        Mentee: "",
         1: 0,
         2: 0,
         3: 0,
-        4: 0
+        4: 0,
+        5: 0
       },
       result: ''
     };
@@ -32,13 +36,13 @@ class Questionnaire extends Component {
   componentWillMount() {
     const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
     this.setState({
+      answers: [],
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0]
     });
   }
-
   shuffleArray(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
@@ -52,29 +56,33 @@ class Questionnaire extends Component {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-
     return array;
   };
-
+  
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
-
     if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
+      setTimeout(() => this.setNextQuestion(), 300);
     } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
+      setTimeout(() => this.setResults(this.getResults()), 300);
     }
   }
 
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: {$apply: (currentValue) => currentValue + 1}
+      [answer]: { $apply: (currentValue) => currentValue * this.state.questionId },
     });
-
     this.setState({
-        answersCount: updatedAnswersCount,
-        answer: answer
+      answersCount: updatedAnswersCount,
+      answer: answer,
+      answers: [...this.state.answers, answer]
     });
+    // this is the array we want to push to mongoDB
+    console.log(this.state.answers);
+    let userAnswers = this.state.answers;
+    // axios.post('/api/user/:id', {
+    //   userAnswers
+    // })
   }
 
   setNextQuestion() {
@@ -82,14 +90,13 @@ class Questionnaire extends Component {
     const questionId = this.state.questionId + 1;
 
     this.setState({
-        counter: counter,
-        questionId: questionId,
-        question: quizQuestions[counter].question,
-        answerOptions: quizQuestions[counter].answers,
-        answer: ''
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
     });
   }
-
   getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
@@ -103,7 +110,7 @@ class Questionnaire extends Component {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: 'not available at this time' });
     }
   }
 
