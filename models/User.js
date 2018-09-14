@@ -38,6 +38,18 @@ const UserSchema = new Schema({
   },
   location: {
     type: String
+  },
+  isMentor: {
+    type: Boolean,
+    default: false
+  },
+  isMatched: {
+    type: Boolean,
+    default: false
+  },
+  userAnswers: {
+    type: Array,
+    default: []
   }
 });
 

@@ -6,8 +6,8 @@ import Result from '../components/Matching/Result';
 import "../components/Matching/Matching.css"
 import axios from 'axios';
 
+
 class Questionnaire extends Component {
-  
   constructor(props) {
     super(props);
 
@@ -19,14 +19,16 @@ class Questionnaire extends Component {
       answer: '',
       answers: [],
       answersCount: {
-        Mentor: "",
-        Mentee: "",
-        1: 0,
-        2: 0,
-        3: 0,
-        4: 0,
-        5: 0
+        True: "",
+        False: "",
+        A: 0,
+        B: 0,
+        C: 0,
+        D: 0,
       },
+      isMentor: '',
+      isMatched: '',
+      userAnswers: [],
       result: ''
     };
 
@@ -70,19 +72,13 @@ class Questionnaire extends Component {
 
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: { $apply: (currentValue) => currentValue * this.state.questionId },
+      [answer]: { $apply: (currentValue) => currentValue + 1 },
     });
     this.setState({
       answersCount: updatedAnswersCount,
       answer: answer,
       answers: [...this.state.answers, answer]
     });
-    // this is the array we want to push to mongoDB
-    console.log(this.state.answers);
-    let userAnswers = this.state.answers;
-    // axios.post('/api/user/:id', {
-    //   userAnswers
-    // })
   }
 
   setNextQuestion() {
@@ -113,6 +109,23 @@ class Questionnaire extends Component {
       this.setState({ result: 'not available at this time' });
     }
   }
+  storeResults(result) {
+    const { user } = this.props;
+
+    console.log(this.state.questionId);
+    console.log(this.state.answers);
+    console.log(this.state.user);
+    axios.get('/api/users/:id', {
+      
+      
+    })
+    // .then(user => {
+    //   axios.put('/api/user/:id', {
+    //     this
+    //   })
+    // })
+  
+  }
 
   renderQuiz() {
     return (
@@ -123,26 +136,31 @@ class Questionnaire extends Component {
         question={this.state.question}
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
+        user={this.state.user}
       />
     );
   }
 
   renderResult() {
+    const { user } = this.props;
+    this.storeResults();
     return (
-      <Result quizResult={this.state.result} />
+      <div>
+        {user}
+      <Result quizResult={this.state.answers} />
+      </div>
     );
   }
 
   render() {
+    const { user } = this.props;
+
     return (
       <div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
   }
-
-
-
 }
 
 export default Questionnaire;

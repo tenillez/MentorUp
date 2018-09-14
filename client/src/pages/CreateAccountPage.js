@@ -10,6 +10,7 @@ class CreateAccountPage extends Component {
     password1: "",
     email: "",
     location: "",
+    // isMentor: "",
     error: ""
   }
   handleInputChanged = (event) => {
@@ -49,16 +50,17 @@ class CreateAccountPage extends Component {
     // post an auth request
     axios.post('/api/users', {
       username,
-      password, 
+      password,
       firstName,
       lastName,
       email,
-      location
+      location,
+      // isMentor
     })
       .then(user => {
         // if the response is successful, make them log in
         history.push('/login');
-        })
+      })
       .catch(err => {
 
         this.setState({
@@ -76,12 +78,12 @@ class CreateAccountPage extends Component {
           <div className="col-lg-6">
             <div className="signupForm">
               <div className="title-container">
-              <h2>Register</h2>
+                <h2>Register</h2>
               </div>
-              { error }
+              {error}
               <form onSubmit={this.handleLogin}>
                 <div className="form-group">
-                <i className="fa fa-address-book" aria-hidden="true"></i>
+                  <i className="fa fa-address-book" aria-hidden="true"></i>
                   <input
                     value={this.state.firstName}
                     name="firstName"
@@ -91,7 +93,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-address-book-o" aria-hidden="true"></i>
+                  <i className="fa fa-address-book-o" aria-hidden="true"></i>
                   <input
                     value={this.state.lastName}
                     name="lastName"
@@ -101,7 +103,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+                  <i className="fa fa-user-circle-o" aria-hidden="true"></i>
                   <input
                     value={this.state.username}
                     name="username"
@@ -111,7 +113,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-unlock-alt" aria-hidden="true"></i>
+                  <i className="fa fa-unlock-alt" aria-hidden="true"></i>
                   <input
                     value={this.state.password}
                     name="password"
@@ -121,17 +123,17 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-key" aria-hidden="true"></i>
+                  <i className="fa fa-key" aria-hidden="true"></i>
                   <input
                     value={this.state.password1}
                     name="password1"
                     onChange={this.handleInputChanged}
                     type="password"
                     placeholder="Verify Password"
-                 ></input>
+                  ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-envelope" aria-hidden="true"></i>
+                  <i className="fa fa-envelope" aria-hidden="true"></i>
                   <input
                     value={this.state.email}
                     name="email"
@@ -141,7 +143,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-map-marker" aria-hidden="true"></i>
+                  <i className="fa fa-map-marker" aria-hidden="true"></i>
                   <input
                     value={this.state.location}
                     name="location"
@@ -150,17 +152,9 @@ class CreateAccountPage extends Component {
                     placeholder="City, State"
                   ></input>
                 </div>
-                {/* <div className="form-group">
-                  <input
-                    value={this.state.years}
-                    name="years"
-                    onChange={this.handleInputChanged}
-                    type="years"
-                    placeholder="Years of experience"
-                  ></input>
-                </div>
-                <br />
-                <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
+                {/* mentor */}
+                {/* upload picture */}
+                {/* <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
                   <input
                     value={this.state.picture}
                     name="form-control-file"
@@ -168,6 +162,7 @@ class CreateAccountPage extends Component {
                     type="file"
                   ></input>
                 </div> */}
+
                 <div className="form-group">
                   <button className="btn btn-secondary" type="submit" onClick={this.handleFormSubmit}>Submit</button>
                 </div>

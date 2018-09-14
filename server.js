@@ -72,7 +72,7 @@ app.post('/users', (req,res) => {
  });
  
  app.get('/api/user/:id', (req, res) => {
-   console.log(req.params.id);
+   console.log('id: ' + req.params.id);
    var userData = {id:000, isUser: true}
    res.json(userData)
  });
@@ -81,6 +81,7 @@ app.post('/users', (req,res) => {
     const authData = chatkit.authenticate({ userId: req.query.user_id })
     res.status(authData.status).send(authData.body)
   });
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
