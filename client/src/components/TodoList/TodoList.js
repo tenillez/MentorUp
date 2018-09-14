@@ -1,17 +1,35 @@
-import React, { Component } from "react";
-import TodoListItem from "../TodoListItem"
 
-class TodoList extends Component {
-    render () {
-      var items = this.props.items.map((item, index) => {
-        return (
-          <TodoListItem key={index} item={item} index={index} removeItem={this.props.removeItem} markTodoDone={this.props.markTodoDone} />
-        );
-      });
-      return (
-        <ul className="list-group"> {items} </ul>
-      );
+
+import React from "react";
+// import TodosListHeader from "./todos-list-header";
+import TodosListItem from "../TodoListItem";
+
+export default class TodosList extends React.Component {
+    renderItems () {
+        return this.props.todos.map((c, index) => {
+            return (
+                <TodosListItem
+                    key={index}
+                    {...c}
+                    id={index}
+                    toggleTask={this.props.toggleTask}
+                    editTask={this.props.editTask}
+                    deleteTask={this.props.deleteTask}
+                />
+            )
+        });
     }
-  }
-
-  export default TodoList;
+    render () {
+        if (!this.props.todos.length) {
+            return <p className="tutorial">What are your goals?</p>;
+        }
+        return (
+            <table>
+                {/* <TodosListHeader /> */}
+                <tbody>
+                    {this.renderItems()}
+                </tbody>
+            </table>
+        )
+    }
+}

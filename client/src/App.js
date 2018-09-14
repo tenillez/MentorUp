@@ -3,11 +3,6 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Footer from './components/Footer';
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 301b6371164d98994d07a6d655e2e813894f6bc4
 import { withUser, update } from './services/withUser';
 import Navbar from './pages/Navbar';
 import HomePage from './pages/HomePage';
@@ -18,13 +13,9 @@ import AccountPage from './pages/AccountPage';
 import Questionnaire from './pages/Questionnaire';
 import Community from './pages/Community';
 
-<<<<<<< HEAD
-
-=======
 import NotFoundPage from './pages/NotFoundPage';
 
 import './App.css';
->>>>>>> 301b6371164d98994d07a6d655e2e813894f6bc4
 
 class App extends Component {
   componentDidMount() {

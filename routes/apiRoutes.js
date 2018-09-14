@@ -111,12 +111,6 @@ router.route('/questionnaire')
   });
 
 
-<<<<<<< HEAD
-
-
-
-module.exports = router;
-=======
   // account page possibly
 // router.get('users/:id');
 
@@ -124,4 +118,3 @@ module.exports = router;
 // router.put('users/:id/update', userAnswers);  
 
 module.exports = router;
->>>>>>> 301b6371164d98994d07a6d655e2e813894f6bc4

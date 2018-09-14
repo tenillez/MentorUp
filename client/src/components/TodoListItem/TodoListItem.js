@@ -1,32 +1,81 @@
-import React, { Component } from "react";
+import React from "react";
 
-class TodoListItem extends Component {
-    constructor(props) {
-      super(props);
-      this.onClickClose = this.onClickClose.bind(this);
-      this.onClickDone = this.onClickDone.bind(this);
+export default class TodosListItem extends React.Component {
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            isEditing: false
+        };
     }
-    onClickClose() {
-      var index = parseInt(this.props.index);
-      this.props.removeItem(index);
+
+    renderActionSection () {
+        if (this.state.isEditing) {
+            return (
+                <td>
+                    <button onClick={this.editTask.bind(this)}>Save</button>
+                    <button className="cancel-btn" onClick={this.setEditState.bind(this, false)}>Cancel</button>
+                </td>
+            );
+        }
+        return (
+            <td>
+                <button onClick={this.setEditState.bind(this, true)}>Edit</button>
+                <button className="delete-btn" onClick={this.deleteTask.bind(this)}>Delete</button>
+            </td>
+        );
     }
-    onClickDone() {
-      var index = parseInt(this.props.index);
-      this.props.markTodoDone(index);
+
+    renderTask () {
+        const { task, isCompleted } = this.props;
+        const taskStyle = {
+            cursor: "pointer"
+        };
+
+        if (this.state.isEditing) {
+            return (
+                <td>
+                    <form onSubmit={this.editTask.bind(this)}>
+                        <input ref="task" defaultValue={task} autoFocus />
+                    </form>
+                </td>
+            );
+        }
+
+        return (
+            <td onClick={this.toggleTask.bind(this)} style={taskStyle}>{task}</td>
+        );
     }
+
     render () {
-      var todoClass = this.props.item.done ? 
-          "done" : "undone";
-      return(
-        <li className="list-group-item ">
-          <div className={todoClass}>
-            <span className="glyphicon glyphicon-ok icon" aria-hidden="true" onClick={this.onClickDone}></span>
-            {this.props.item.value}
-            <button type="button" className="close" onClick={this.onClickClose}>&times;</button>
-          </div>
-        </li>     
-      );
+        const { isCompleted } = this.props;
+        return (
+            <tr className={"todo-" + (isCompleted ? "completed" : "not-completed") }>
+                {this.renderTask()}
+                {this.renderActionSection()}
+            </tr>
+        )
     }
-  }
 
-  export default TodoListItem;
+    setEditState (isEditing) {
+        this.setState({
+            isEditing
+        });
+    }
+
+    toggleTask () {
+        this.props.toggleTask(this.props.id);
+    }
+
+    editTask (e) {
+        this.props.editTask(this.props.id, this.refs.task.value);
+        this.setState({
+            isEditing: false
+        });
+        e.preventDefault();
+    }
+
+    deleteTask () {
+        this.props.deleteTask(this.props.id);
+    }
+}

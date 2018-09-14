@@ -24,23 +24,6 @@ class Account extends Component {
         }
         console.log(JSON.stringify(this.props.user));
     }
-<<<<<<< HEAD
-
-
-    componentWillMount() {
-        axios.get("/api/user/" + this.state.accountID).then((res) =>{
-            console.log(res.data);
-            this.setState({userInfo: res})
-            
-        })
-
-        axios.get("/api/stuff").then((res) => {
-            console.log(res);
-        })
-
-        axios.get("/api/tableTest").then((res) => {
-            console.log(res);
-=======
     componentDidMount(){
         this.findUser();
     }
@@ -48,7 +31,6 @@ class Account extends Component {
         axios.get("/api/user/" + this.state.accountID).then((res) =>{
             console.log(res);
             this.setState(res.data)
->>>>>>> 301b6371164d98994d07a6d655e2e813894f6bc4
         })
     }
 
@@ -72,11 +54,10 @@ class Account extends Component {
             <p>Email: { this.state.email } </p>
             <br></br>
             <p>Location: { this.state.location } </p>
-            <br></br>
-            <Goals 
-            
-            
-            />
+            <br></br>   
+
+            <Goals />
+           
 
             </div>
         )
