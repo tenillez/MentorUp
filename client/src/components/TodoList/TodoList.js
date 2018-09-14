@@ -1,6 +1,7 @@
-import TodoListItem from ""
+import React, { Component } from "react";
+import TodoListItem from "../TodoListItem"
 
-class TodoList extends React.Component {
+class TodoList extends Component {
     render () {
       var items = this.props.items.map((item, index) => {
         return (
@@ -12,3 +13,5 @@ class TodoList extends React.Component {
       );
     }
   }
+
+  export default TodoList;

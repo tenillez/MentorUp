@@ -7,6 +7,10 @@ import Goals from "../Goals";
 
 
 
+
+
+
+
 class Account extends Component {
     constructor(props) {
         super(props);
@@ -45,23 +49,17 @@ class Account extends Component {
             <h1>
                 Account Page
             </h1>
-<<<<<<< HEAD
-            <p>User: { this.props.match.params.userID } </p>
-
-            <div id="accountGoals">
-                Goals dawg
-            </div>
-            
-
-=======
             <p>Name: { this.props.match.params.userID } </p>
             <br></br>
             <p>UserName: </p>
             <br></br>
             <p>Email: </p>
             <br></br>
-            <Goals />
->>>>>>> 35bbb159641f985166ec0d92d064f4d4b09d89cd
+            <Goals 
+            
+            
+            />
+
             </div>
         )
     }

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
+
 import { withUser, update } from './services/withUser';
 
 import CreateAccountPage from './pages/CreateAccountPage';
@@ -16,6 +17,8 @@ import Questionnaire from './pages/Questionnaire';
 import Chat from './pages/Chat';
 import AccountPage from './pages/AccountPage';
 import Community from './pages/Community';
+
+
 
 class App extends Component {
   componentDidMount() {
