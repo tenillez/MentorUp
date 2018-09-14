@@ -33,6 +33,7 @@ class Questionnaire extends Component {
       result: '',
       accountID: this.props.match.params.userID
     };
+        console.log(JSON.stringify(this.props.user));
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -119,6 +120,7 @@ class Questionnaire extends Component {
       console.log(res);
       this.setState(res.data)
     });
+    console.log(this.state.accountID)
   }
 
 
@@ -135,30 +137,29 @@ class Questionnaire extends Component {
     );
   }
 
-  renderResult() {
+  storeResults() {
+    let userArray = this.state.answers;
 
+    console.log(this.state.userID);
+    axios.put("/api/user/" + this.state.userID, {
+      userAnswers: userArray
+    })
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    });
+  }
+
+  renderResult() {
     this.storeResults();
     return (
       <div>
         <Result quizResult={this.state.answers} />
       </div>
     );
-  }
-
-  storeResults() {
-    console.log(this.state.answers);
-
-    axios.put("/api/user/" + this.state.accountID, {
-      userAnswers: this.state.answers
-    })
-    .then(res => {
-      console.log(res)
-    })
-    .catch(error => {
-      console.log(error)
-    });
-  }
-
+  };
 
 
   render() {
