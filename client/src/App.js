@@ -4,18 +4,18 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
 import { withUser, update } from './services/withUser';
-
-import CreateAccountPage from './pages/CreateAccountPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
-import NotFoundPage from './pages/NotFoundPage';
-import './App.css';
-import Questionnaire from './pages/Questionnaire';
+import CreateAccountPage from './pages/CreateAccountPage';
 import Chat from './pages/Chat';
 import AccountPage from './pages/AccountPage';
+import Questionnaire from './pages/Questionnaire';
 import Community from './pages/Community';
+
+import NotFoundPage from './pages/NotFoundPage';
+
+import './App.css';
 
 class App extends Component {
   componentDidMount() {
@@ -45,13 +45,17 @@ class App extends Component {
                 user={user}
               />
                 <Switch>
-                  <Route exact path="/" component={HomePage} />
+                  <Route exact path="/" component={HomePage} user={user}/>
                   <Route exact path="/login" component={LoginPage} />
                   <Route exact path="/create" component={CreateAccountPage} />
                   <Route exact path="/chat" component={Chat} />
                   <Route exact path="/user/:userID" component={AccountPage} />
                   <Route exact path="/questionnaire" component={Questionnaire} />
                   <Route exact path="/board" component={Community} />
+                  <Route exact path="/chat" component={Chat} user={user}/>
+                  <Route exact path="/account/:userID" component={AccountPage} user={user}/>
+                  <Route exact path="/questionnaire" component={Questionnaire} user={user}/>
+                  <Route exact path="/board" component={Community} user={user}/>
                   <Route component={NotFoundPage} />
                 </Switch>
               

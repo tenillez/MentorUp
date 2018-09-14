@@ -35,7 +35,6 @@ class WhosOnlineListItem extends Component {
   render() {
     return (
       <div>
-        <h2>Online</h2>
         <li >
           {this.props.children}
         </li>
