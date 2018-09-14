@@ -9,6 +9,7 @@ import { update } from '../services/withUser';
 
 const Navbar = (props) => {
   const { user } = props;
+  console.log(JSON.stringify(user));
   const username = user ? user.username : null;
   const handleLogIn = () => {
     props.history.push('/login');
@@ -30,7 +31,7 @@ const Navbar = (props) => {
         {/* this shows login/logout based on if user is either logged in/out */}
         <div className="nav-item">
           {user ?
-            <LoginMenu username={username} onLogOut={handleLogOut} />
+            <LoginMenu username={username} onLogOut={handleLogOut} id={user.id} user = {user}/>
             : <LoginButton onClick={handleLogIn} />}
         </div>
     </nav>

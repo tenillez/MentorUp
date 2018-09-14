@@ -70,6 +70,7 @@ app.post('/users', (req,res) => {
       }
     });
  });
+
  
  app.get('/api/user/:id', (req, res) => {
    console.log('id: ' + req.params.id);
