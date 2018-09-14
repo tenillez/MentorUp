@@ -2,9 +2,9 @@ import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { withUser, update } from './services/withUser';
+import Navbar from './pages/Navbar';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import CreateAccountPage from './pages/CreateAccountPage';
