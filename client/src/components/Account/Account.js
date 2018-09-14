@@ -5,6 +5,12 @@ import axios from 'axios';
 import { withUser } from '../../services/withUser';
 import Goals from "../Goals";
 
+
+
+
+
+
+
 class Account extends Component {
     constructor(props) {
         super(props);
@@ -27,6 +33,14 @@ class Account extends Component {
             this.setState(res.data)
         })
     }
+
+    
+
+
+
+    
+
+    
     render() {
         return (
             <div>
@@ -40,8 +54,11 @@ class Account extends Component {
             <p>Email: { this.state.email } </p>
             <br></br>
             <p>Location: { this.state.location } </p>
-            <br></br>
+            <br></br>   
+
             <Goals />
+           
+
             </div>
         )
     }
