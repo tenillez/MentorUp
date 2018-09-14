@@ -50,7 +50,7 @@ class App extends Component {
                   <Route exact path="/create" component={CreateAccountPage} />
                   <Route exact path="/chat" component={Chat} />
                   <Route exact path="/user/:userID" component={AccountPage} />
-                  <Route exact path="/questionnaire" component={Questionnaire} />
+                  <Route exact path="/questionnaire" component={Questionnaire} user={user}/>
                   <Route exact path="/board" component={Community} />
                   <Route exact path="/chat" component={Chat} user={user}/>
                   <Route exact path="/account/:userID" component={AccountPage} user={user}/>

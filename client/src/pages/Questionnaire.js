@@ -5,6 +5,7 @@ import Quiz from '../components/Matching/Quiz';
 import Result from '../components/Matching/Result';
 import "../components/Matching/Matching.css"
 import axios from 'axios';
+import { withUser } from '../services/withUser';
 
 
 class Questionnaire extends Component {
@@ -29,7 +30,8 @@ class Questionnaire extends Component {
       isMentor: '',
       isMatched: '',
       userAnswers: [],
-      result: ''
+      result: '',
+      accountID: this.props.match.params.userID
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -60,7 +62,7 @@ class Questionnaire extends Component {
     }
     return array;
   };
-  
+
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
     if (this.state.questionId < quizQuestions.length) {
@@ -104,28 +106,21 @@ class Questionnaire extends Component {
 
   setResults(result) {
     if (result.length === 1) {
-      this.setState({ result: result[0] });
+      this.setState({ result: result });
     } else {
       this.setState({ result: 'not available at this time' });
     }
   }
-  storeResults(result) {
-    const { user } = this.props;
-
-    console.log(this.state.questionId);
-    console.log(this.state.answers);
-    console.log(this.state.user);
-    axios.get('/api/users/:id', {
-      
-      
-    })
-    // .then(user => {
-    //   axios.put('/api/user/:id', {
-    //     this
-    //   })
-    // })
-  
+  componentDidMount() {
+    this.findUser();
   }
+  findUser() {
+    axios.get("/api/user/" + this.state.accountID).then((res) => {
+      console.log(res);
+      this.setState(res.data)
+    });
+  }
+
 
   renderQuiz() {
     return (
@@ -136,25 +131,37 @@ class Questionnaire extends Component {
         question={this.state.question}
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
-        user={this.state.user}
       />
     );
   }
 
   renderResult() {
-    const { user } = this.props;
+
     this.storeResults();
     return (
       <div>
-        {user}
-      <Result quizResult={this.state.answers} />
+        <Result quizResult={this.state.answers} />
       </div>
     );
   }
 
-  render() {
-    const { user } = this.props;
+  storeResults() {
+    console.log(this.state.answers);
 
+    axios.put("/api/user/" + this.state.accountID, {
+      userAnswers: this.state.answers
+    })
+    .then(res => {
+      console.log(res)
+    })
+    .catch(error => {
+      console.log(error)
+    });
+  }
+
+
+
+  render() {
     return (
       <div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
@@ -163,4 +170,4 @@ class Questionnaire extends Component {
   }
 }
 
-export default Questionnaire;
+export default withUser(Questionnaire);
