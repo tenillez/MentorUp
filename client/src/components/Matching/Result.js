@@ -23,7 +23,7 @@ function Result(props) {
 }
 
 Result.propTypes = {
-  quizResult: PropTypes.string.isRequired,
+  quizResult: PropTypes.array.isRequired,
 };
 
 export default Result;

@@ -4,15 +4,15 @@ var quizQuestions = [
         id: 1,
         answers: [
             {
-                value: "Mentor",
+                value: "True",
                 content: "Mentor"
             },
             {
-                value: "Mentee",
+                value: "False",
                 content: "Mentee"
             },
             // {
-            //     value: "2",
+            //     value: "B",
             //     content: "both"
             // }
         ]
@@ -23,25 +23,25 @@ var quizQuestions = [
         id: 2,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "0-3 years"
             },
             {
-                value: "2",
+                value: "B",
                 content: "3-5 years"
             },
             {
-                value: "3",
+                value: "C",
                 content: "5-10 years"
             },
             {
-                value: "4",
-                content: "10-15 years"
+                value: "D",
+                content: "10+ years"
             },
-            {
-                value: "5",
-                content: "15+ years"
-            }
+            // {
+            //     value: "5",
+            //     content: "15+ years"
+            // }
         ]
     },
     {
@@ -50,19 +50,19 @@ var quizQuestions = [
         id: 3,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "Motivator"
             },
             {
-                value: "2",
+                value: "B",
                 content: "Teacher"
             },
             {
-                value: "3",
+                value: "C",
                 content: "Colleague"
             },
             {
-                value: "4",
+                value: "D",
                 content: "Sounding Board"
             }
 
@@ -74,19 +74,19 @@ var quizQuestions = [
         id: 4,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "Increase self-confidence"
             },
             {
-                value: "2",
+                value: "B",
                 content: "Improve communication skills"
             },
             {
-                value: "3",
+                value: "C",
                 content: "Knowledge of professional etiquette and standards of personal presentation"
             },
             {
-                value: "4",
+                value: "D",
                 content: "Increase professional network"
             }
 
@@ -98,19 +98,19 @@ var quizQuestions = [
         id: 5,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "Sales, Business Development, or Customer Support"
             },
             {
-                value: "2",
+                value: "B",
                 content: "Operations, Marketing, Accounting, Finance, or HR"
             },
             {
-                value: "3",
+                value: "C",
                 content: "Software Development or IT"
             },
             {
-                value: "4",
+                value: "D",
                 content: "Looking for the next opportunity"
             }
         ]
@@ -121,19 +121,19 @@ var quizQuestions = [
         id: 6,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "Learning something new and creativity"
             },
             {
-                value: "2",
+                value: "B",
                 content: "Goals and/or the end-result"
             },
             {
-                value: "3",
+                value: "C",
                 content: "Money"
             },
             {
-                value: "4",
+                value: "D",
                 content: "Numbers and Statistics"
             }
         ]
@@ -144,19 +144,19 @@ var quizQuestions = [
         id: 7,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "I want to be known"
             },
             {
-                value: "2",
+                value: "B",
                 content: "I want to enjoy life"
             },
             {
-                value: "3",
+                value: "C",
                 content: "I want to learn as much as possible"
             },
             {
-                value: "4",
+                value: "D",
                 content: "I want to help people"
             }
 
@@ -168,19 +168,19 @@ var quizQuestions = [
         id: 8,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "High Impact, Physical movement, i.e. hiking, sports, etc."
             },
             {
-                value: "2",
+                value: "B",
                 content: "Who has hobbies?  I have kids! "
             },
             {
-                value: "3",
+                value: "C",
                 content: "Low Impact, Low-key activity, i.e. reading, television, etc. "
             },
             {
-                value: "4",
+                value: "D",
                 content: "Creating art/content or pursuing side-projects"
             }
         ]
@@ -191,19 +191,19 @@ var quizQuestions = [
         id: 9,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "Work, Creative Endeavors, Family, Friends"
             },
             {
-                value: "2",
+                value: "B",
                 content: "Family, Work, Friends, Creative Endeavors"
             },
             {
-                value: "3",
+                value: "C",
                 content: "Family, Friends, Work, Creative Endeavors"
             },
             {
-                value: "4",
+                value: "D",
                 content: "Creative Endeavors, Work, Family, Friends"
             }
         ]
@@ -214,19 +214,19 @@ var quizQuestions = [
         id: 10,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "I speak up right away"
             },
             {
-                value: "2",
+                value: "B",
                 content: "I wait for an appropriate time, then bring it up"
             },
             {
-                value: "3",
+                value: "C",
                 content: "I wait to see if the problem persists, then eventually say something about it"
             },
             {
-                value: "4",
+                value: "D",
                 content: "I probably wouldn't say anything"
             }
         ]
@@ -237,19 +237,19 @@ var quizQuestions = [
         id: 11,
         answers: [
             {
-                value: "1",
+                value: "A",
                 content: "Excited. I like staying on the cutting edge and experimenting"
             },
             {
-                value: "2",
+                value: "B",
                 content: "Irritated. Things run more smoothly with the established procedures"
             },
             {
-                value: "3",
+                value: "C",
                 content: "Interested. I like changing things up so that I don't get bored"
             },
             {
-                value: "4",
+                value: "D",
                 content: "Slightly apprehensive. I might not be comfortable with the new routine"
             }
         ]

@@ -94,4 +94,10 @@ router.route('/questionnaire')
   });
 
 
+  // account page possibly
+// router.get('users/:id');
+
+// put answers in user db
+// router.put('users/:id/update', userAnswers);  
+
 module.exports = router;
