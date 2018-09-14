@@ -2,9 +2,9 @@ import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { withUser, update } from './services/withUser';
+import Navbar from './pages/Navbar';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import CreateAccountPage from './pages/CreateAccountPage';
@@ -50,7 +50,7 @@ class App extends Component {
                   <Route exact path="/create" component={CreateAccountPage} />
                   <Route exact path="/chat" component={Chat} />
                   <Route exact path="/user/:userID" component={AccountPage} />
-                  <Route exact path="/questionnaire" component={Questionnaire} />
+                  <Route exact path="/questionnaire" component={Questionnaire} user={user}/>
                   <Route exact path="/board" component={Community} />
                   <Route exact path="/chat" component={Chat} user={user}/>
                   <Route exact path="/account/:userID" component={AccountPage} user={user}/>

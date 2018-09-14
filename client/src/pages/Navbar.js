@@ -2,8 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import LoginButton from './LoginButton';
-import LoginMenu from './LoginMenu';
+import LoginButton from '../components/Navbar/LoginButton';
+import LoginMenu from '../components/Navbar/LoginMenu';
 
 import { update } from '../services/withUser';
 

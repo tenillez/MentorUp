@@ -15,7 +15,7 @@ function Result(props) {
       transitionAppearTimeout={500}
     >
       <div>
-        Your match is <strong>{props.quizResult}</strong>!
+      <strong>{props.quizResult}</strong>
       </div>
     </ReactCSSTransitionGroup>
   );
