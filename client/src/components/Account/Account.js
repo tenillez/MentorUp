@@ -15,9 +15,16 @@ class Account extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            firstName: " ",
+            lastName: " ",
+            username: " ",
+            email: " ",
+            location: " ",
             accountID : this.props.match.params.userID
         }
+        console.log(JSON.stringify(this.props.user));
     }
+<<<<<<< HEAD
 
 
     componentWillMount() {
@@ -33,6 +40,15 @@ class Account extends Component {
 
         axios.get("/api/tableTest").then((res) => {
             console.log(res);
+=======
+    componentDidMount(){
+        this.findUser();
+    }
+    findUser() {
+        axios.get("/api/user/" + this.state.accountID).then((res) =>{
+            console.log(res);
+            this.setState(res.data)
+>>>>>>> 301b6371164d98994d07a6d655e2e813894f6bc4
         })
     }
 
@@ -49,11 +65,13 @@ class Account extends Component {
             <h1>
                 Account Page
             </h1>
-            <p>Name: { this.props.match.params.userID } </p>
+            <p>Name: { this.state.firstName + " " + this.state.lastName } </p>
             <br></br>
-            <p>UserName: </p>
+            <p>UserName: { this.state.username } </p>
             <br></br>
-            <p>Email: </p>
+            <p>Email: { this.state.email } </p>
+            <br></br>
+            <p>Location: { this.state.location } </p>
             <br></br>
             <Goals 
             

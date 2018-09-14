@@ -47,6 +47,32 @@ router.route('/auth')
       message: 'You have been logged out.'
     });
   });
+ 
+  router.route('/user/:id')
+    .get((req, res) => {
+      console.log('\n\n\n\n\n\n\n' +req.params.id);
+      db.User.findById(req.params.id, (err, results) => {
+        if (err) {
+          //console.log('LINE 54\n\n\n' + JSON.stringify(res));
+          res.json({user: false});
+        } else {
+          res.json(results)
+        }
+      })
+  });
+ 
+  router.route('/user/:id')
+  .put((req, res) => {
+    console.log('\n\n\n\n\n\n\n' +req.params.id);
+    db.User.findById(req.params.id, (err, results) => {
+      if (err) {
+        //console.log('LINE 54\n\n\n' + JSON.stringify(res));
+        res.json({user: false});
+      } else {
+        res.json(results)
+      }
+    })
+});
 
 router.route('/users')
   // POST to /api/users will create a new user
@@ -85,7 +111,17 @@ router.route('/questionnaire')
   });
 
 
+<<<<<<< HEAD
 
 
 
 module.exports = router;
+=======
+  // account page possibly
+// router.get('users/:id');
+
+// put answers in user db
+// router.put('users/:id/update', userAnswers);  
+
+module.exports = router;
+>>>>>>> 301b6371164d98994d07a6d655e2e813894f6bc4

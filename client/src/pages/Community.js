@@ -1,4 +1,5 @@
 import React from 'react';
+import ResultContainer from "../components/Meetup/ResultContainer";
 
 const Community = () => {
     return (
@@ -47,6 +48,7 @@ const Community = () => {
                         </div>
                     </div>
                 </div>
+                {/* break this out into a component */}
                 <div className="col-lg-5">
                     <h3>Meetups</h3>
                     <p>Click a group below to see their upcoming events.</p>
@@ -55,6 +57,9 @@ const Community = () => {
                     <button className="btn btn-dark" value="ChickTech-Austin">ChickTech ATX</button>
                     <button className="btn btn-dark" value="Ladies-That-UX-Austin">Ladies That UX Austin</button>
                     <button className="btn btn-dark" value="IEEE-Women-in-Engineering-Book-Club">Women in Engineering Book Club</button>
+                    <div className="card meetup-result">
+                        <ResultContainer />
+                    </div>
                 </div>
             </div>
         </div>
