@@ -38,6 +38,16 @@ class Questionnaire extends Component {
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
+  componentDidMount() {
+    this.findUser();
+  }
+  findUser() {
+    axios.get("/api/user/" + this.state.accountID).then((res) => {
+      this.setState(res.data)
+    });
+    console.log(this.state.accountID)
+  }
+
   componentWillMount() {
     const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
     this.setState({
@@ -46,6 +56,7 @@ class Questionnaire extends Component {
       answerOptions: shuffledAnswerOptions[0]
     });
   }
+  
   shuffleArray(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -112,17 +123,6 @@ class Questionnaire extends Component {
       this.setState({ result: 'not available at this time' });
     }
   }
-  componentDidMount() {
-    this.findUser();
-  }
-  findUser() {
-    axios.get("/api/user/" + this.state.accountID).then((res) => {
-      console.log(res);
-      this.setState(res.data)
-    });
-    console.log(this.state.accountID)
-  }
-
 
   renderQuiz() {
     return (
@@ -140,7 +140,6 @@ class Questionnaire extends Component {
   storeResults() {
     let userArray = this.state.answers;
 
-    console.log(this.state.userID);
     axios.put("/api/user/" + this.state.userID, {
       userAnswers: userArray
     })
@@ -160,7 +159,6 @@ class Questionnaire extends Component {
       </div>
     );
   };
-
 
   render() {
     return (
