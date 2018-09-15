@@ -61,6 +61,7 @@ router.route('/auth')
       })
   });
  
+  // for useranswers from questionnaire... this doesn't work... i know :(
   router.route('/user/:id')
   .put((req, res) => {
     console.log('\n\n\n\n\n\n\n' + req.params.id);

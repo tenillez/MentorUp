@@ -148,7 +148,7 @@ class Questionnaire extends Component {
 
     console.log(id);
     axios.put("/api/user/" + id, {
-      userAnswers: userArray
+      userAnswers: userArray,
     })
     .then(res => {
       console.log(res.data.userAnswers);
