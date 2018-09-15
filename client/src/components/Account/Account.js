@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {withRouter} from 'react-router';
+import { withRouter } from 'react-router';
 import "./Account.css";
 import axios from 'axios';
 import { withUser } from '../../services/withUser';
@@ -20,37 +20,52 @@ class Account extends Component {
             username: " ",
             email: " ",
             location: " ",
-            accountID : this.props.match.params.userID
+            accountID: this.props.match.params.userID
         }
         console.log(JSON.stringify(this.props.user));
     }
-    componentDidMount(){
+    componentDidMount() {
         this.findUser();
     }
     findUser() {
-        axios.get("/api/user/" + this.state.accountID).then((res) =>{
+        axios.get("/api/user/" + this.state.accountID).then((res) => {
             console.log(res);
             this.setState(res.data)
         })
     }
 
+
+
+
+
+
+
     render() {
         return (
             <div>
-            <h1>
-                Account Page
-            </h1>
-            <p>Name: { this.state.firstName + " " + this.state.lastName } </p>
-            <br></br>
-            <p>UserName: { this.state.username } </p>
-            <br></br>
-            <p>Email: { this.state.email } </p>
-            <br></br>
-            <p>Location: { this.state.location } </p>
-            <br></br>   
+                <h1>
+                    Account Information
+                </h1>
+                <p>Name: {this.state.firstName + " " + this.state.lastName} </p>
 
-            <Goals />
-           
+                <p>UserName: {this.state.username} </p>
+
+                <p>Email: {this.state.email} </p>
+
+                <p>Location: {this.state.location} </p>
+
+                <h1>
+                    Video Conference Options
+                </h1>
+
+                <img src={require('./img/zoom.jpg')} /> 
+
+                <img src={require('./img/hangouts.png')} />
+
+                <img src={require('./img/skype.png')} />
+
+                <Goals />
+
 
             </div>
         )

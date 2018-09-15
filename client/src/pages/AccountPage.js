@@ -10,8 +10,11 @@ class AccountPage extends Component {
             <div>
                 < Account />
             </div>
+            
         )
+        
     }
+    
 }
 
 export default AccountPage;
