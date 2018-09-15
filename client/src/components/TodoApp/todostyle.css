@@ -9,7 +9,7 @@
 } */
 
 body {
-    background: #1abc9c;
+    background: #16a085; 
 }
 
 #app {
@@ -22,9 +22,8 @@ body {
 
 h1 {
     font-family: 'Pacifico', cursive;
-    color: #1abc9c;
+    color: #16a085; 
 }
-
 input, button {
     padding: 0.5em;
     margin: 2px;
@@ -35,7 +34,7 @@ input, button, div#app {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 input {
-    border: 2px solid #16a085;
+    border: 2px solid#16a085;
 }
 
 button {
@@ -88,11 +87,11 @@ form.create-todo-form input {
 
 
 tr.todo-not-completed td:first-of-type {
-    color: #e74c3c;
+    color:#e74c3c; 
 }
 
 tr.todo-completed td:first-of-type {
-    color: #1abc9c;
+    color: #16a085;  
 }
 
 tr > td:first-of-type {
@@ -112,5 +111,5 @@ tr > td > form > input {
 }
 
 .delete-btn, .cancel-btn {
-    background-color: #e74c3c;
+    background-color:   #e74c3c; 
 }
