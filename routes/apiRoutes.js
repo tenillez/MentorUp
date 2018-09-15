@@ -50,7 +50,7 @@ router.route('/auth')
  
   router.route('/user/:id')
     .get((req, res) => {
-      console.log('\n\n\n\n\n\n\n' +req.params.id);
+      console.log('\n\n\n\n\n\n\n' + req.params.id);
       db.User.findById(req.params.id, (err, results) => {
         if (err) {
           //console.log('LINE 54\n\n\n' + JSON.stringify(res));
@@ -63,10 +63,9 @@ router.route('/auth')
  
   router.route('/user/:id')
   .put((req, res) => {
-    console.log('\n\n\n\n\n\n\n' +req.params.id);
+    console.log('\n\n\n\n\n\n\n' + req.params.id);
     db.User.findById(req.params.id, (err, results) => {
       if (err) {
-        //console.log('LINE 54\n\n\n' + JSON.stringify(res));
         res.json({user: false});
       } else {
         res.json(results)
