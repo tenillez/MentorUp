@@ -138,17 +138,13 @@ class Questionnaire extends Component {
   }
 
   storeResults() {
-    let userArray = this.state.answers;
     let id = (this.props.user.id);
-    console.log(this.props.user.id);
 
-    console.log(id);
     axios.put("/api/user/" + id, {
-      userAnswers: userArray
+      userAnswers: this.state.answers
     })
     .then(res => {
       console.log(res.data.userAnswers);
-      console.log(userArray)
     })
     .catch(err => {
       console.log(err)
@@ -158,9 +154,7 @@ class Questionnaire extends Component {
   renderResult() {
     this.storeResults();
     return (
-      <div>
-        <Result quizResult={this.state.answers} />
-      </div>
+      <Result />
     );
   };
 

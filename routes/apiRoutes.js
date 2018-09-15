@@ -64,16 +64,13 @@ router.route('/auth')
   // for useranswers from questionnaire... this doesn't work... i know :(
   router.route('/user/:id')
   .put((req, res) => {
-    console.log('\n\n\n\n\n\n\n' + req.params.id);
-    db.User.findById(req.params.id, (err, results) => {
-      if (err) {
-        res.json({user: false});
-      } else {
-        res.json(results)
-      }
-    })
-});
-
+    db.User.findOneAndUpdate(
+      {_id: req.params.id}, {$set:req.body} , { new: false })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+    });
+    
 router.route('/users')
   // POST to /api/users will create a new user
   .post((req, res, next) => {
