@@ -1,1 +1,1 @@
-// export { AnswerOption, Question, QuestionCount, Quiz, Result } from "./Matching";
+export { AnswerOption, Question, QuestionCount, Quiz, Result } from "./Matching";
