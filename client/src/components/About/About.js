@@ -8,7 +8,7 @@ const About = (props) => {
         <div>
             <div className="jumbotron">
                 <h1>Mentor Up</h1>
-                <p className="lead">Mentorship pairing geared to further women in tech</p>
+                <p className="lead">Mentorship pairing geared to empowering women in tech.</p>
                 {/* <a className="btn btn-light btn" role="button">Learn More</a> */}
 
                 <div className="container">
