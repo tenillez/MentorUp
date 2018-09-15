@@ -66,7 +66,7 @@ router.route('/auth')
     console.log('\n\n\n\n\n\n\n' + req.params.id);
     db.User.findById(req.params.id, (err, results) => {
       if (err) {
-        res.json({userAnswers: results});
+        res.json({user: false});
       } else {
         res.json(results)
       }

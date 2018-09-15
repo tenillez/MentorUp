@@ -1,17 +1,17 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
-// function Question(props) {
+function Question(props) {
 
-//   return (
-//     <h4 className="question">{props.content}</h4>
-//   );
+  return (
+    <h4 className="question">{props.content}</h4>
+  );
 
-// }
+}
 
-// Question.propTypes = {
-//   content: PropTypes.string.isRequired
-// };
+Question.propTypes = {
+  content: PropTypes.string.isRequired
+};
 
-// export default Question;
+export default Question;
