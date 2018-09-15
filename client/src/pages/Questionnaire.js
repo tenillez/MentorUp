@@ -33,9 +33,19 @@ class Questionnaire extends Component {
       result: '',
       accountID: this.props.match.params.userID
     };
-        console.log(JSON.stringify(this.props.user));
+        // console.log(JSON.stringify(this.props.user.id));
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
+  }
+
+  componentDidMount() {
+    this.findUser();
+  }
+  findUser() {
+    axios.get("/api/user/" + this.state.accountID).then((res) => {
+      this.setState(res.data)
+    });
+    console.log(this.state.accountID)
   }
 
   componentWillMount() {
@@ -46,6 +56,7 @@ class Questionnaire extends Component {
       answerOptions: shuffledAnswerOptions[0]
     });
   }
+  
   shuffleArray(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -112,17 +123,6 @@ class Questionnaire extends Component {
       this.setState({ result: 'not available at this time' });
     }
   }
-  componentDidMount() {
-    this.findUser();
-  }
-  findUser() {
-    axios.get("/api/user/" + this.state.accountID).then((res) => {
-      console.log(res);
-      this.setState(res.data)
-    });
-    console.log(this.state.accountID)
-  }
-
 
   renderQuiz() {
     return (
@@ -138,14 +138,13 @@ class Questionnaire extends Component {
   }
 
   storeResults() {
-    let userArray = this.state.answers;
+    let id = (this.props.user.id);
 
-    console.log(this.state.userID);
-    axios.put("/api/user/" + this.state.userID, {
-      userAnswers: userArray
+    axios.put("/api/user/" + id, {
+      userAnswers: this.state.answers
     })
     .then(res => {
-      console.log(res)
+      console.log(res.data.userAnswers);
     })
     .catch(err => {
       console.log(err)
@@ -155,16 +154,13 @@ class Questionnaire extends Component {
   renderResult() {
     this.storeResults();
     return (
-      <div>
-        <Result quizResult={this.state.answers} />
-      </div>
+      <Result />
     );
   };
 
-
   render() {
     return (
-      <div>
+      <div className="qContainer">
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
@@ -172,3 +168,5 @@ class Questionnaire extends Component {
 }
 
 export default withUser(Questionnaire);
+
+

@@ -5,7 +5,7 @@ export default class CreateTodo extends React.Component {
         return (
             <form onSubmit={this.onSubmit.bind(this)} className="create-todo-form">
                 <input type="text" placeholder="Task" ref="taskMessage" autoFocus/>
-                <button>Add</button>
+                <button className="btn btn">Add</button>
             </form>
         );
     }
