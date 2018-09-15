@@ -2,7 +2,7 @@
   .App {
     text-align: center;
     font-family: 'PT Sans', sans-serif;
-    height: 100vh
+    height: 100vh;
   }
   body {
     font-family: 'PT Sans', sans-serif;
@@ -33,6 +33,10 @@
     margin-bottom: 5%;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem
+  }
+
+  .container{
+    height:100vh;
   }
   .signupForm, .signinForm, .enter-chat-form {
     background: white;
@@ -70,6 +74,6 @@
 
   /* David has the fix in his next push....  */
   #footer {
-    position: fixed;
+    
     bottom: 0;
   }

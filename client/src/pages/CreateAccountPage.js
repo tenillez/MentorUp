@@ -1,7 +1,15 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 
+const viewHeight = {
+ 
+}
+
 class CreateAccountPage extends Component {
+
+  
+
+
   state = {
     firstName: "",
     lastName: "",
@@ -68,6 +76,8 @@ class CreateAccountPage extends Component {
         });
       });
   }
+
+  
   render() {
     const { error } = this.state;
 

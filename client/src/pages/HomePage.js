@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withUser } from '../services/withUser';
 import About from "../components/About";
 
+
 class HomePage extends Component {
   state = {
     user: null
