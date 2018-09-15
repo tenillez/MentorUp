@@ -61,7 +61,7 @@ router.route('/auth')
       })
   });
  
-  // for useranswers from questionnaire... this doesn't work... i know :(
+  // for userAnswers from questionnaire
   router.route('/user/:id')
   .put((req, res) => {
     db.User.findOneAndUpdate(
