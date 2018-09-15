@@ -125,8 +125,7 @@ class Questionnaire extends Component {
 
 
   renderQuiz() {
-    return (
-      <Quiz
+     <Quiz
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
@@ -134,6 +133,11 @@ class Questionnaire extends Component {
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
+    return (
+      <div>
+
+      </div>
+     
     );
   }
 
