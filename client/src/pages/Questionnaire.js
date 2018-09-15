@@ -33,7 +33,7 @@ class Questionnaire extends Component {
       result: '',
       accountID: this.props.match.params.userID
     };
-        console.log(JSON.stringify(this.props.user.id));
+        // console.log(JSON.stringify(this.props.user.id));
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -125,7 +125,8 @@ class Questionnaire extends Component {
   }
 
   renderQuiz() {
-     <Quiz
+    return (
+      <Quiz
         answer={this.state.answer}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
@@ -133,11 +134,6 @@ class Questionnaire extends Component {
         questionTotal={quizQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
-    return (
-      <div>
-
-      </div>
-     
     );
   }
 
@@ -148,7 +144,7 @@ class Questionnaire extends Component {
 
     console.log(id);
     axios.put("/api/user/" + id, {
-      userAnswers: userArray,
+      userAnswers: userArray
     })
     .then(res => {
       console.log(res.data.userAnswers);
@@ -170,7 +166,7 @@ class Questionnaire extends Component {
 
   render() {
     return (
-      <div>
+      <div className="qContainer">
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
@@ -178,3 +174,5 @@ class Questionnaire extends Component {
 }
 
 export default withUser(Questionnaire);
+
+
