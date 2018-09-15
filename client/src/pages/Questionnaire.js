@@ -166,7 +166,7 @@ class Questionnaire extends Component {
 
   render() {
     return (
-      <div>
+      <div className="qContainer">
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
@@ -174,3 +174,5 @@ class Questionnaire extends Component {
 }
 
 export default withUser(Questionnaire);
+
+
