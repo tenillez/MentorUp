@@ -59,3 +59,7 @@
     color: white;
     text-align: right
   }
+
+  .card .fa {
+    font-size: 1.5rem
+  }
