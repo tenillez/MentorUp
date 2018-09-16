@@ -1,22 +1,22 @@
 var quizQuestions = [
-    {
-        question: "Are you interested in being a Mentor or a Mentee?",
-        id: 1,
-        answers: [
-            {
-                value: "True",
-                content: "Mentor"
-            },
-            {
-                value: "False",
-                content: "Mentee"
-            },
-            // {
-            //     value: 2,
-            //     content: "both"
-            // }
-        ]
-    },
+    // {
+    //     question: "Are you interested in being a Mentor or a Mentee?",
+    //     id: 1,
+    //     answers: [
+    //         {
+    //             value: "True",
+    //             content: "Mentor"
+    //         },
+    //         {
+    //             value: "False",
+    //             content: "Mentee"
+    //         },
+    //         // {
+    //         //     value: 2,
+    //         //     content: "both"
+    //         // }
+    //     ]
+    // },
     {
         question: "How many years of experience do you have?",
         weight: 10,

@@ -17,17 +17,17 @@ class Questionnaire extends Component {
       question: '',
       answerOptions: [],
       answer: '',
+      userAnswers: [],
+      isMentor: '',
       answers: [],
-      isMentor: true,
       answersCount: {
         1: 0,
         2: 0,
         3: 0,
         4: 0,
       },
-      userAnswers: [],
       result: '',
-      accountID: this.props.match.params.userID
+      accountID: this.props.match.params.userID || null
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -133,22 +133,13 @@ class Questionnaire extends Component {
 
   storeResults() {
     let id = (this.props.user.id);
-    console.log(this.state.answers[0]);
+    let multichoice = (this.state.answers);
+    
+    console.log(multichoice);
 
     // our userAnswers
     axios.put("/api/user/" + id, {
-      userAnswers: this.state.answers
-    })
-    .then(res => {
-      console.log(res.data.userAnswers);
-    })
-    .catch(err => {
-      console.log(err)
-    });
-
-    // user is a mentor or mentee
-    axios.put("/api/user/" + id, {
-      isMentor: this.state.answers[0]
+      userAnswers: multichoice
     })
     .then(res => {
       console.log(res.data);
@@ -158,7 +149,7 @@ class Questionnaire extends Component {
     });
   }
 
-  renderResult() {
+    renderResult() {
     this.storeResults();
     return (
       <Result />
