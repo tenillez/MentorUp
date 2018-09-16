@@ -72,6 +72,8 @@ form.create-todo-form {
 
 form.create-todo-form input {
     width: calc(100% - 50px);
+    border-bottom: none;
+    margin-bottom: 15px;
 }
 
 tr > td:first-of-type {

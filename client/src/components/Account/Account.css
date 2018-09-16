@@ -1,3 +1,6 @@
+img:hover {
+    filter: blur(4px); 
+}
 .card .imgCard {
     height: 200px;
     width: 100%;

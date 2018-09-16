@@ -40,7 +40,6 @@ class Questionnaire extends Component {
     axios.get("/api/user/" + this.state.accountID).then((res) => {
       this.setState(res.data)
     });
-    console.log(this.state.accountID)
   }
 
   componentWillMount() {
