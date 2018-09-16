@@ -27,7 +27,7 @@ export default class TodosListItem extends React.Component {
     }
 
     renderTask () {
-        const { task, isCompleted } = this.props;
+        const { task } = this.props;
         const taskStyle = {
             cursor: "pointer"
         };

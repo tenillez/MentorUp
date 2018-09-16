@@ -1,15 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 
-const viewHeight = {
- 
-}
-
 class CreateAccountPage extends Component {
-
-  
-
-
   state = {
     firstName: "",
     lastName: "",
@@ -163,6 +155,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 {/* mentor */}
+
                 {/* upload picture */}
                 {/* <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
                   <input

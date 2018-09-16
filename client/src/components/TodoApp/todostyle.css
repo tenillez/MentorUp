@@ -4,14 +4,6 @@
     box-sizing: border-box;
 }
 
-/* body, input, button {
-    font-family: 'Open Sans', sans-serif;
-} */
-
-body {
-    /* background: #16a085;  */
-}
-
 #app {
     max-width: 100%;
     width: 900px;
@@ -32,9 +24,6 @@ input, button {
 }
 input, button, div#app {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-}
-input {
-    /* border: 2px solid#16a085; */
 }
 
 button {
@@ -85,15 +74,6 @@ form.create-todo-form input {
     width: calc(100% - 50px);
 }
 
-
-tr.todo-not-completed td:first-of-type {
-    /* color: #87a08e;  */
-}
-
-tr.todo-completed td:first-of-type {
-    /* color: #87a08e;  */
-}
-
 tr > td:first-of-type {
     font-size: 1.5em;
     font-weight: bold;
@@ -108,8 +88,4 @@ tr > td:first-of-type {
 
 tr > td > form > input {
     width: 100%;
-}
-
-.delete-btn, .cancel-btn {
-    /* background-color:   #a5a1c5;  */
 }

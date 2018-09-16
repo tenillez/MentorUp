@@ -1,7 +1,7 @@
 import React from "react";
 import TodosList from "../TodoList"
 import CreateTodo from "../CreateTodo";
-import css from "./todostyle.css";
+import "./todostyle.css";
 
 const todos = {
     items: [],

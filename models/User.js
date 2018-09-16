@@ -41,11 +41,9 @@ const UserSchema = new Schema({
   },
   isMentor: {
     type: Boolean,
-    default: false
   },
   isMatched: {
     type: Boolean,
-    default: false
   },
   userAnswers: {
     type: Array,

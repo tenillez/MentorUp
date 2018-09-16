@@ -7,7 +7,6 @@ import "../components/Matching/Matching.css"
 import axios from 'axios';
 import { withUser } from '../services/withUser';
 
-
 class Questionnaire extends Component {
   constructor(props) {
     super(props);
@@ -19,21 +18,17 @@ class Questionnaire extends Component {
       answerOptions: [],
       answer: '',
       answers: [],
+      isMentor: true,
       answersCount: {
-        True: "",
-        False: "",
-        A: 0,
-        B: 0,
-        C: 0,
-        D: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
       },
-      isMentor: '',
-      isMatched: '',
       userAnswers: [],
       result: '',
       accountID: this.props.match.params.userID
     };
-        // console.log(JSON.stringify(this.props.user.id));
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -139,13 +134,25 @@ class Questionnaire extends Component {
 
   storeResults() {
     let id = (this.props.user.id);
-    
+    console.log(this.state.answers[0]);
 
+    // our userAnswers
     axios.put("/api/user/" + id, {
       userAnswers: this.state.answers
     })
     .then(res => {
       console.log(res.data.userAnswers);
+    })
+    .catch(err => {
+      console.log(err)
+    });
+
+    // user is a mentor or mentee
+    axios.put("/api/user/" + id, {
+      isMentor: this.state.answers[0]
+    })
+    .then(res => {
+      console.log(res.data);
     })
     .catch(err => {
       console.log(err)
@@ -169,5 +176,3 @@ class Questionnaire extends Component {
 }
 
 export default withUser(Questionnaire);
-
-

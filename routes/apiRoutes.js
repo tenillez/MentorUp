@@ -61,16 +61,26 @@ router.route('/auth')
       })
   });
  
-  // for userAnswers from questionnaire
-  router.route('/user/:id')
-  .put((req, res) => {
-    db.User.findOneAndUpdate(
-      {_id: req.params.id}, {$set:req.body} , { new: false })
-      .then(function(dbUser) {
-        res.json(dbUser);
-      });
+// for userAnswers from questionnaire
+router.route('/user/:id')
+.put((req, res) => {
+  db.User.findOneAndUpdate(
+    {_id: req.params.id}, {$set:req.body} , { new: true })
+    .then(function(dbUser) {
+      res.json(dbUser);
     });
+  });
     
+// for userAnswers from questionnaire to determine mentor or mentee
+router.route('/user/:id')
+.put((req, res) => {
+  db.User.findOneAndUpdate(
+    {_id: req.params.id}, {$set: {isMentor:req.body}}, { new: true})
+    .then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+
 router.route('/users')
   // POST to /api/users will create a new user
   .post((req, res, next) => {
