@@ -139,6 +139,7 @@ class Questionnaire extends Component {
 
   storeResults() {
     let id = (this.props.user.id);
+    
 
     axios.put("/api/user/" + id, {
       userAnswers: this.state.answers

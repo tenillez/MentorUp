@@ -11,6 +11,9 @@
   a {
     color: #7E6B8F
   }
+  .container{
+    height:86vh;
+  }
 
   
   /* headers */
@@ -35,9 +38,6 @@
     border-top-right-radius: 0.5rem
   }
 
-  .container{
-    height:100vh;
-  }
   .signupForm, .signinForm, .enter-chat-form {
     background: white;
     text-align: center;

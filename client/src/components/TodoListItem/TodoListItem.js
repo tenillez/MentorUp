@@ -13,15 +13,15 @@ export default class TodosListItem extends React.Component {
         if (this.state.isEditing) {
             return (
                 <td>
-                    <button className="btn btn" onClick={this.editTask.bind(this)}>Save</button>
-                    <button className="cancel-btn btn" onClick={this.setEditState.bind(this, false)}>Cancel</button>
+                    <button className="btn btn-dark" onClick={this.editTask.bind(this)}>Save<i className="fa fa-floppy-o" aria-hidden="true"></i></button>
+                    <button className="cancel-btn btn" onClick={this.setEditState.bind(this, false)}>Cancel<i className="fa fa-ban" aria-hidden="true"></i></button>
                 </td>
             );
         }
         return (
             <td>
-                <button className="btn btn" onClick={this.setEditState.bind(this, true)}>Edit</button>
-                <button className="delete-btn btn" onClick={this.deleteTask.bind(this)}>Delete</button>
+                <button className="btn btn-dark" onClick={this.setEditState.bind(this, true)}>Edit<i className="fa fa-pencil" aria-hidden="true"></i></button>
+                <button className="delete-btn btn" onClick={this.deleteTask.bind(this)}>Delete<i className="fa fa-trash" aria-hidden="true"></i></button>
             </td>
         );
     }
