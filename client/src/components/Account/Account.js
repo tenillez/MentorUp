@@ -60,17 +60,17 @@ class Account extends Component {
                         <div className="row">
                             <div className="col-sm-4">
                                 <div className="card imgCard">
-                                    <img src={require('./img/zoom.jpg')} />
+                                    <img src={require('./img/zoom.jpg')} alt="zoom" />
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard">
-                                    <img src={require('./img/hangouts.png')} />
+                                    <img src={require('./img/hangouts.png')} alt="google-hangouts"/>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard">
-                                    <img src={require('./img/skype.png')} />
+                                    <img src={require('./img/skype.png')} alt="skype"/>
                                 </div>
                             </div>
                         </div>

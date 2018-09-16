@@ -15,7 +15,6 @@
     height:86vh;
   }
 
-  
   /* headers */
   h1, h2, h3 {
     margin-bottom: 10px;
@@ -37,7 +36,6 @@
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem
   }
-
   .signupForm, .signinForm, .enter-chat-form {
     background: white;
     text-align: center;
@@ -72,8 +70,7 @@
     background: silver
   }
 
-  /* David has the fix in his next push....  */
+/* footer */
   #footer {
-    
     bottom: 0;
   }

@@ -18,7 +18,7 @@ const Footer = () =>{
 
         <div id="footer">
             <div id="repolink">
-            <a href="https://github.com/tenillez/MentorUp" target="_blank"><i className="fab fa-github"></i></a>
+            <a href="https://github.com/tenillez/MentorUp" rel='noopener noreferrer' target="_blank"><i className="fab fa-github"></i></a>
             
             <div id="social">
             <i className="fab fa-twitter"></i>
