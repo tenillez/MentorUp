@@ -5,12 +5,6 @@ import axios from 'axios';
 import { withUser } from '../../services/withUser';
 import Goals from "../Goals";
 
-
-
-
-
-
-
 class Account extends Component {
     constructor(props) {
         super(props);
@@ -34,40 +28,56 @@ class Account extends Component {
         })
     }
 
-
-
-
-
-
-
     render() {
         return (
             <div>
-                <h1>
-                    Account Information
-                </h1>
-                <p>Name: {this.state.firstName + " " + this.state.lastName} </p>
+                <div className="card welcome">
+                    <h1>
+                        Hi {this.state.firstName}! 
+                        {/* + " " + this.state.lastName}! */}
+                    </h1>
+                    <hr />
+                    <div className="row">
+                        <div className="col-lg-8">
+                            <p>Username: {this.state.username} </p>
 
-                <p>UserName: {this.state.username} </p>
+                            <p>Email: {this.state.email} </p>
 
-                <p>Email: {this.state.email} </p>
-
-                <p>Location: {this.state.location} </p>
-
-                <h1>
-                    Video Conference Options
-                </h1>
-
-                <img src={require('./img/zoom.jpg')} /> 
-
-                <img src={require('./img/hangouts.png')} />
-
-                <img src={require('./img/skype.png')} />
-
-                <Goals />
-
-
+                            <p>Location: {this.state.location} </p>
+                        </div>
+                        <div className="col-lg-4">
+                            <p>You are paired with: A great mentor</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="goalsContainer">
+                    <Goals />
+                </div>
+                <div className="card video">
+                    <div className="card-body">
+                        <h1>Video Conference Options</h1>
+                        <hr />
+                        <div className="row">
+                            <div className="col-sm-4">
+                                <div className="card imgCard">
+                                    <img src={require('./img/zoom.jpg')} alt="zoom" />
+                                </div>
+                            </div>
+                            <div className="col-sm-4">
+                                <div className="card imgCard">
+                                    <img src={require('./img/hangouts.png')} alt="google-hangouts"/>
+                                </div>
+                            </div>
+                            <div className="col-sm-4">
+                                <div className="card imgCard">
+                                    <img src={require('./img/skype.png')} alt="skype"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         )
     }
 }

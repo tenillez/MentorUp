@@ -1,15 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 
-const viewHeight = {
- 
-}
-
 class CreateAccountPage extends Component {
-
-  
-
-
   state = {
     firstName: "",
     lastName: "",
@@ -18,7 +10,7 @@ class CreateAccountPage extends Component {
     password1: "",
     email: "",
     location: "",
-    // isMentor: "",
+    isMentor: "",
     error: ""
   }
   handleInputChanged = (event) => {
@@ -29,7 +21,7 @@ class CreateAccountPage extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const { username, password, firstName, lastName, email, location } = this.state;
+    const { username, password, firstName, lastName, email, location, isMentor } = this.state;
     const { history } = this.props;
 
     this.setState({
@@ -63,7 +55,7 @@ class CreateAccountPage extends Component {
       lastName,
       email,
       location,
-      // isMentor
+      isMentor
     })
       .then(user => {
         // if the response is successful, make them log in
@@ -77,7 +69,7 @@ class CreateAccountPage extends Component {
       });
   }
 
-  
+
   render() {
     const { error } = this.state;
 
@@ -163,6 +155,21 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 {/* mentor */}
+                <div className="form-group">
+                <i className="fa fa-handshake-o" aria-hidden="true"></i>
+                Are you interesting in being a Mentor or Mentee?
+                  <select
+                    name="isMentor"
+                    onChange={this.handleInputChanged}
+                    className="form-select"
+                    type="drop-down"
+                    value={this.state.isMentor}
+                  >
+                    <option>Please Pick One</option>
+                    <option value="true">Mentor</option>
+                    <option value="false">Mentee</option>
+                  </select>
+                </div>
                 {/* upload picture */}
                 {/* <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
                   <input

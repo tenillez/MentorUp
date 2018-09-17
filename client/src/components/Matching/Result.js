@@ -8,7 +8,7 @@ const Result = () => {
           <div className="col-lg-6">
             <div className="card">
               <h6>Thank you for taking the questionnaire.</h6>
-              <button>Meet your Mentor!</button>
+              <button className="btn btn-dark">Meet your Mentor!</button>
             </div>
           </div>
         </div>

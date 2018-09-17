@@ -11,13 +11,14 @@
   }
   .jumbotron .container {
     background-color: rgba(255,255,255,0.5);
-    max-height: 350px;
+    max-height: 375px;
     border-radius: 0.5rem;
     padding: 5%;
     max-width:95%;
     text-align: right;
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0 6px 30px 5px rgba(0, 0, 0, 0.4);
+    overflow: hidden
   }
   .jumbotron .container .btn {
       background:  #7E6B8F;
@@ -44,7 +45,7 @@
     background: silver
   }
   .card .card {
-    height: 150px;
+    height: 160px;
     width: 100%;
     background: #353a3f;
     margin: 5px;
@@ -57,5 +58,8 @@
   .why-card {
     background: #353a3f;
     color: white;
-    text-align: right
+    text-align: right;
+  }
+  .card .fa {
+    font-size: 1.5rem
   }

@@ -7,7 +7,6 @@ import "../components/Matching/Matching.css"
 import axios from 'axios';
 import { withUser } from '../services/withUser';
 
-
 class Questionnaire extends Component {
   constructor(props) {
     super(props);
@@ -18,22 +17,18 @@ class Questionnaire extends Component {
       question: '',
       answerOptions: [],
       answer: '',
+      userAnswers: [],
+      isMentor: '',
       answers: [],
       answersCount: {
-        True: "",
-        False: "",
-        A: 0,
-        B: 0,
-        C: 0,
-        D: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
       },
-      isMentor: '',
-      isMatched: '',
-      userAnswers: [],
       result: '',
-      accountID: this.props.match.params.userID
+      accountID: this.props.match.params.userID || null
     };
-        // console.log(JSON.stringify(this.props.user.id));
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -45,7 +40,6 @@ class Questionnaire extends Component {
     axios.get("/api/user/" + this.state.accountID).then((res) => {
       this.setState(res.data)
     });
-    console.log(this.state.accountID)
   }
 
   componentWillMount() {
@@ -139,19 +133,23 @@ class Questionnaire extends Component {
 
   storeResults() {
     let id = (this.props.user.id);
+    let multichoice = (this.state.answers);
+    
+    console.log(multichoice);
 
+    // our userAnswers
     axios.put("/api/user/" + id, {
-      userAnswers: this.state.answers
+      userAnswers: multichoice
     })
     .then(res => {
-      console.log(res.data.userAnswers);
+      console.log(res.data);
     })
     .catch(err => {
       console.log(err)
     });
   }
 
-  renderResult() {
+    renderResult() {
     this.storeResults();
     return (
       <Result />
@@ -168,5 +166,3 @@ class Questionnaire extends Component {
 }
 
 export default withUser(Questionnaire);
-
-
