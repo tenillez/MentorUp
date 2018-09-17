@@ -1,5 +1,6 @@
 import React from 'react';
-import ResultContainer from "../components/Meetup/ResultContainer";
+// import ResultContainer from "../components/Meetup/ResultContainer";
+import Meetup from "../components/Meetup";
 
 const Community = () => {
     return (
@@ -57,9 +58,12 @@ const Community = () => {
                     <button className="btn btn-dark" value="ChickTech-Austin">ChickTech ATX</button>
                     <button className="btn btn-dark" value="Ladies-That-UX-Austin">Ladies That UX Austin</button>
                     <button className="btn btn-dark" value="IEEE-Women-in-Engineering-Book-Club">Women in Engineering Book Club</button>
+                    <Meetup />
                     <div className="card meetup-result">
-                        <ResultContainer />
+                        
+                 
                     </div>
+                    
                 </div>
             </div>
         </div>
