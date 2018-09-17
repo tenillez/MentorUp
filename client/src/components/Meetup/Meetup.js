@@ -2,9 +2,6 @@ import React from "react";
 import { render } from "react-dom";
 import Meetups from "react-meetup-meetups";
 
-export default class Meetup extends React.Component {
-    
-}
 const styles = {
     fontFamily: "sans-serif",
     textAlign: "left"
