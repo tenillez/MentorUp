@@ -2,19 +2,9 @@ import React from "react";
 import { render } from "react-dom";
 import Meetups from "react-meetup-meetups";
 
-// const ResultList = props => (
-//   <ul className="list-group">
-//     {props.results.map(result => (
-//       <li className="list-group-item" key={result.id}>
-//         <img
-//           alt={result.title}
-//           className="img-fluid"
-//           src={result.images.original.url}
-//         />
-//       </li>
-//     ))}
-//   </ul>
-// );
+export default class Meetup extends React.Component {
+    
+}
 const styles = {
     fontFamily: "sans-serif",
     textAlign: "left"
@@ -50,6 +40,9 @@ const App = () => (
   </div>
 );
 
-render(<App />, document.getElementById("root"));
+// render(<App />, document.getElementById("meetup"));
 
-export default Meetup;
+// export default Meetup;
+
+
+// render(<Meetup />, document.querySelector("#meetup")) 
