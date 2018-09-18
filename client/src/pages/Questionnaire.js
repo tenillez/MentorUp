@@ -18,15 +18,15 @@ class Questionnaire extends Component {
       answerOptions: [],
       answer: '',
       userAnswers: [],
-      isMentor: '',
       answers: [],
+      pairing: this.props.match.params.pairing,
       answersCount: {
         1: 0,
         2: 0,
         3: 0,
         4: 0,
       },
-      result: '',
+      result: this.props.match.params.pairing,
       accountID: this.props.match.params.userID 
     };
 
@@ -39,6 +39,8 @@ class Questionnaire extends Component {
   findUser() {
     axios.get("/api/user/" + this.state.accountID).then((res) => {
       this.setState(res.data)
+      console.log(res.data);
+      console.log(this.state.pairing);
     });
   }
 
@@ -111,7 +113,9 @@ class Questionnaire extends Component {
   }
 
   setResults(result) {
+    console.log("result" + this.state.result);
     if (result.length === 1) {
+
       this.setState({ result: result });
     } else {
       this.setState({ result: 'not available at this time' });
@@ -158,8 +162,9 @@ class Questionnaire extends Component {
 
   render() {
     return (
+      // fix this so if there is a result, it doesn't go to quiz again
       <div className="qContainer">
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        {this.state.pairing ? <GetMatch/> : this.renderQuiz()}
       </div>
     );
   }
