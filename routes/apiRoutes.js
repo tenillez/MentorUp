@@ -83,7 +83,7 @@ router.route('/mentees')
     //retrieve all articles from the database
     .get(function(req, res) {
         //looks at our User Schema
-        db.User.find({isMentor: false},function(err, users) {
+        db.User.find({isMentor: false},{isMatched: false},function(err, users) {
             if (err) {
                 res.send(err);
             }
@@ -97,7 +97,7 @@ router.route('/mentors')
     //retrieve all articles from the database
     .get(function(req, res) {
         //looks at our User Schema
-        db.User.find({isMentor: true},function(err, users) {
+        db.User.find({isMentor: true},{isMatched: false},function(err, users) {
             if (err) {
                 res.send(err);
             }

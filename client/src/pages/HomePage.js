@@ -39,7 +39,7 @@ class HomePage extends Component {
                   <br />
                   <p><i className="fa fa-handshake-o" aria-hidden="true"></i></p>
                   {user ?
-                  <p> Meet your <a href="/result">mentor/mentee!</a></p>
+                  <p> Meet your <a href="/getMatch">mentor/mentee!</a></p>
                   : <p>Meet your mentor/mentee!</p> }
                 </div>
               </div>

@@ -12,7 +12,6 @@ import Chat from './pages/Chat';
 import AccountPage from './pages/AccountPage';
 
 import Questionnaire from './pages/Questionnaire';
-import Result from './components/Matching/Result';
 import GetMatch from './components/Matching/GetMatch'
 import Community from './pages/Community';
 
@@ -54,7 +53,6 @@ class App extends Component {
                   <Route exact path="/chat" component={Chat} />
                   <Route exact path="/user/:userID" component={AccountPage} />
                   <Route exact path="/questionnaire" component={Questionnaire}/>
-                  <Route exact path="/result" component={Result} user={user}/>
                   <Route exact path="/getmatch" component={GetMatch} user={user}/>
                   <Route exact path="/board" component={Community} />
                   <Route component={NotFoundPage} />
