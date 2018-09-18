@@ -9,7 +9,7 @@ import { update } from '../services/withUser';
 
 const Navbar = (props) => {
   const { user } = props;
-  console.log(JSON.stringify(user));
+  // console.log(JSON.stringify(user));
   const username = user ? user.username : null;
   const handleLogIn = () => {
     props.history.push('/login');

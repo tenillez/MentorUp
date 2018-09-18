@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import update from 'react-addons-update';
 import quizQuestions from '../api/quizQuestions';
 import Quiz from '../components/Matching/Quiz';
-import Result from '../components/Matching/Result';
+import GetMatch from '../components/Matching/GetMatch';
 import "../components/Matching/Matching.css"
 import axios from 'axios';
 import { withUser } from '../services/withUser';
@@ -27,7 +27,7 @@ class Questionnaire extends Component {
         4: 0,
       },
       result: '',
-      accountID: this.props.match.params.userID || null
+      accountID: this.props.match.params.userID 
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -142,7 +142,7 @@ class Questionnaire extends Component {
       userAnswers: multichoice
     })
     .then(res => {
-      console.log(res.data);
+      console.log(res.data.userAnswers);
     })
     .catch(err => {
       console.log(err)
@@ -152,7 +152,7 @@ class Questionnaire extends Component {
     renderResult() {
     this.storeResults();
     return (
-      <Result />
+      <GetMatch />
     );
   };
 

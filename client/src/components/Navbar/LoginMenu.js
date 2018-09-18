@@ -12,7 +12,7 @@ const LoginMenu = (props) => {
         <a className="dropdown-item" href={ "/user/" + id }><i className="fa fa-user-circle" aria-hidden="true"></i>Account</a>
         <a className="dropdown-item" href="/board"><i className="fa fa-thumb-tack" aria-hidden="true"></i>Community</a>
         <a className="dropdown-item" href="/chat"><i className="fa fa-comments" aria-hidden="true"></i>Chat</a>
-        <a className="dropdown-item" onClick={onLogOut}><i className="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
+        <a className="dropdown-item" href="/" onClick={onLogOut}><i className="fa fa-sign-out" aria-hidden="true"></i>Log out</a>
       </div>
     </div>
   )
