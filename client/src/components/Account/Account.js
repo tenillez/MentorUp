@@ -16,7 +16,7 @@ class Account extends Component {
             email: " ",
             location: " ",
             isMentor: " ",
-            pairing: "Match not quite available yet",
+            pairing: " ",
             accountID: this.props.match.params.userID
         }
         console.log(JSON.stringify(this.props.user));
