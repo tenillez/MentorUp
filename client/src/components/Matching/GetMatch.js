@@ -15,7 +15,8 @@ class GetMatch extends Component {
             email: " ",
             location: " ",
             isMentor: " ",
-            pairing: "Match not quite available yet",
+            pairing: "",
+            isMatched: "",
             users: [],
             scores: [],
             accountID: this.props.user.id
@@ -35,27 +36,71 @@ class GetMatch extends Component {
         });
     }
 
-    loadUsers = () => {
-        axios.get('/api/users')
+    // need to separate get mentees, get mentors hmmm
+    getMentor = () => {
+        axios.get('/api/mentors')
             .then(res => {
-
-                let matchingScores = this.state.scores;
-                let matchedName = "";
-                let comparison = 1000;
-                for (let i = 0; i < res.data.length; i++){
-                    let difference = 0;
-                    for (let j = 0; j < matchingScores.length; j++){
-                        difference += Math.abs(res.data[i].scores[j] - matchingScores[j]);
-                    }
-                if (difference < comparison) {
-                    matchedName = res.data[i].username;
-                    console.log(matchedName);
-
+                let closestMatch = {
+                    name: "",
+                    comparison: 1000
                 }
-                // console.log(res.data[i].userAnswers);
+                let matchingScores = this.state.scores;
+
+                let difference;
+                for (let i = 0; i < res.data.length; i++){
+                    let current = res.data[i];
+                    difference = 0;
+                    console.log(current)
+                    for (let j = 0; j < matchingScores.length; j++){
+                        difference += Math.abs(res.data[i].userAnswers[j] - matchingScores[j]);
+                    }
+                if (difference <= closestMatch.comparison) {
+                    
+                    closestMatch = res.data[i].username;
+                    console.log("diff= " + difference);
+                    if (closestMatch === current.username){
+                        console.log("noooo");
+                    }
+                    console.log(closestMatch);
+                    this.setState({ pairing: closestMatch });
+                    console.log(this.state.pairing)
+                }
                 }
             });
     };
+
+    getMentee = () => {
+        axios.get('/api/mentees')
+            .then(res => {
+                let closestMatch = {
+                    name: "",
+                    comparison: 1000
+                }
+                let matchingScores = this.state.scores;
+
+                let difference;
+                for (let i = 0; i < res.data.length; i++){
+                    let current = res.data[i];
+                    difference = 0;
+                    console.log(current)
+                    for (let j = 0; j < matchingScores.length; j++){
+                        difference += Math.abs(res.data[i].userAnswers[j] - matchingScores[j]);
+                    }
+                if (difference <= closestMatch.comparison) {
+                    
+                    closestMatch = res.data[i].username;
+                    console.log("diff= " + difference);
+                    if (closestMatch === current.username){
+                        console.log("noooo");
+                    }
+                    console.log(closestMatch);
+                    this.setState({ pairing: closestMatch });
+                    console.log(this.state.pairing)
+                }
+                }
+            });
+    };
+
 
 
     render() {
@@ -65,8 +110,9 @@ class GetMatch extends Component {
                     <div className="col-lg-3"></div>
                     <div className="col-lg-6">
                         <div className="card">
-                            <h3>Your match is: </h3>
-                            <button className="btn btn-dark" onClick={this.loadUsers}>CLICK to find out!</button>
+                            <h3>Your match is: {this.state.pairing}</h3>
+                            {this.state.isMentor===false ? <button className="btn btn-dark" onClick={this.getMentor}>Get Mentor!</button>
+                            :<button className="btn btn-dark" onClick={this.getMentee}>Get Mentee!</button>}
                             <p className="homelink"><a href='/'>(Go Back to Home)</a></p>
                         </div>
                     </div>
