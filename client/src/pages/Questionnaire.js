@@ -27,7 +27,7 @@ class Questionnaire extends Component {
         4: 0,
       },
       result: '',
-      accountID: this.props.match.params.userID || null
+      accountID: this.props.match.params.userID 
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
