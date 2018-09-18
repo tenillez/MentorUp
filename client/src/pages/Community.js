@@ -61,8 +61,11 @@ const Community = () => {
 
                     <div className="card meetup-result">
                         
-                 <div id="meetup"> </div>
+                 {/* <div id="meetup"> </div> */}
+                    
+                 <Meetup />
                     </div>
+
                     
                 </div>
             </div>

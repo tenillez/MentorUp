@@ -9,16 +9,17 @@ const styles = {
   
 const apiKey = "1ce5144155b5f7b4d775c446d374e78";
 const meetupsIds = [
-  254417604,
-  253925649
-  
+    8789492, 
+    18189194
 ];
 
-const fmtTime = time => new Date(time).toISOString().substring(0, 10);
+// const fmtTime = time => new Date(time).toISOString().substring(0, 10);
 
-const Meetup = ({ time, name, event_url }) => (
+const Meetup = ({name, event_url }) => (
   <div>
-    {fmtTime(time)} : <a href={event_url}>{name}</a>
+    {/* {fmtTime(time)} :  */}
+    <a href={event_url}>{name}
+    </a>
   </div>
 );
 
@@ -39,7 +40,7 @@ const App = () => (
 
 // render(<App />, document.getElementById("meetup"));
 
-// export default Meetup;
+export default Meetup;
 
 
 // render(<Meetup />, document.querySelector("#meetup")) 
