@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router';
+import {withRouter} from 'react-router';
 import "./Account.css";
 import axios from 'axios';
 import { withUser } from '../../services/withUser';
 import Goals from "../Goals";
+
+
+
+
+
+
 
 class Account extends Component {
     constructor(props) {
@@ -14,15 +20,15 @@ class Account extends Component {
             username: " ",
             email: " ",
             location: " ",
-            accountID: this.props.match.params.userID
+            accountID : this.props.match.params.userID
         }
         console.log(JSON.stringify(this.props.user));
     }
-    componentDidMount() {
+    componentDidMount(){
         this.findUser();
     }
     findUser() {
-        axios.get("/api/user/" + this.state.accountID).then((res) => {
+        axios.get("/api/user/" + this.state.accountID).then((res) =>{
             console.log(res);
             this.setState(res.data)
         })
@@ -31,53 +37,22 @@ class Account extends Component {
     render() {
         return (
             <div>
-                <div className="card welcome">
-                    <h1>
-                        Hi {this.state.firstName}! 
-                        {/* + " " + this.state.lastName}! */}
-                    </h1>
-                    <hr />
-                    <div className="row">
-                        <div className="col-lg-8">
-                            <p>Username: {this.state.username} </p>
+            <h1>
+                Account Page
+            </h1>
+            <p>Name: { this.state.firstName + " " + this.state.lastName } </p>
+            <br></br>
+            <p>UserName: { this.state.username } </p>
+            <br></br>
+            <p>Email: { this.state.email } </p>
+            <br></br>
+            <p>Location: { this.state.location } </p>
+            <br></br>   
 
-                            <p>Email: {this.state.email} </p>
+            <Goals />
+           
 
-                            <p>Location: {this.state.location} </p>
-                        </div>
-                        <div className="col-lg-4">
-                            <p>You are paired with: A great mentor</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="goalsContainer">
-                    <Goals />
-                </div>
-                <div className="card video">
-                    <div className="card-body">
-                        <h1>Video Conference Options</h1>
-                        <hr />
-                        <div className="row">
-                            <div className="col-sm-4">
-                                <div className="card imgCard">
-                                    <img src={require('./img/zoom.jpg')} alt="zoom" />
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="card imgCard">
-                                    <img src={require('./img/hangouts.png')} alt="google-hangouts"/>
-                                </div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="card imgCard">
-                                    <img src={require('./img/skype.png')} alt="skype"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
         )
     }
 }
