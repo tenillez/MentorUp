@@ -1,32 +1,15 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { withUser } from '../../services/withUser';
+import React from 'react';
 
-
-class Result extends Component {
-  state = {
-    users: []
-  };
-
-  // componentDidMount() {
-  //   this.loadUsers();
-  // }
-
-  // loadUsers = () => {
-  //   axios.get({})
-  // })
-  // }
-  render() {
+const Result = () => {
     return (
       <div className="container thx">
         <div className="row">
           <div className="col-lg-3"></div>
           <div className="col-lg-6">
             <div className="card">
-            <h1>{this.state.firstName}</h1>
-              <h3>Thank you for taking the questionnaire.</h3>
-              <button className="btn btn-dark" onClick={this.getMatch}>Meet your mentor/mentee!</button>
-              <p className="homelink"><a href='/'>(Go Back to Home)</a></p>
+              <h6>Thank you for taking the questionnaire.</h6>
+              <button className="btn btn-dark"><a href="/getmatch">Meet your Mentor!</a></button>
+              <button className="btn btn-dark"><a href="/">Return to home page</a></button>
             </div>
           </div>
         </div>
@@ -34,6 +17,6 @@ class Result extends Component {
 
     )
   }
-}
 
-export default withUser(Result);
+
+export default (Result);

@@ -64,6 +64,20 @@ router.route('/user/:id')
 // > db.users.find().forEach(printjson);
 // > db.users.find({"isMentor": false}).forEach(printjson);
 
+//adding the /users route to our /api router
+router.route('/users')
+    //retrieve all articles from the database
+    .get(function(req, res) {
+        //looks at our User Schema
+        db.User.find(function(err, users) {
+            if (err) {
+                res.send(err);
+            }
+            //responds with a json object of our database users.
+            res.json(users);
+        });
+    })
+
 // to store userAnswers from questionnaire
 router.route('/user/:id')
   .put((req, res) => {

@@ -8,7 +8,7 @@ import Goals from "../Goals";
 class Account extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             firstName: " ",
             lastName: " ",
@@ -30,9 +30,9 @@ class Account extends Component {
             this.setState(res.data);
             console.log(res.data.isMentor);
             if ((res.data.isMentor) === false) {
-                this.setState({isMentor : "mentee"})
+                this.setState({ isMentor: "mentee" })
             } else if (((res.data.isMentor) === true)) {
-                this.setState({isMentor : "mentor"})
+                this.setState({ isMentor: "mentor" })
             }
             console.log(this.state.isMentor)
         })
@@ -42,7 +42,7 @@ class Account extends Component {
             <div>
                 <div className="card welcome">
                     <h1>
-                        Hi {this.state.firstName}! 
+                        Hi {this.state.firstName}!
                         {/* + " " + this.state.lastName}! */}
                     </h1>
                     <hr />
@@ -64,7 +64,7 @@ class Account extends Component {
                 <div className="goalsContainer">
                     <Goals />
                 </div>
-                
+
                 <div className="card video">
                     <div className="card-body">
                         <h1>Video Conference Options</h1>
@@ -77,12 +77,12 @@ class Account extends Component {
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="hangouts">
-                                    <img src={require('./img/hangouts.png')} alt="google-hangouts"/>
+                                    <img src={require('./img/hangouts.png')} alt="google-hangouts" />
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="skype">
-                                    <img src={require('./img/skype.png')} alt="skype"/>
+                                    <img src={require('./img/skype.png')} alt="skype" />
                                 </div>
                             </div>
                         </div>

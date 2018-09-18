@@ -142,7 +142,7 @@ class Questionnaire extends Component {
       userAnswers: multichoice
     })
     .then(res => {
-      console.log(res.data);
+      console.log(res.data.userAnswers);
     })
     .catch(err => {
       console.log(err)
