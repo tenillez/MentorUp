@@ -2,20 +2,28 @@ import axios from 'axios';
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
 import { withUser, update } from './services/withUser';
-
-import CreateAccountPage from './pages/CreateAccountPage';
+import Navbar from './pages/Navbar';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
-import Questionnaire from './pages/Questionnaire';
+
 import Chatkit from './components/Chatkit';
+import CreateAccountPage from './pages/CreateAccountPage';
+import Chat from './pages/Chat';
+import chatkit from './pages/chatkit';
+
 import AccountPage from './pages/AccountPage';
+
+import Questionnaire from './pages/Questionnaire';
+import GetMatch from './components/Matching/GetMatch'
 import Community from './pages/Community';
+
+import NotFoundPage from './pages/NotFoundPage';
+
+import './App.css';
 
 class App extends Component {
   componentDidMount() {
@@ -45,9 +53,12 @@ class App extends Component {
                 user={user}
               />
                 <Switch>
-                  <Route exact path="/" component={HomePage} />
+                  <Route exact path="/" component={HomePage} user={user}/>
                   <Route exact path="/login" component={LoginPage} />
                   <Route exact path="/create" component={CreateAccountPage} />
+                  <Route exact path="/chat" component={Chat} />
+                  <Route exact path="/getMatch" component={GetMatch} />
+
                   <Route exact path="/chatkit" component={Chatkit} />
                   <Route exact path="/account/:userID" component={AccountPage} />
                   <Route exact path="/questionnaire" component={Questionnaire} />

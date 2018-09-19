@@ -2,13 +2,14 @@ import axios from 'axios';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import LoginButton from './LoginButton';
-import LoginMenu from './LoginMenu';
+import LoginButton from '../components/Navbar/LoginButton';
+import LoginMenu from '../components/Navbar/LoginMenu';
 
 import { update } from '../services/withUser';
 
 const Navbar = (props) => {
   const { user } = props;
+  // console.log(JSON.stringify(user));
   const username = user ? user.username : null;
   const handleLogIn = () => {
     props.history.push('/login');
@@ -30,7 +31,7 @@ const Navbar = (props) => {
         {/* this shows login/logout based on if user is either logged in/out */}
         <div className="nav-item">
           {user ?
-            <LoginMenu username={username} onLogOut={handleLogOut} />
+            <LoginMenu username={username} onLogOut={handleLogOut} id={user.id} user = {user}/>
             : <LoginButton onClick={handleLogIn} />}
         </div>
     </nav>

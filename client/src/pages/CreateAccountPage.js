@@ -1,7 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-// import Footer from "../components/Footer";
-
 
 class CreateAccountPage extends Component {
   state = {
@@ -12,8 +10,7 @@ class CreateAccountPage extends Component {
     password1: "",
     email: "",
     location: "",
-    years: "",
-    mentor: "",
+    isMentor: "",
     error: ""
   }
   handleInputChanged = (event) => {
@@ -24,17 +21,13 @@ class CreateAccountPage extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const { username, password } = this.state;
+    const { username, password, firstName, lastName, email, location, isMentor } = this.state;
     const { history } = this.props;
 
-    // clear any previous errors so we don't confuse the user
     this.setState({
       error: ""
     });
 
-    // check to make sure they've entered a username and password.
-    // this is very poor validation, and there are better ways
-    // to do this in react, but this will suffice for the example
     if (!username || !password) {
       this.setState({
         error: 'A username and password is required.'
@@ -49,10 +42,20 @@ class CreateAccountPage extends Component {
       return;
     }
 
+    if (!firstName || !lastName || !email || !location) {
+      this.setState({
+        error: 'All fields are required.'
+      });
+    }
     // post an auth request
     axios.post('/api/users', {
       username,
-      password
+      password,
+      firstName,
+      lastName,
+      email,
+      location,
+      isMentor
     })
       .then(user => {
         // if the response is successful, make them log in
@@ -65,6 +68,8 @@ class CreateAccountPage extends Component {
         });
       });
   }
+
+
   render() {
     const { error } = this.state;
 
@@ -75,12 +80,12 @@ class CreateAccountPage extends Component {
           <div className="col-lg-6">
             <div className="signupForm">
               <div className="title-container">
-              <h2>Register</h2>
+                <h2>Register</h2>
               </div>
-              { error }
+              {error}
               <form onSubmit={this.handleLogin}>
                 <div className="form-group">
-                <i className="fa fa-address-book" aria-hidden="true"></i>
+                  <i className="fa fa-address-book" aria-hidden="true"></i>
                   <input
                     value={this.state.firstName}
                     name="firstName"
@@ -90,7 +95,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-address-book-o" aria-hidden="true"></i>
+                  <i className="fa fa-address-book-o" aria-hidden="true"></i>
                   <input
                     value={this.state.lastName}
                     name="lastName"
@@ -100,7 +105,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+                  <i className="fa fa-user-circle-o" aria-hidden="true"></i>
                   <input
                     value={this.state.username}
                     name="username"
@@ -110,7 +115,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-unlock-alt" aria-hidden="true"></i>
+                  <i className="fa fa-unlock-alt" aria-hidden="true"></i>
                   <input
                     value={this.state.password}
                     name="password"
@@ -120,17 +125,17 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-key" aria-hidden="true"></i>
+                  <i className="fa fa-key" aria-hidden="true"></i>
                   <input
                     value={this.state.password1}
                     name="password1"
                     onChange={this.handleInputChanged}
                     type="password"
                     placeholder="Verify Password"
-                 ></input>
+                  ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-envelope" aria-hidden="true"></i>
+                  <i className="fa fa-envelope" aria-hidden="true"></i>
                   <input
                     value={this.state.email}
                     name="email"
@@ -140,7 +145,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 <div className="form-group">
-                <i className="fa fa-map-marker" aria-hidden="true"></i>
+                  <i className="fa fa-map-marker" aria-hidden="true"></i>
                   <input
                     value={this.state.location}
                     name="location"
@@ -149,17 +154,26 @@ class CreateAccountPage extends Component {
                     placeholder="City, State"
                   ></input>
                 </div>
-                {/* <div className="form-group">
-                  <input
-                    value={this.state.years}
-                    name="years"
-                    onChange={this.handleInputChanged}
-                    type="years"
-                    placeholder="Years of experience"
-                  ></input>
-                </div>
+                {/* mentor */}
+                <div className="form-group">
+                <i className="fa fa-handshake-o" aria-hidden="true"></i>
+                Are you interesting in being a Mentor or Mentee?
                 <br />
-                <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
+                <br />
+                  <select
+                    name="isMentor"
+                    onChange={this.handleInputChanged}
+                    className="form-select"
+                    type="drop-down"
+                    value={this.state.isMentor}
+                  >
+                    <option>Please Pick One</option>
+                    <option value="true">Mentor</option>
+                    <option value="false">Mentee</option>
+                  </select>
+                </div>
+                {/* upload picture */}
+                {/* <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
                   <input
                     value={this.state.picture}
                     name="form-control-file"
@@ -167,6 +181,7 @@ class CreateAccountPage extends Component {
                     type="file"
                   ></input>
                 </div> */}
+
                 <div className="form-group">
                   <button className="btn btn-secondary" type="submit" onClick={this.handleFormSubmit}>Submit</button>
                 </div>
@@ -174,11 +189,6 @@ class CreateAccountPage extends Component {
             </div>
           </div>
         </div>
-
-      
-    
-     
-
       </div>
     );
   }

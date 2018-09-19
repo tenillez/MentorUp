@@ -1,0 +1,28 @@
+img:hover {
+    filter: blur(2px); 
+}
+.card .imgCard {
+    height: 200px;
+    width: 100%;
+    background: #353a3f;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 30px 5px rgba(0, 0, 0, 0.4);
+}
+.video, .welcome{
+    margin: 30px;
+    border: 1px solid #a5a1c5;
+}
+
+.video h1 {
+    text-align: right;
+}
+.goalsContainer {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    margin: 30px;
+    border: 1px solid #a5a1c5;
+}

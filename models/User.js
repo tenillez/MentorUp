@@ -15,6 +15,14 @@ const bcrypt = require('bcrypt');
 const WORK_FACTOR = 10;
 
 const UserSchema = new Schema({
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
   username: {
     type: String,
     required: true,
@@ -22,6 +30,30 @@ const UserSchema = new Schema({
   },
   password: {
     type: String
+  },
+  email: {
+    type: String,
+    required: true,
+    index: { unique: true }
+  },
+  location: {
+    type: String
+  },
+  isMentor: {
+    type: Boolean,
+    default: null
+  },
+  isMatched: {
+    type: Boolean,
+    default: null
+  },
+  userAnswers: {
+    type: Array,
+    default: []
+  },
+  pairing: {
+    type: String,
+    default: null
   }
 });
 
@@ -71,6 +103,11 @@ UserSchema.methods.validatePassword = function (candidatePassword) {
   });
 };
 
+// custom method to set isMatched to true when users are matched
+UserSchema.methods.matched = function() {
+  this.isMatched = true;
+  return this.isMatched
+}
 const User = mongoose.model('User', UserSchema);
 
 module.exports = User;

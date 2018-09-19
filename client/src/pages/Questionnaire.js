@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import update from 'react-addons-update';
 import quizQuestions from '../api/quizQuestions';
 import Quiz from '../components/Matching/Quiz';
-import Result from '../components/Matching/Result';
+import GetMatch from '../components/Matching/GetMatch';
 import "../components/Matching/Matching.css"
+import axios from 'axios';
+import { withUser } from '../services/withUser';
 
 class Questionnaire extends Component {
-
   constructor(props) {
     super(props);
 
@@ -16,29 +17,44 @@ class Questionnaire extends Component {
       question: '',
       answerOptions: [],
       answer: '',
+      userAnswers: [],
+      answers: [],
+      pairing: this.props.match.params.pairing,
       answersCount: {
-        Heather: 0,
-        Tenille: 0,
-        Christine: 0,
-        Alex: 0,
-        Ellie: 0
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
       },
-      result: ''
+      result: this.props.match.params.pairing,
+      accountID: this.props.match.params.userID 
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
+  componentDidMount() {
+    this.findUser();
+  }
+  findUser() {
+    axios.get("/api/user/" + this.state.accountID).then((res) => {
+      this.setState(res.data)
+      console.log(res.data);
+      console.log(this.state.pairing);
+    });
+  }
+
   componentWillMount() {
     const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
     this.setState({
+      answers: [],
       question: quizQuestions[0].question,
       answerOptions: shuffledAnswerOptions[0]
     });
   }
-
+  
   shuffleArray(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
@@ -52,28 +68,26 @@ class Questionnaire extends Component {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-
     return array;
   };
 
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
-
     if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
+      setTimeout(() => this.setNextQuestion(), 300);
     } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
+      setTimeout(() => this.setResults(this.getResults()), 300);
     }
   }
 
   setUserAnswer(answer) {
     const updatedAnswersCount = update(this.state.answersCount, {
-      [answer]: {$apply: (currentValue) => currentValue + 1}
+      [answer]: { $apply: (currentValue) => currentValue + 1 },
     });
-
     this.setState({
-        answersCount: updatedAnswersCount,
-        answer: answer
+      answersCount: updatedAnswersCount,
+      answer: answer,
+      answers: [...this.state.answers, answer]
     });
   }
 
@@ -82,14 +96,13 @@ class Questionnaire extends Component {
     const questionId = this.state.questionId + 1;
 
     this.setState({
-        counter: counter,
-        questionId: questionId,
-        question: quizQuestions[counter].question,
-        answerOptions: quizQuestions[counter].answers,
-        answer: ''
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
     });
   }
-
   getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
@@ -100,10 +113,12 @@ class Questionnaire extends Component {
   }
 
   setResults(result) {
+    console.log("result" + this.state.result);
     if (result.length === 1) {
-      this.setState({ result: result[0] });
+
+      this.setState({ result: result });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: 'not available at this time' });
     }
   }
 
@@ -120,22 +135,39 @@ class Questionnaire extends Component {
     );
   }
 
-  renderResult() {
-    return (
-      <Result quizResult={this.state.result} />
-    );
+  storeResults() {
+    let id = (this.props.user.id);
+    let multichoice = (this.state.answers);
+    
+    console.log(multichoice);
+
+    // our userAnswers
+    axios.put("/api/user/" + id, {
+      userAnswers: multichoice
+    })
+    .then(res => {
+      console.log(res.data.userAnswers);
+    })
+    .catch(err => {
+      console.log(err)
+    });
   }
+
+    renderResult() {
+    this.storeResults();
+    return (
+      <GetMatch />
+    );
+  };
 
   render() {
     return (
-      <div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+      // fix this so if there is a result, it doesn't go to quiz again
+      <div className="qContainer">
+        {this.state.pairing ? <GetMatch/> : this.renderQuiz()}
       </div>
     );
   }
-
-
-
 }
 
-export default Questionnaire;
+export default withUser(Questionnaire);

@@ -2,22 +2,19 @@
   .App {
     text-align: center;
     font-family: 'PT Sans', sans-serif;
-  }
-  .loggedinmessage {
-    text-align: right;
-    font-family: 'PT Sans', sans-serif;
-    background:black;
-    color:white
+    height: 100vh;
   }
   body {
     font-family: 'PT Sans', sans-serif;
-    background: #e7e7e7; 
+    background: url("./assets/greyzz.png"); 
   }
   a {
     color: #7E6B8F
   }
+  .container{
+    height:86vh;
+  }
 
-  
   /* headers */
   h1, h2, h3 {
     margin-bottom: 10px;
@@ -73,8 +70,7 @@
     background: silver
   }
 
-  /* David has the fix in his next push....  */
+/* footer */
   #footer {
-    position: fixed;
     bottom: 0;
   }
