@@ -158,6 +158,8 @@ class CreateAccountPage extends Component {
                 <div className="form-group">
                 <i className="fa fa-handshake-o" aria-hidden="true"></i>
                 Are you interesting in being a Mentor or Mentee?
+                <br />
+                <br />
                   <select
                     name="isMentor"
                     onChange={this.handleInputChanged}

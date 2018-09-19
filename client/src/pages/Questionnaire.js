@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import update from 'react-addons-update';
 import quizQuestions from '../api/quizQuestions';
 import Quiz from '../components/Matching/Quiz';
-import Result from '../components/Matching/Result';
+import GetMatch from '../components/Matching/GetMatch';
 import "../components/Matching/Matching.css"
 import axios from 'axios';
 import { withUser } from '../services/withUser';
@@ -18,16 +18,16 @@ class Questionnaire extends Component {
       answerOptions: [],
       answer: '',
       userAnswers: [],
-      isMentor: '',
       answers: [],
+      pairing: this.props.match.params.pairing,
       answersCount: {
         1: 0,
         2: 0,
         3: 0,
         4: 0,
       },
-      result: '',
-      accountID: this.props.match.params.userID || null
+      result: this.props.match.params.pairing,
+      accountID: this.props.match.params.userID 
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -39,6 +39,8 @@ class Questionnaire extends Component {
   findUser() {
     axios.get("/api/user/" + this.state.accountID).then((res) => {
       this.setState(res.data)
+      console.log(res.data);
+      console.log(this.state.pairing);
     });
   }
 
@@ -111,7 +113,9 @@ class Questionnaire extends Component {
   }
 
   setResults(result) {
+    console.log("result" + this.state.result);
     if (result.length === 1) {
+
       this.setState({ result: result });
     } else {
       this.setState({ result: 'not available at this time' });
@@ -142,7 +146,7 @@ class Questionnaire extends Component {
       userAnswers: multichoice
     })
     .then(res => {
-      console.log(res.data);
+      console.log(res.data.userAnswers);
     })
     .catch(err => {
       console.log(err)
@@ -152,14 +156,15 @@ class Questionnaire extends Component {
     renderResult() {
     this.storeResults();
     return (
-      <Result />
+      <GetMatch />
     );
   };
 
   render() {
     return (
+      // fix this so if there is a result, it doesn't go to quiz again
       <div className="qContainer">
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        {this.state.pairing ? <GetMatch/> : this.renderQuiz()}
       </div>
     );
   }

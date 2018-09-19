@@ -20,5 +20,10 @@ label {
     height: 81vh;
 }
 .thx {
-    margin-top: 15%
+    margin-top: 15%;
+    text-align: center;
+}
+.homelink {
+    text-align: center;
+    padding-top: 5px
 }

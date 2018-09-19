@@ -50,6 +50,10 @@ const UserSchema = new Schema({
   userAnswers: {
     type: Array,
     default: []
+  },
+  pairing: {
+    type: String,
+    default: null
   }
 });
 
@@ -99,6 +103,11 @@ UserSchema.methods.validatePassword = function (candidatePassword) {
   });
 };
 
+// custom method to set isMatched to true when users are matched
+UserSchema.methods.matched = function() {
+  this.isMatched = true;
+  return this.isMatched
+}
 const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
