@@ -26,3 +26,15 @@ img:hover {
     margin: 30px;
     border: 1px solid #a5a1c5;
 }
+.alert {
+    color: #a5a1c5;
+    text-align: left
+}
+.alert:hover {
+    filter: blur(2px); 
+    background: silver
+}
+
+.note {
+    font-family: 'Pacifico', cursive;
+}

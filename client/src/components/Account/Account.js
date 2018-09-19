@@ -17,6 +17,8 @@ class Account extends Component {
             location: " ",
             isMentor: " ",
             pairing: " ",
+            linkedin: " ",
+            note: "Glad we connected! Let's grab some coffee and chat!",
             accountID: this.props.match.params.userID
         }
         console.log(JSON.stringify(this.props.user));
@@ -53,11 +55,15 @@ class Account extends Component {
                             <p>Email: {this.state.email} </p>
 
                             <p>Location: {this.state.location} </p>
+                            <a href={this.state.linkedin} rel='noopener noreferrer' target="_blank">LinkedIn Profile: {this.state.linkedin}</a>
                         </div>
                         <div className="col-lg-4">
                             <p>You are a {this.state.isMentor} </p>
 
                             <p>You are paired with: {this.state.pairing}</p>
+                            <h5 className="alert">{this.state.pairing} left you a note!</h5>
+
+                            <p className="note">{this.state.note}</p>
                         </div>
                     </div>
                 </div>
