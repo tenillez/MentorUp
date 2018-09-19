@@ -51,19 +51,15 @@ export default class PostApp extends React.Component {
     }
     render() {
         return (
-            <div className="posts">
-                <h1>Goals</h1>
-                <hr />
-                <div className="row">
-                    <div className="col-lg-6">
-                    <h3>Add your own goals below</h3>
-                        <hr />
+            <div>
+
+                    <h3>Community Posts</h3>
+                    <p>Have a question, or an answer? Please contribute below</p> 
 
                         <CreatePost
                             createTask={this.createTask.bind(this)}
                         />
-                    </div>
-                    <div className="col-lg-6">
+                    <div id="cardRow">
                         <PostList
                             posts={this.state.posts}
                             toggleTask={this.toggleTask.bind(this)}
@@ -71,7 +67,6 @@ export default class PostApp extends React.Component {
                             deleteTask={this.deleteTask.bind(this)}
                         />
                     </div>
-                </div>
             </div>
         );
     }

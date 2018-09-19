@@ -22,60 +22,20 @@ export default class PostList extends React.Component {
             return (
                 <div className="container">
             <div className="row">
-                <div className="col-lg-7">
-                    <h3>Community Posts</h3>
-                    <p>Have a question, or an answer? Please contribute below</p>
-                    <div className="card">
-                        <div className="card-title">Coding Languages</div>
-                        <div className="card-body">
-                            <p>
-                                I'm new to coding and have been learning on my own.  What languages do you recommend besides Javascript for beginners?
-                        </p>
-                            <div className="btn-group">
-                                <button className="btn btn-dark"><i className="fa fa-plus" aria-hidden="true"></i></button>
-                                <button className="btn btn-dark"><i className="fa fa-pencil" aria-hidden="true"></i></button>
-                                <button className="btn btn-dark"><i className="fa fa-trash" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="card-title">Looking to break into the business</div>
-                        <div className="card-body">
-                            <p>
-                                What can I do to improve my chances of finding a tech job?
-                        </p>
-                            <div className="btn-group">
-                                <button className="btn btn-dark"><i className="fa fa-plus" aria-hidden="true"></i></button>
-                                <button className="btn btn-dark"><i className="fa fa-pencil" aria-hidden="true"></i></button>
-                                <button className="btn btn-dark"><i className="fa fa-trash" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card">
-                        <div className="card-title">Ideas for new projects</div>
-                        <div className="card-body">
-                            <p>
-                                Anyone interested in collaboration on new ideas?
-                        </p>
-                            <div className="btn-group">
-                                <button className="btn btn-dark"><i className="fa fa-plus" aria-hidden="true"></i></button>
-                                <button className="btn btn-dark"><i className="fa fa-pencil" aria-hidden="true"></i></button>
-                                <button className="btn btn-dark"><i className="fa fa-trash" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            ?
             </div>
             </div>
             )
         }
         return (
-            <table>
-                {/* <TodosListHeader /> */}
-                <tbody>
+                    <div className="card">
                     {this.renderItems()}
-                </tbody>
-            </table>
+                    </div>
+            // <table>
+                // <TodosListHeader /> */}
+                // <tbody>
+                // </tbody>
+            // </table>
         )
     }
 }
