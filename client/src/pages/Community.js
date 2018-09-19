@@ -1,11 +1,12 @@
 import React from 'react';
 import ResultContainer from "../components/Meetup/ResultContainer";
 
+
 const Community = () => {
     return (
-        <div className="container">
+        <div className="container" id="commContainer">
             <div className="row">
-                <div className="col-lg-7">
+                <div className="col-lg-7" id="cardRow">
                     <h3>Community Posts</h3>
                     <p>Have a question, or an answer? Please contribute below</p>
                     <div className="card">
@@ -34,7 +35,7 @@ const Community = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card" >
                         <div className="card-title">Ideas for new projects</div>
                         <div className="card-body">
                             <p>
