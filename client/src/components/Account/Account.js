@@ -72,17 +72,23 @@ class Account extends Component {
                         <div className="row">
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="zoom">
+                                <a href ="https://www.zoom.us/" target="blank">
                                     <img src={require('./img/zoom.jpg')} alt="zoom" />
+                                    </a>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="hangouts">
+                                    <a href ="https://hangouts.google.com/" target="blank">
                                     <img src={require('./img/hangouts.png')} alt="google-hangouts" />
+                                    </a>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="skype">
+                                <a href ="https://www.skype.com/en/get-skype/" target="blank">
                                     <img src={require('./img/skype.png')} alt="skype" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
