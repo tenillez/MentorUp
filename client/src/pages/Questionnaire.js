@@ -10,6 +10,7 @@ import { withUser } from '../services/withUser';
 class Questionnaire extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
 
     this.state = {
       counter: 0,
@@ -19,14 +20,13 @@ class Questionnaire extends Component {
       answer: '',
       userAnswers: [],
       answers: [],
-      pairing: this.props.match.params.pairing,
       answersCount: {
         1: 0,
         2: 0,
         3: 0,
         4: 0,
       },
-      result: this.props.match.params.pairing,
+      result: "",
       accountID: this.props.match.params.userID 
     };
 
@@ -36,11 +36,11 @@ class Questionnaire extends Component {
   componentDidMount() {
     this.findUser();
   }
+
   findUser() {
     axios.get("/api/user/" + this.state.accountID).then((res) => {
       this.setState(res.data)
       console.log(res.data);
-      console.log(this.state.pairing);
     });
   }
 
@@ -103,6 +103,7 @@ class Questionnaire extends Component {
       answer: ''
     });
   }
+
   getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
@@ -161,10 +162,11 @@ class Questionnaire extends Component {
   };
 
   render() {
+    let result = this.state.result
     return (
       // fix this so if there is a result, it doesn't go to quiz again
       <div className="qContainer">
-        {this.state.pairing ? <GetMatch/> : this.renderQuiz()}
+        {result ? <GetMatch/> : this.renderQuiz()}
       </div>
     );
   }
