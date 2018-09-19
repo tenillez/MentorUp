@@ -1,6 +1,25 @@
 import React from 'react';
 // import ResultContainer from "../components/Meetup/ResultContainer";
 import Meetup from "../components/Meetup";
+import Meetups from "react-meetup-meetups";
+
+const apiKey = "1ce5144155b5f7b4d775c446d374e78";
+const meetupsIds = [
+    8789492, 
+    18189194
+];
+
+const renderMeetups = results => {
+    return results.map(Meetup);
+  };
+
+//   const Meetup = ({name, event_url }) => (
+//     <div>
+//       {/* {fmtTime(time)} :  */}
+//       <a href={event_url}>{name}
+//       </a>
+//     </div>
+//   );
 
 const Community = () => {
     return (
@@ -58,12 +77,15 @@ const Community = () => {
                     <button className="btn btn-dark" value="ChickTech-Austin">ChickTech ATX</button>
                     <button className="btn btn-dark" value="Ladies-That-UX-Austin">Ladies That UX Austin</button>
                     <button className="btn btn-dark" value="IEEE-Women-in-Engineering-Book-Club">Women in Engineering Book Club</button>
-
                     <div className="card meetup-result">
-                        
-                 {/* <div id="meetup"> </div> */}
-                    
-                 <Meetup />
+                                       
+
+                 <Meetups
+                    apiKey={apiKey}
+                    meetupsIds={meetupsIds}
+                    render={renderMeetups}
+                    loading={() => <div>Loading...</div>}
+                    />
                     </div>
 
                     

@@ -15,6 +15,7 @@ const meetupsIds = [
 
 // const fmtTime = time => new Date(time).toISOString().substring(0, 10);
 
+
 const Meetup = ({name, event_url }) => (
   <div>
     {/* {fmtTime(time)} :  */}
@@ -27,7 +28,8 @@ const renderMeetups = results => {
   return results.map(Meetup);
 };
 
-const App = () => (
+const App = () => {
+    return (
   <div style={styles}>
     <Meetups
       apiKey={apiKey}
@@ -36,11 +38,8 @@ const App = () => (
       loading={() => <div>Loading...</div>}
     />
   </div>
-);
+    )
+};
 
-// render(<App />, document.getElementById("meetup"));
 
 export default Meetup;
-
-
-// render(<Meetup />, document.querySelector("#meetup")) 
