@@ -50,7 +50,7 @@ export default class PostListItem extends React.Component {
     render () {
         const { isCompleted } = this.props;
         return (
-            <tr className={"todo-" + (isCompleted ? "completed" : "not-completed") }>
+            <tr className={"post-" + (isCompleted ? "completed" : "not-completed") }>
                 {this.renderTask()}
                 {this.renderActionSection()}
             </tr>

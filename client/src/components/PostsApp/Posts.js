@@ -1,9 +1,9 @@
 import React from "react";
 import PostList from "../PostList";
-import CreatePost from "../CreatePost";
+import CreatePost from "../CreatePost/CreatePost";
 //import "./todostyle.css";
 
-const todos = {
+const posts = {
     items: [],
     lsKey: "posts",
     populate() {

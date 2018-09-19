@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class CreatePost extends React.Component {
+class CreatePost extends React.Component {
     render () {
         return (
             <form onSubmit={this.onSubmit.bind(this)} className="create-post-form">
@@ -15,3 +15,5 @@ export default class CreatePost extends React.Component {
         e.preventDefault();
     }
 }
+
+export default CreatePost;

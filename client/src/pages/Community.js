@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultContainer from "../components/Meetup/ResultContainer";
+import PostApp from '../components/PostsApp/Posts';
 
 const Community = () => {
     return (
