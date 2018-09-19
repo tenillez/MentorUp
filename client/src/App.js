@@ -13,7 +13,7 @@ import LoginPage from './pages/LoginPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 import Questionnaire from './pages/Questionnaire';
-import Chat from './pages/Chat';
+import Chatkit from './components/Chatkit';
 import AccountPage from './pages/AccountPage';
 import Community from './pages/Community';
 
@@ -48,7 +48,7 @@ class App extends Component {
                   <Route exact path="/" component={HomePage} />
                   <Route exact path="/login" component={LoginPage} />
                   <Route exact path="/create" component={CreateAccountPage} />
-                  <Route exact path="/chat" component={Chat} />
+                  <Route exact path="/chatkit" component={Chatkit} />
                   <Route exact path="/account/:userID" component={AccountPage} />
                   <Route exact path="/questionnaire" component={Questionnaire} />
                   <Route exact path="/board" component={Community} />
