@@ -3,7 +3,7 @@ import ResultContainer from "../components/Meetup/ResultContainer";
 
 const Community = () => {
     return (
-        <div className="container">
+        <div className="container" id="commContainer">
             <div className="row">
                 <div className="col-lg-7">
                     <h3>Community Posts</h3>
