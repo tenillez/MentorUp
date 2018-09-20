@@ -5,13 +5,13 @@ import Meetups from "react-meetup-meetups";
 
 const apiKey = "1ce5144155b5f7b4d775c446d374e78";
 const meetupsIds = [
-    8789492, 
+    8789492,
     18189194
 ];
 
 const renderMeetups = results => {
     return results.map(Meetup);
-  };
+};
 
 //   const Meetup = ({name, event_url }) => (
 //     <div>
@@ -27,7 +27,7 @@ const Community = () => {
         <div className="container" id="commContainer">
             <div className="row">
                 <div className="col-lg-7" id="cardRow">
-                    <h3>Community Posts</h3>
+                    <h3><i className="fa fa-thumb-tack" aria-hidden="true"></i>Community Posts</h3>
                     <p>Have a question, or an answer? Please contribute below</p>
                     <div className="card">
                         <div className="card-title">Coding Languages</div>
@@ -71,25 +71,25 @@ const Community = () => {
                 </div>
                 {/* break this out into a component */}
                 <div className="col-lg-5">
-                    <h3>Meetups</h3>
-                    <p>Click a group below to see their upcoming events.</p>
-                    <button className="btn btn-dark" value="Women-Who-Code-Austin">Women Who Code Austin</button>
+                    <h3><i className="fa fa-meetup" aria-hidden="true"></i>Meetups</h3>
+                    {/* <p>Click a group below to see their upcoming events.</p> */}
+                    {/* <button className="btn btn-dark" value="Women-Who-Code-Austin">Women Who Code Austin</button>
                     <button className="btn btn-dark" value="austinwomentech">Austin Women in Tech</button>
                     <button className="btn btn-dark" value="ChickTech-Austin">ChickTech ATX</button>
                     <button className="btn btn-dark" value="Ladies-That-UX-Austin">Ladies That UX Austin</button>
-                    <button className="btn btn-dark" value="IEEE-Women-in-Engineering-Book-Club">Women in Engineering Book Club</button>
+                    <button className="btn btn-dark" value="IEEE-Women-in-Engineering-Book-Club">Women in Engineering Book Club</button> */}
                     <div className="card meetup-result">
-                                       
 
-                 <Meetups
-                    apiKey={apiKey}
-                    meetupsIds={meetupsIds}
-                    render={renderMeetups}
-                    loading={() => <div>Loading...</div>}
-                    />
+
+                        <Meetups
+                            apiKey={apiKey}
+                            meetupsIds={meetupsIds}
+                            render={renderMeetups}
+                            loading={() => <div>Loading...</div>}
+                        />
                     </div>
 
-                    
+
                 </div>
             </div>
         </div>

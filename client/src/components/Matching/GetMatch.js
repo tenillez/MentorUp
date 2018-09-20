@@ -92,12 +92,14 @@ class GetMatch extends Component {
 
     storeMatch() {
         let id = (this.props.user.id);
-        console.log(this.state.pairing)
+        console.log(this.state.pairing);
+        let message = (this.state.note);
         console.log(id);
         axios.put('/api/user/' + id, {
 
             pairing: this.state.pairing,
-            isMatched: true
+            isMatched: true,
+            note: message
         })
             .then(res => {
                 console.log(res.data.pairing);
@@ -128,13 +130,13 @@ class GetMatch extends Component {
                                     <h4>Leave a note for {this.state.pairing}.</h4>
                                     <br />
                                     <div className="form-group">
-                                        <i className="fa fa-address-book" aria-hidden="true"></i>
+                                    <i className="fa fa-handshake-o" aria-hidden="true"></i>
                                         <input
                                             value={this.state.note}
                                             name="firstName"
                                             onChange={this.handleInputChanged}
                                             type="text-area"
-                                            placeholder="Let's meet for coffee. My # is ..."
+                                            placeholder="Let's meet for coffee..."
                                         ></input>
                                         <button className="btn btn-dark" onClick={this.sendNote}>Send</button>
                                     </div>
@@ -146,7 +148,7 @@ class GetMatch extends Component {
                                 </div>
                             }
 
-                            <p className="homelink"><a href='/'>(Go Back to Home)</a></p>
+                            <p className="homelink"><a href='/'>Go Back to Home</a></p>
                         </div>
                     </div>
                 </div>

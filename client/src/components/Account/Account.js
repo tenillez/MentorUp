@@ -44,8 +44,7 @@ class Account extends Component {
             <div>
                 <div className="card welcome">
                     <h1>
-                        Hi {this.state.firstName}!
-                        {/* + " " + this.state.lastName}! */}
+                        Hi {this.state.firstName + " " + this.state.lastName}!
                     </h1>
                     <hr />
                     <div className="row">
@@ -55,7 +54,7 @@ class Account extends Component {
                             <p>Email: {this.state.email} </p>
 
                             <p>Location: {this.state.location} </p>
-                            <a href={this.state.linkedin} rel='noopener noreferrer' target="_blank">LinkedIn Profile: {this.state.linkedin}</a>
+                            <p>LinkedIn Profile: <a href={this.state.linkedin} rel='noopener noreferrer' target="_blank"> {this.state.linkedin}</a></p>
                         </div>
                         <div className="col-lg-4">
                             <p>You are a {this.state.isMentor} </p>

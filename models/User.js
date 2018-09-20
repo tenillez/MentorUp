@@ -58,7 +58,7 @@ const UserSchema = new Schema({
   linkedin: {
     type: String,
   },
-  photo: {
+  note: {
     type: String
   }
 });
