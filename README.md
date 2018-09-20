@@ -7,9 +7,12 @@ Once paired, mentors & mentees have many options to communicate with each other 
 * Note and Goals residing in the Account page
 * Video conferencing services such as Zoom, Google Hangouts, and Skype
 
+Our community page gives users access to Meetups in the Austin area pertaining to women in tech via the MeetUp API.
+
 Tech used to produce this app include: 
 * [MongoDB & Mongoose](https://www.mongodb.com/)
 * [Express.js](https://expressjs.com/en/guide/routing.html)
+* [Axios](https://www.npmjs.com/package/axios)
 * [React](https://reactjs.org/)
 * [Node.js](https://nodejs.org/en/)
 * [Pusher Chatkit](https://pusher.com/chatkit)
@@ -30,5 +33,12 @@ Users will first enter our app and see a home page, they will login or signup, t
 <img src="./readMeImg/quizphonedemo.JPG" alt="phone homepage" width="200px" />
 
 <img src="./readMeImg/match.png" alt="match" width="200px" />
+
+### Created by 
+* Tenille
+* David
+* Brandon
+* Heather
+* Christine
 
 
