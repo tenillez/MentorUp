@@ -22,6 +22,8 @@ img:hover {
 .video, .welcome{
     margin: 30px;
     border: 1px solid #a5a1c5;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 30px 5px rgba(0, 0, 0, 0.4);
 }
 
 .video h1 {
@@ -33,6 +35,8 @@ img:hover {
     background: white;
     margin: 30px;
     border: 1px solid #a5a1c5;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 30px 5px rgba(0, 0, 0, 0.4);
 }
 .alert {
     color: #a5a1c5;
@@ -45,4 +49,9 @@ img:hover {
 
 .note {
     font-family: 'Pacifico', cursive;
+    margin-top: 20px
+}
+
+.col-lg-4 {
+    text-align: center
 }
