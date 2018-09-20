@@ -22,10 +22,12 @@ Tech used to produce this app include:
 ## Mobile Views
 
 Users will first enter our app and see a home page, they will login or signup, then may proceed to take the questionnaire.  Once questionnaire answers are stored in the database, the next page will find a match.
-![home](./readMeImg/phonedemohome.JPG)
-![options](./readMeImg/phonedemo2.JPG)
-![quiz](./readMeImg/quizphonedemo.JPG)
+
+<img src="./readMeImg/phonedemohome.JPG" alt="phone homepage" width="200px" /><img src="./readMeImg/phonedemo2.JPG" alt="phone homepage" width="200px" /><img src="./readMeImg/quizphonedemo.JPG" alt="phone homepage" width="200px" />
+
 
 ## Desktop Views
-![match](./readMeImg/match.png)
+
+<img src="./readMeImg/match.png" alt="match" width="200px" />
+
 
