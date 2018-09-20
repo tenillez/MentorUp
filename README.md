@@ -19,15 +19,10 @@ Tech used to produce this app include:
 * [Font Awesome Icons](https://fontawesome.com/v4.7.0/icons/)
 * [Stock Image provided by Pexels](https://www.pexels.com/)
 
-## Mobile Views
+## App Walkthrough (Images are mixed desktop and phone views)
 
 Users will first enter our app and see a home page, they will login or signup, then may proceed to take the questionnaire.  Once questionnaire answers are stored in the database, the next page will find a match.
 
-<img src="./readMeImg/phonedemohome.JPG" alt="phone homepage" width="200px" /><img src="./readMeImg/phonedemo2.JPG" alt="phone homepage" width="200px" /><img src="./readMeImg/quizphonedemo.JPG" alt="phone homepage" width="200px" />
-
-
-## Desktop Views
-
-<img src="./readMeImg/match.png" alt="match" width="200px" />
+<img src="./readMeImg/phonedemohome.JPG" alt="phone homepage" width="200px" /><img src="./readMeImg/phonedemo2.JPG" alt="phone homepage" width="200px" /><img src="./readMeImg/quizphonedemo.JPG" alt="phone homepage" width="200px" /><img src="./readMeImg/match.png" alt="match" width="200px" />
 
 
