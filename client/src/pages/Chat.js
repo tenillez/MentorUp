@@ -16,7 +16,7 @@ class Chat extends Component {
   // http://localhost:3001/users
   // https://agile-caverns-57821.herokuapp.com/users
 
-   fetch('http://localhost:3001/users', {
+   fetch('https://agile-caverns-57821.herokuapp.com/users', {
      method: 'POST',
      headers: {
        'Content-Type': 'application/json',
