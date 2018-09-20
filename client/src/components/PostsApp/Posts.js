@@ -53,7 +53,7 @@ export default class PostApp extends React.Component {
         return (
             <div>
 
-                    <h3>Community Posts</h3>
+                    <h3><i class="fa fa-thumb-tack" aria-hidden="true"></i>Community Posts</h3>
                     <p>Have a question, or an answer? Please contribute below</p> 
 
                         <CreatePost
