@@ -7,8 +7,14 @@ import { withUser, update } from './services/withUser';
 import Navbar from './pages/Navbar';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import NotFoundPage from './pages/NotFoundPage';
+import './App.css';
+
+import Chatkit from './components/Chatkit';
 import CreateAccountPage from './pages/CreateAccountPage';
 import Chat from './pages/Chat';
+import chatkit from './pages/chatkit';
+
 import AccountPage from './pages/AccountPage';
 
 import Questionnaire from './pages/Questionnaire';
@@ -51,9 +57,11 @@ class App extends Component {
                   <Route exact path="/login" component={LoginPage} />
                   <Route exact path="/create" component={CreateAccountPage} />
                   <Route exact path="/chat" component={Chat} />
-                  <Route exact path="/user/:userID" component={AccountPage} />
-                  <Route exact path="/questionnaire" component={Questionnaire}/>
-                  <Route exact path="/getmatch" component={GetMatch} user={user}/>
+                  <Route exact path="/getMatch" component={GetMatch} />
+
+                  <Route exact path="/chatkit" component={Chatkit} />
+                  <Route exact path="/account/:userID" component={AccountPage} />
+                  <Route exact path="/questionnaire" component={Questionnaire} />
                   <Route exact path="/board" component={Community} />
                   <Route component={NotFoundPage} />
                 </Switch>
