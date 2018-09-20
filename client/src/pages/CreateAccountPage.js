@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-
 class CreateAccountPage extends Component {
   state = {
     firstName: "",
@@ -21,7 +20,7 @@ class CreateAccountPage extends Component {
   handleLogin = (event) => {
     event.preventDefault();
 
-    const { username, password, firstName, lastName, email, location, isMentor } = this.state;
+    const { username, password, firstName, lastName, email, location, linkedin, photo, isMentor } = this.state;
     const { history } = this.props;
 
     this.setState({
@@ -55,6 +54,8 @@ class CreateAccountPage extends Component {
       lastName,
       email,
       location,
+      linkedin,
+      photo,
       isMentor
     })
       .then(user => {
@@ -83,6 +84,7 @@ class CreateAccountPage extends Component {
                 <h2>Register</h2>
               </div>
               {error}
+              {/* name */}
               <form onSubmit={this.handleLogin}>
                 <div className="form-group">
                   <i className="fa fa-address-book" aria-hidden="true"></i>
@@ -104,6 +106,7 @@ class CreateAccountPage extends Component {
                     placeholder="Last Name"
                   ></input>
                 </div>
+                {/* username */}
                 <div className="form-group">
                   <i className="fa fa-user-circle-o" aria-hidden="true"></i>
                   <input
@@ -114,6 +117,7 @@ class CreateAccountPage extends Component {
                     placeholder="Username"
                   ></input>
                 </div>
+                {/* passwords */}
                 <div className="form-group">
                   <i className="fa fa-unlock-alt" aria-hidden="true"></i>
                   <input
@@ -134,6 +138,7 @@ class CreateAccountPage extends Component {
                     placeholder="Verify Password"
                   ></input>
                 </div>
+                {/* email */}
                 <div className="form-group">
                   <i className="fa fa-envelope" aria-hidden="true"></i>
                   <input
@@ -144,6 +149,7 @@ class CreateAccountPage extends Component {
                     placeholder="Email"
                   ></input>
                 </div>
+                {/* location */}
                 <div className="form-group">
                   <i className="fa fa-map-marker" aria-hidden="true"></i>
                   <input
@@ -154,12 +160,33 @@ class CreateAccountPage extends Component {
                     placeholder="City, State"
                   ></input>
                 </div>
+                {/* linkedin */}
+                <div className="form-group">
+                  <i className="fa fa-linkedin-square" aria-hidden="true"></i>
+                  <input
+                    value={this.state.linkedin}
+                    name="linkedin"
+                    onChange={this.handleInputChanged}
+                    type="linkedin"
+                    placeholder="www.linkedin.com/"
+                  ></input>
+                </div>
+                {/* upload picture */}
+                {/* <div className="form-group">
+                  <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                  <input
+                    value={this.state.photo}
+                    name="form-control-file"
+                    onChange={this.handleInputChanged}
+                    type="file"
+                  ></input>
+                </div> */}
                 {/* mentor */}
                 <div className="form-group">
-                <i className="fa fa-handshake-o" aria-hidden="true"></i>
-                Are you interesting in being a Mentor or Mentee?
+                  <i className="fa fa-handshake-o" aria-hidden="true"></i>
+                  Are you interesting in being a Mentor or Mentee?
                 <br />
-                <br />
+                  <br />
                   <select
                     name="isMentor"
                     onChange={this.handleInputChanged}
@@ -172,15 +199,6 @@ class CreateAccountPage extends Component {
                     <option value="false">Mentee</option>
                   </select>
                 </div>
-                {/* upload picture */}
-                {/* <div className="form-group" id="pic"><h4>Add a Profile Picture</h4>
-                  <input
-                    value={this.state.picture}
-                    name="form-control-file"
-                    onChange={this.handleInputChanged}
-                    type="file"
-                  ></input>
-                </div> */}
 
                 <div className="form-group">
                   <button className="btn btn-secondary" type="submit" onClick={this.handleFormSubmit}>Submit</button>

@@ -54,6 +54,12 @@ const UserSchema = new Schema({
   pairing: {
     type: String,
     default: null
+  },
+  linkedin: {
+    type: String,
+  },
+  note: {
+    type: String
   }
 });
 

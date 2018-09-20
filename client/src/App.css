@@ -78,3 +78,8 @@
   #footer {
     bottom: 0;
   }
+
+  /* community */
+  #commContainer {
+    margin-top: 10px
+  }

@@ -18,6 +18,8 @@ class Account extends Component {
             location: " ",
             isMentor: " ",
             pairing: " ",
+            linkedin: " ",
+            note: "Glad we connected! Let's grab some coffee and chat!",
             accountID: this.props.match.params.userID
         }
         console.log(JSON.stringify(this.props.user));
@@ -43,8 +45,7 @@ class Account extends Component {
             <div>
                 <div className="card welcome">
                     <h1>
-                        Hi {this.state.firstName}!
-                        {/* + " " + this.state.lastName}! */}
+                        Hi {this.state.firstName + " " + this.state.lastName}!
                     </h1>
                     <hr />
                     <div className="row">
@@ -52,11 +53,15 @@ class Account extends Component {
                             <p>Username: {this.state.username} </p>
 
                             <p>Location: {this.state.location} </p>
+                            <p>LinkedIn Profile: <a href={this.state.linkedin} rel='noopener noreferrer' target="_blank"> {this.state.linkedin}</a></p>
                         </div>
                         <div className="col-lg-4">
                             <p>You are a {this.state.isMentor} </p>
 
                             <p>You are paired with: {this.state.pairing}</p>
+                            <h5 className="alert">{this.state.pairing} left you a note!</h5>
+
+                            <p className="note">{this.state.note}</p>
                         </div>
                     </div>
                 </div>
@@ -71,17 +76,23 @@ class Account extends Component {
                         <div className="row">
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="zoom">
+                                <a href ="https://www.zoom.us/" target="blank">
                                     <img src={require('./img/zoom.jpg')} alt="zoom" />
+                                    </a>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="hangouts">
+                                    <a href ="https://hangouts.google.com/" target="blank">
                                     <img src={require('./img/hangouts.png')} alt="google-hangouts" />
+                                    </a>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="skype">
+                                <a href ="https://www.skype.com/en/get-skype/" target="blank">
                                     <img src={require('./img/skype.png')} alt="skype" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
