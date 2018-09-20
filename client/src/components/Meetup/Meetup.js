@@ -13,12 +13,12 @@ const meetupsIds = [
     18189194
 ];
 
-// const fmtTime = time => new Date(time).toISOString().substring(0, 10);
+const fmtTime = time => new Date(time).toISOString().substring(0, 10);
 
 
-const Meetup = ({name, event_url }) => (
+const Meetup = ({time, name, event_url }) => (
   <div>
-    {/* {fmtTime(time)} :  */}
+    {fmtTime(time)} : 
     <a href={event_url}>{name}
     </a>
   </div>
