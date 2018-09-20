@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-
 class CreateAccountPage extends Component {
   state = {
     firstName: "",
@@ -173,7 +172,7 @@ class CreateAccountPage extends Component {
                   ></input>
                 </div>
                 {/* upload picture */}
-                <div className="form-group">
+                {/* <div className="form-group">
                   <i class="fa fa-camera-retro" aria-hidden="true"></i>
                   <input
                     value={this.state.photo}
@@ -181,7 +180,7 @@ class CreateAccountPage extends Component {
                     onChange={this.handleInputChanged}
                     type="file"
                   ></input>
-                </div>
+                </div> */}
                 {/* mentor */}
                 <div className="form-group">
                   <i className="fa fa-handshake-o" aria-hidden="true"></i>

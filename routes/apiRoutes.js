@@ -59,11 +59,6 @@ router.route('/user/:id')
     })
   });
 
-// getting users from db to compare answers
-// this command works in mongo shell to get the data
-// > db.users.find().forEach(printjson);
-// > db.users.find({"isMentor": false}).forEach(printjson);
-
 //adding the /users route to our /api router
 router.route('/users')
     //retrieve all articles from the database
