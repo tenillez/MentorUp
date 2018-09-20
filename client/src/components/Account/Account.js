@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {withRouter} from 'react-router';
+import { withRouter } from 'react-router';
 import "./Account.css";
 import axios from 'axios';
 import { withUser } from '../../services/withUser';
@@ -24,11 +24,11 @@ class Account extends Component {
         }
         console.log(JSON.stringify(this.props.user));
     }
-    componentDidMount(){
+    componentDidMount() {
         this.findUser();
     }
     findUser() {
-        axios.get("/api/user/" + this.state.accountID).then((res) =>{
+        axios.get("/api/user/" + this.state.accountID).then((res) => {
             console.log(res);
             this.setState(res.data);
             console.log(res.data.isMentor);
@@ -49,18 +49,23 @@ class Account extends Component {
                     </h1>
                     <hr />
                     <div className="row">
-                        <div className="col-lg-8">
+                        <div className="col-lg-4">
+                            <h3>Info</h3>
+                            <hr />
                             <p>Username: {this.state.username} </p>
-
                             <p>Location: {this.state.location} </p>
                             <p>LinkedIn Profile: <a href={this.state.linkedin} rel='noopener noreferrer' target="_blank"> {this.state.linkedin}</a></p>
                         </div>
                         <div className="col-lg-4">
+                            <h3>Mentor Up status</h3>
+                            <hr />
                             <p>You are a {this.state.isMentor} </p>
-
                             <p>You are paired with: {this.state.pairing}</p>
-                            <h5 className="alert">{this.state.pairing} left you a note!</h5>
-
+                        </div>
+                        <div className="col-lg-4">
+                            <h3>Notes</h3>
+                            <hr />
+                            <p><i className="fa fa-sticky-note-o" aria-hidden="true"></i>{this.state.pairing} left you a note!</p>
                             <p className="note">{this.state.note}</p>
                         </div>
                     </div>
@@ -76,22 +81,22 @@ class Account extends Component {
                         <div className="row">
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="zoom">
-                                <a href ="https://www.zoom.us/" target="blank">
-                                    <img src={require('./img/zoom.jpg')} alt="zoom" />
+                                    <a href="https://www.zoom.us/" target="blank">
+                                        <img src={require('./img/zoom.jpg')} alt="zoom" />
                                     </a>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="hangouts">
-                                    <a href ="https://hangouts.google.com/" target="blank">
-                                    <img src={require('./img/hangouts.png')} alt="google-hangouts" />
+                                    <a href="https://hangouts.google.com/" target="blank">
+                                        <img src={require('./img/hangouts.png')} alt="google-hangouts" />
                                     </a>
                                 </div>
                             </div>
                             <div className="col-sm-4">
                                 <div className="card imgCard" id="skype">
-                                <a href ="https://www.skype.com/en/get-skype/" target="blank">
-                                    <img src={require('./img/skype.png')} alt="skype" />
+                                    <a href="https://www.skype.com/en/get-skype/" target="blank">
+                                        <img src={require('./img/skype.png')} alt="skype" />
                                     </a>
                                 </div>
                             </div>
