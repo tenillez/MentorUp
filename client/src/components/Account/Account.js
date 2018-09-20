@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router';
+import {withRouter} from 'react-router';
 import "./Account.css";
 import axios from 'axios';
 import { withUser } from '../../services/withUser';
 import Goals from "../Goals";
+
 
 class Account extends Component {
     constructor(props) {
@@ -23,11 +24,11 @@ class Account extends Component {
         }
         console.log(JSON.stringify(this.props.user));
     }
-    componentDidMount() {
+    componentDidMount(){
         this.findUser();
     }
     findUser() {
-        axios.get("/api/user/" + this.state.accountID).then((res) => {
+        axios.get("/api/user/" + this.state.accountID).then((res) =>{
             console.log(res);
             this.setState(res.data);
             console.log(res.data.isMentor);
@@ -50,8 +51,6 @@ class Account extends Component {
                     <div className="row">
                         <div className="col-lg-8">
                             <p>Username: {this.state.username} </p>
-
-                            <p>Email: {this.state.email} </p>
 
                             <p>Location: {this.state.location} </p>
                             <p>LinkedIn Profile: <a href={this.state.linkedin} rel='noopener noreferrer' target="_blank"> {this.state.linkedin}</a></p>
@@ -100,7 +99,6 @@ class Account extends Component {
                     </div>
                 </div>
             </div>
-
         )
     }
 }

@@ -1,4 +1,8 @@
 import React from 'react';
+
+import ResultContainer from "../components/Meetup/ResultContainer";
+import PostApp from '../components/PostsApp/Posts';
+
 // import ResultContainer from "../components/Meetup/ResultContainer";
 import Meetup from "../components/Meetup";
 import Meetups from "react-meetup-meetups";
@@ -27,8 +31,11 @@ const Community = () => {
         <div className="container" id="commContainer">
             <div className="row">
                 <div className="col-lg-7" id="cardRow">
-                    <h3><i className="fa fa-thumb-tack" aria-hidden="true"></i>Community Posts</h3>
-                    <p>Have a question, or an answer? Please contribute below</p>
+
+                <PostApp />
+                    {/* <h3>Community Posts</h3>
+                    <p>Have a question, or an answer? Please contribute below</p> 
+
                     <div className="card">
                         <div className="card-title">Coding Languages</div>
                         <div className="card-body">
@@ -67,8 +74,8 @@ const Community = () => {
                                 <button className="btn btn-dark"><i className="fa fa-trash" aria-hidden="true"></i></button>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>*/}
+                    </div> 
                 {/* break this out into a component */}
                 <div className="col-lg-5">
                     <h3><i className="fa fa-meetup" aria-hidden="true"></i>Meetups</h3>
