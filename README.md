@@ -35,10 +35,10 @@ Users will first enter our app and see a home page, they will login or signup, t
 <img src="./readMeImg/match.png" alt="match" width="200px" />
 
 ### Created by 
-* Tenille 
-* David
-* Brandon
-* Heather
-* Christine
+* Tenille Zaher
+* David Juarez
+* Brandon Dullye
+* Heather Shaw
+* Christine Ronk
 
-# View the app [here.](https://agile-caverns-57821.herokuapp.com/)
+### View the app [here.](https://agile-caverns-57821.herokuapp.com/)
