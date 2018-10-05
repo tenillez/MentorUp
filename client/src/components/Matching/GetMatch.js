@@ -19,6 +19,7 @@ class GetMatch extends Component {
             isMatched: "",
             users: [],
             scores: [],
+            note: "",
             accountID: this.props.user.id
         }
     };
@@ -93,13 +94,10 @@ class GetMatch extends Component {
     storeMatch() {
         let id = (this.props.user.id);
         console.log(this.state.pairing);
-        let message = (this.state.note);
         console.log(id);
         axios.put('/api/user/' + id, {
-
             pairing: this.state.pairing,
             isMatched: true,
-            note: message
         })
             .then(res => {
                 console.log(res.data.pairing);
@@ -109,9 +107,22 @@ class GetMatch extends Component {
             });
     };
 
+
     sendNote() {
-        console.log("hi")
-    }
+        console.log(this.state.note);
+        // let id = (this.props.user.id);
+        // let note = (this.state.note);
+        // console.log(note);
+        // axios.put('/api/user/' + id, {
+        //     note: note,
+        // })
+        //     .then(res => {
+        //         console.log(res.data.note);
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
+        //     });
+    };
 
     render() {
         return (
@@ -130,7 +141,7 @@ class GetMatch extends Component {
                                     <h4>Leave a note for {this.state.pairing}.</h4>
                                     <br />
                                     <div className="form-group">
-                                    <i className="fa fa-handshake-o" aria-hidden="true"></i>
+                                        <i className="fa fa-handshake-o" aria-hidden="true"></i>
                                         <input
                                             value={this.state.note}
                                             name="firstName"

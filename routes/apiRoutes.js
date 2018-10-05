@@ -86,6 +86,7 @@ router.route('/mentees')
             res.json(users);
         });
     })
+
 // Mentors
 //adding the /users route to our /api router
 router.route('/mentors')
@@ -117,6 +118,15 @@ router.route('/user/:id')
   .put((req, res) => {
     db.User.findOneAndUpdate(
       { _id: req.params.id }, { $set: { isMentor: req.body } }, { new: true })
+      .then(function (dbUser) {
+        res.json(dbUser);
+      });
+  });
+// note
+router.route('/user/:id')
+  .put((req, res) => {
+    db.User.findOneAndUpdate(
+      { _id: req.params.id }, { $set: { note: req.body } }, { new: true })
       .then(function (dbUser) {
         res.json(dbUser);
       });
