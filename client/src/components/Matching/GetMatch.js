@@ -19,7 +19,6 @@ class GetMatch extends Component {
             isMatched: "",
             users: [],
             scores: [],
-            note: "",
             accountID: this.props.user.id
         }
     };
@@ -110,19 +109,19 @@ class GetMatch extends Component {
     // puts the note in the db
     // this function needs work
     sendNote() {
-        console.log(this.state.note);
-        // let id = (this.props.user.id);
-        // let note = (this.state.note);
-        // console.log(note);
-        // axios.put('/api/user/' + id, {
-        //     note: note,
-        // })
-        //     .then(res => {
-        //         console.log(res.data.note);
-        //     })
-        //     .catch(err => {
-        //         console.log(err)
-        //     });
+        // console.log(this.state.note);
+        let id = (this.props.user.id);
+        let note = (this.state.note);
+        console.log(note);
+        axios.put('/api/user/' + id, {
+            note: note,
+        })
+            .then(res => {
+                console.log(res.data.note);
+            })
+            .catch(err => {
+                console.log(err)
+            });
     };
 
     render() {
