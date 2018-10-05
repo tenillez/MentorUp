@@ -37,7 +37,7 @@ class GetMatch extends Component {
         });
     }
 
-    // need to separate get mentees, get mentors hmmm
+    // get mentor/mentee depending on which the user is
     getMentor = () => {
         axios.get('/api/mentors')
             .then(res => {
@@ -91,6 +91,7 @@ class GetMatch extends Component {
 
     };
 
+    // this stores match in the db
     storeMatch() {
         let id = (this.props.user.id);
         console.log(this.state.pairing);
@@ -106,8 +107,8 @@ class GetMatch extends Component {
                 console.log(err)
             });
     };
-
-
+    // puts the note in the db
+    // this function needs work
     sendNote() {
         console.log(this.state.note);
         // let id = (this.props.user.id);
