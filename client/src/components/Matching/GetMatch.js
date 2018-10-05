@@ -108,20 +108,22 @@ class GetMatch extends Component {
     };
     // puts the note in the db
     // this function needs work
+    // we need to grab the matched mentor or mentee's id 
+    // put note in their db
     sendNote() {
-        // console.log(this.state.note);
-        let id = (this.props.user.id);
-        let note = (this.state.note);
-        console.log(note);
-        axios.put('/api/user/' + id, {
-            note: note,
-        })
-            .then(res => {
-                console.log(res.data.note);
-            })
-            .catch(err => {
-                console.log(err)
-            });
+        console.log("this isn't working :( ");
+        // let id = (this.props.user.id);
+        // let note = (this.state.note);
+        // console.log(note);
+        // axios.put('/api/user/' + id, {
+        //     note: note,
+        // })
+        //     .then(res => {
+        //         console.log(res.data.note);
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
+        //     });
     };
 
     render() {
