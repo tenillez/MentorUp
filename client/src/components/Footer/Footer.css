@@ -2,31 +2,17 @@ body{
     margin: 0;
     padding: 0;
 }
-
 #footer{
-    background-color: #343a40;
+    background: url("../../assets/greyzz.png");
+    /* background-color: #343a40; */
     margin-top: 22px;
     padding: 15px;
-    
     bottom: 0;
     left: 0;
     width: 100%;
-    color: white;
+    color: #343a40;
     margin-bottom:0;
-   
-    
-    
-   
-        
-    
-
-
-    
-
-
 }
-
-
 #social{
     float: right;
 }
