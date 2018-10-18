@@ -49,7 +49,7 @@ class ChatScreen extends Component {
         this.setState({ currentUser })
         return currentUser.subscribeToRoom({
           // roomId: 15052466,
-          roomId:  15585824,
+          roomId:  18904537,
           messageLimit: 100,
           hooks: {
             onNewMessage: message => {
